@@ -11,7 +11,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/console"
+	"github.com/ethereum/go-ethereum/console/prompt"
 )
 
 // method or action
@@ -155,7 +155,7 @@ func (cli *CLI) applyTxFile(path string) error {
 }
 
 func (cli *CLI) applyTxGuide(offline bool) error {
-	var prompt string
+	var promptStr string
 
 	if cli.tran == nil {
 		return errCliTranNil
@@ -166,11 +166,11 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 		if err := func() error {
 			// enter contract address
 			if cli.tran.To == (common.Address{}) {
-				prompt = fmt.Sprintf("Enter contract address: ")
+				promptStr = fmt.Sprintf("Enter contract address: ")
 			} else {
-				prompt = fmt.Sprintf("Enter contract address (default: %s): ", cli.tran.To.String())
+				promptStr = fmt.Sprintf("Enter contract address (default: %s): ", cli.tran.To.String())
 			}
-			contractAddressStr, err := console.Stdin.PromptInput(prompt)
+			contractAddressStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return fmt.Errorf("get contract address error")
 			}
@@ -200,11 +200,11 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 	for i := 0; ; i++ {
 		if err := func() error {
 			if cli.tran.From == (common.Address{}) {
-				prompt = fmt.Sprintf("Enter from address who sign tx: ")
+				promptStr = fmt.Sprintf("Enter from address who sign tx: ")
 			} else {
-				prompt = fmt.Sprintf("Enter from address who sign tx (default: %s): ", cli.tran.From.String())
+				promptStr = fmt.Sprintf("Enter from address who sign tx (default: %s): ", cli.tran.From.String())
 			}
-			fromAddressStr, err := console.Stdin.PromptInput(prompt)
+			fromAddressStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return fmt.Errorf("get \"from\" error")
 			}
@@ -253,11 +253,11 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 	fmt.Printf(" %d. TokenTransfer - Transfer token from this MSW\n", TokenTransfer)
 
 	action := Submit
-	prompt = fmt.Sprintf("Enter the number of action (default: %d): ", action)
+	promptStr = fmt.Sprintf("Enter the number of action (default: %d): ", action)
 	for i := 0; ; i++ {
 		if err := func() error {
 			action = Submit
-			actionStr, err := console.Stdin.PromptInput(prompt)
+			actionStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return fmt.Errorf("get \"to\" error")
 			}
@@ -368,15 +368,15 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 }
 
 func (cli *CLI) applyTxGuideNode() error {
-	var prompt string
+	var promptStr string
 
 	if cli.tran == nil {
 		return errCliTranNil
 	}
 
 	// get nonce
-	prompt = fmt.Sprintf("Enter nonce of from address (default: %d): ", cli.tran.Nonce)
-	nonceStr, err := console.Stdin.PromptInput(prompt)
+	promptStr = fmt.Sprintf("Enter nonce of from address (default: %d): ", cli.tran.Nonce)
+	nonceStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		return err
 	}
@@ -392,8 +392,8 @@ func (cli *CLI) applyTxGuideNode() error {
 	if cli.tran.GasPrice == nil {
 		cli.tran.GasPrice = big.NewInt(1)
 	}
-	prompt = fmt.Sprintf("Enter gasPrice (default: %s WEI): ", cli.tran.GasPrice.String())
-	gasPriceStr, err := console.Stdin.PromptInput(prompt)
+	promptStr = fmt.Sprintf("Enter gasPrice (default: %s WEI): ", cli.tran.GasPrice.String())
+	gasPriceStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		fmt.Println("get gasPrice error")
 		return err
@@ -413,8 +413,8 @@ func (cli *CLI) applyTxGuideNode() error {
 	if cli.tran.GasLimit < 21000 {
 		cli.tran.GasLimit = 21000
 	}
-	prompt = fmt.Sprintf("Enter gasLimit (default: %d): ", cli.tran.GasLimit)
-	gasLimitStr, err := console.Stdin.PromptInput(prompt)
+	promptStr = fmt.Sprintf("Enter gasLimit (default: %d): ", cli.tran.GasLimit)
+	gasLimitStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		return fmt.Errorf("get gasLimit error")
 	}
@@ -430,8 +430,8 @@ func (cli *CLI) applyTxGuideNode() error {
 	if cli.tran.NetworkID == nil || cli.tran.NetworkID.Cmp(big.NewInt(0)) == 0 {
 		cli.tran.NetworkID = big.NewInt(16888)
 	}
-	prompt = fmt.Sprintf("Enter ChainID (default: %s): ", cli.tran.NetworkID.String())
-	networkIDStr, err := console.Stdin.PromptInput(prompt)
+	promptStr = fmt.Sprintf("Enter ChainID (default: %s): ", cli.tran.NetworkID.String())
+	networkIDStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		return err
 	}
@@ -475,7 +475,7 @@ func saveStringToFile(str, filepath string) error {
 }
 
 func (cli *CLI) applyTxGuideSubmit() error {
-	var prompt string
+	var promptStr string
 
 	if cli.tran == nil {
 		return errCliTranNil
@@ -486,11 +486,11 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	for i := 0; ; i++ {
 		if err := func() error {
 			if to == (common.Address{}) {
-				prompt = fmt.Sprintf("Enter to address: ")
+				promptStr = fmt.Sprintf("Enter to address: ")
 			} else {
-				prompt = fmt.Sprintf("Enter to address (default: %s): ", to.String())
+				promptStr = fmt.Sprintf("Enter to address (default: %s): ", to.String())
 			}
-			toAddressStr, err := console.Stdin.PromptInput(prompt)
+			toAddressStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return fmt.Errorf("get \"to\" error")
 			}
@@ -519,9 +519,9 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	var unit string
 	for i := 0; ; i++ {
 		if err := func() error {
-			prompt = fmt.Sprintf("Enter unit for amount (NEW or WEI, default NEW): ")
+			promptStr = fmt.Sprintf("Enter unit for amount (NEW or WEI, default NEW): ")
 			var err error
-			unit, err = console.Stdin.PromptInput(prompt)
+			unit, err = prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("Error: get \"unit\" error")
 				return err
@@ -548,9 +548,9 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	value := new(big.Int)
 	for i := 0; ; i++ {
 		if err := func() error {
-			prompt = fmt.Sprintf("Enter amount to pay in %s (default: %s): ", unit,
+			promptStr = fmt.Sprintf("Enter amount to pay in %s (default: %s): ", unit,
 				getWeiAmountTextByUnit(value, unit))
-			amountStr, err := console.Stdin.PromptInput(prompt)
+			amountStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)
 				return err
@@ -586,8 +586,8 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	var data []byte
 	for i := 0; ; i++ {
 		if err := func() error {
-			prompt = fmt.Sprintf("Enter text message (default is empty): ")
-			dataStr, err := console.Stdin.PromptInput(prompt)
+			promptStr = fmt.Sprintf("Enter text message (default is empty): ")
+			dataStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return err
 			}
@@ -613,13 +613,13 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	return nil
 }
 
-func (cli *CLI) applyTxGuideID(prompt string, action int) error {
+func (cli *CLI) applyTxGuideID(promptStr string, action int) error {
 	if cli.tran == nil {
 		return errCliTranNil
 	}
 
 	// get number
-	idStr, err := console.Stdin.PromptInput(prompt + ": ")
+	idStr, err := prompt.Stdin.PromptInput(promptStr + ": ")
 	if err != nil {
 		fmt.Println("PromptInput err:", err)
 		return err
@@ -670,8 +670,8 @@ func (cli *CLI) applyTxGuideAddress(prompt, method string) error {
 	return nil
 }
 
-func promptAddress(prompt string) (common.Address, error) {
-	addressStr, err := console.Stdin.PromptInput(prompt)
+func promptAddress(promptStr string) (common.Address, error) {
+	addressStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		fmt.Println("PromptInput err:", err)
 		return common.Address{}, err
@@ -720,7 +720,7 @@ func (cli *CLI) applyTxGuideRequired() error {
 	}
 
 	// get number
-	idStr, err := console.Stdin.PromptInput("Enter the required number to change: ")
+	idStr, err := prompt.Stdin.PromptInput("Enter the required number to change: ")
 	if err != nil {
 		fmt.Println("PromptInput err:", err)
 		return err
@@ -755,8 +755,8 @@ func (cli *CLI) applyTxGuideDailyLimit() error {
 
 	// get pay amount unit
 	var unit string
-	prompt := fmt.Sprintf("Enter unit for daily limit (NEW or WEI, default NEW): ")
-	unit, err = console.Stdin.PromptInput(prompt)
+	promptStr := fmt.Sprintf("Enter unit for daily limit (NEW or WEI, default NEW): ")
+	unit, err = prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		fmt.Println("Error: get \"unit\" error")
 		return err
@@ -771,9 +771,9 @@ func (cli *CLI) applyTxGuideDailyLimit() error {
 
 	// get pay amount
 	value := new(big.Int)
-	prompt = fmt.Sprintf("Enter daily limit to change in %s (default: %s): ", unit,
+	promptStr = fmt.Sprintf("Enter daily limit to change in %s (default: %s): ", unit,
 		getWeiAmountTextByUnit(value, unit))
-	amountStr, err := console.Stdin.PromptInput(prompt)
+	amountStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {
 		fmt.Println("PromptInput err:", err)
 		return err

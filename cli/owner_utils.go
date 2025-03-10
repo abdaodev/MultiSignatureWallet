@@ -65,6 +65,6 @@ func (cli *CLI) GetMethodData(name string, args ...interface{}) ([]byte, error) 
 	}
 
 	// Pack up the method ID too if not a constructor and return
-	return append(method.Id(), arguments...), nil
+	return append(method.ID, arguments...), nil
 
 }

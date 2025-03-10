@@ -9,12 +9,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console"
+	"github.com/ethereum/go-ethereum/console/prompt"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/spf13/cobra"
 )
 
-//  PayTransaction for send Transaction
+// PayTransaction for send Transaction
 type PayTransaction struct {
 	To    common.Address `json:"to"`
 	Value *big.Int       `json:"value"`
@@ -78,7 +78,7 @@ func (cli *CLI) buildBuildCmd() *cobra.Command {
 				}
 				switch cli.tran.action {
 				case Submit:
-					//payTran := cli.tran.params.(*PayTransaction)
+					// payTran := cli.tran.params.(*PayTransaction)
 					if len(cli.tran.params) < 3 {
 						err = errors.New("submitTransaction params length error")
 					} else {
@@ -163,8 +163,8 @@ func (cli *CLI) buildBuildCmd() *cobra.Command {
 			if cmd.Flags().Changed("out") {
 				outStr, err = cmd.Flags().GetString("out")
 			} else {
-				prompt := fmt.Sprintf("Enter file to save transaction (default: %s): ", defaultOutStr)
-				outStr, err = console.Stdin.PromptInput(prompt)
+				promptStr := fmt.Sprintf("Enter file to save transaction (default: %s): ", defaultOutStr)
+				outStr, err = prompt.Stdin.PromptInput(promptStr)
 			}
 			if err != nil {
 				fmt.Println("Error:", err)

@@ -118,7 +118,7 @@ func (cli *CLI) buildTxSubmitCmd() *cobra.Command {
 				}
 
 				// Pack up the method ID too if not a constructor and return
-				data = append(method.Id(), arguments...)
+				data = append(method.ID, arguments...)
 
 				toAddress = tokenAddress
 				amountWei = big.NewInt(0)

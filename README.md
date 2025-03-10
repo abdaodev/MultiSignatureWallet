@@ -101,7 +101,7 @@ $GOPATH/bin/MultiSignatureWallet
 Use commands `go generate` or `abigen` to generate MultiSigWalletWithDailyLimit.go from [MultiSigWalletWithDailyLimit.sol](https://github.com/gnosis/MultiSigWallet/blob/e1b25e8632ca28e9e9e09c81bd20bf33fdb405ce/contracts/MultiSigWalletWithDailyLimit.sol).
 
 ```bash
-abigen --sol contract/MultiSigWalletWithDailyLimit.sol --pkg cli --out cli/MultiSigWalletWithDailyLimit.go
+newchain/newton-ab/build/bin/abigen --bin contract/MultiSigWalletWithDailyLimit.bin --abi contract/MultiSigWalletWithDailyLimit.abi --type MultiSigWalletWithDailyLimit --pkg cli --out cli/MultiSigWalletWithDailyLimit.go
 ```
 
 

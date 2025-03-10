@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/console"
+	"github.com/ethereum/go-ethereum/console/prompt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -19,8 +19,8 @@ func (cli *CLI) buildInitCmd() *cobra.Command {
 
 			fmt.Println("Initialize config file")
 
-			prompt := fmt.Sprintf("Enter file in which to save (%s): ", defaultConfigFile)
-			configPath, err := console.Stdin.PromptInput(prompt)
+			promptStr := fmt.Sprintf("Enter file in which to save (%s): ", defaultConfigFile)
+			configPath, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)
 			}
@@ -30,8 +30,8 @@ func (cli *CLI) buildInitCmd() *cobra.Command {
 			cli.config = configPath
 
 			walletPathV := viper.GetString("walletPath")
-			prompt = fmt.Sprintf("Enter the wallet storage directory (%s): ", walletPathV)
-			cli.walletPath, err = console.Stdin.PromptInput(prompt)
+			promptStr = fmt.Sprintf("Enter the wallet storage directory (%s): ", walletPathV)
+			cli.walletPath, err = prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)
 			}
@@ -41,8 +41,8 @@ func (cli *CLI) buildInitCmd() *cobra.Command {
 			viper.Set("walletPath", cli.walletPath)
 
 			rpcURLV := viper.GetString("rpcURL")
-			prompt = fmt.Sprintf("Enter %s json rpc or ipc url (%s): ", cli.bc.String(), rpcURLV)
-			cli.rpcURL, err = console.Stdin.PromptInput(prompt)
+			promptStr = fmt.Sprintf("Enter %s json rpc or ipc url (%s): ", cli.bc.String(), rpcURLV)
+			cli.rpcURL, err = prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)
 			}
@@ -51,8 +51,8 @@ func (cli *CLI) buildInitCmd() *cobra.Command {
 			}
 			viper.Set("rpcURL", cli.rpcURL)
 
-			prompt = fmt.Sprintf("Create a default account or not: [Y/n] ")
-			createNewAddress, err := console.Stdin.PromptInput(prompt)
+			promptStr = fmt.Sprintf("Create a default account or not: [Y/n] ")
+			createNewAddress, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)
 			}
