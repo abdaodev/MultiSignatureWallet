@@ -13,7 +13,7 @@ abiot:
 	echo "replace github.com/ethereum/go-ethereum => github.com/ABFoundationGlobal/abiot v1.9.18-ab-1.3" >> go.mod
 	go mod tidy
 	go build -ldflags "-X github.com/ABFoundationGlobal/MultiSignatureWallet/cli.buildCommit=${BUILD_COMMIT}\
-    	    -X github.com/ABFoundationGlobal/MultiSignatureWallet/utils.buildDate=${BUILD_DATE}" -o MultiSignatureWallet-ABIoT
+    	    -X github.com/ABFoundationGlobal/MultiSignatureWallet/cli.buildDate=${BUILD_DATE}" -o MultiSignatureWallet-ABIoT
 	mv go.mod.bak go.mod
 	go mod tidy
 
