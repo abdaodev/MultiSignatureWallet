@@ -101,13 +101,13 @@ $GOPATH/bin/MultiSignatureWallet
 Use commands `go generate` or `abigen` to generate MultiSigWalletWithDailyLimit.go from [MultiSigWalletWithDailyLimit.sol](https://github.com/gnosis/MultiSigWallet/blob/e1b25e8632ca28e9e9e09c81bd20bf33fdb405ce/contracts/MultiSigWalletWithDailyLimit.sol).
 
 ```bash
-newchain/newton-ab/build/bin/abigen --bin contract/MultiSigWalletWithDailyLimit.bin --abi contract/MultiSigWalletWithDailyLimit.abi --type MultiSigWalletWithDailyLimit --pkg cli --out cli/MultiSigWalletWithDailyLimit.go
+ab/abiot/build/bin/abigen --bin contract/MultiSigWalletWithDailyLimit.bin --abi contract/MultiSigWalletWithDailyLimit.abi --type MultiSigWalletWithDailyLimit --pkg cli --out cli/MultiSigWalletWithDailyLimit.go
 ```
 
 
 tips: 
-1. the version to compiler used is `solc-v0.4.15+commit.8b45bddb`
-2. the version of newton MultiSignatureWallet is `solc-v0.4.24+commit.e67f0147`
+1. the version of AB MultiSignatureWallet is `solc-v0.4.24+commit.e67f0147` with Optimization runs 200 times
+2. abigen of abiot is incompatible with v1.13.15, so use ethereum@v1.9.18 for ABCore version
 
 ### Commandline
 

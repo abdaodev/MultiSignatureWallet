@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/ABFoundationGlobal/MultiSignatureWallet/cli"
 	"github.com/sirupsen/logrus"
-	"github.com/newtonproject/MultiSignatureWallet/cli"
 )
 
 // test address

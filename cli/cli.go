@@ -30,7 +30,7 @@ type CLI struct {
 	walletPath string
 	rpcURL     string
 	config     string
-	//testing    bool
+	// testing    bool
 
 	contractAddress string
 	client          *ethclient.Client
@@ -55,14 +55,7 @@ func NewCLI() *CLI {
 		fmt.Println(err)
 		return nil
 	}
-	version := "v1.3.0"
-	if buildCommit != "" {
-		version = fmt.Sprintf("%s-%s", version, buildCommit)
-	}
-	if buildDate != "" {
-		version = fmt.Sprintf("%s-%s", version, buildDate)
-	}
-	version = fmt.Sprintf("%s-%s", version, bc.String())
+	version := fmt.Sprintf("%s-%s-%s", buildCommit, buildDate, bc.String())
 
 	// init blockchain
 	bc.Init()
@@ -115,7 +108,7 @@ func (cli *CLI) buildSimpleRegistry() (*SimpleRegistry, error) {
 	return cli.simpleRegistry, nil
 }
 
-//GetSimpleRegistry GetSimpleRegistry
+// GetSimpleRegistry GetSimpleRegistry
 func (cli *CLI) GetSimpleRegistry() (*SimpleRegistry, error) {
 	if cli.simpleRegistry == nil {
 		return cli.buildSimpleRegistry()
@@ -205,7 +198,7 @@ func (cli *CLI) help(cmd *cobra.Command, args []string) {
 
 // TestCommand test command
 func (cli *CLI) TestCommand(command string) string {
-	//cli.testing = true
+	// cli.testing = true
 	result := cli.Run(strings.Fields(command)...)
 	//	cli.testing = false
 	return result

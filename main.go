@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/newtonproject/MultiSignatureWallet/cli"
+	"github.com/ABFoundationGlobal/MultiSignatureWallet/cli"
 )
 
 func main() {
