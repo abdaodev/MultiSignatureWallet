@@ -86,9 +86,8 @@ var (
 
 func InitUnit(bc BlockChain) {
 	if bc == NewChain {
-		UnitETH = "NEW"
+		UnitETH = "AB"
 		UnitWEI = "ISAAC"
-
 	}
 
 	UnitList = []string{UnitETH, UnitWEI}
@@ -127,7 +126,7 @@ func InitERC(bc BlockChain) {
 var defaultRPCURL string
 
 const defaultNEWRPCURL = "https://rpc1.newchain.newtonproject.org"
-const defaultETHRPCUrl = "https://ethrpc.service.newtonproject.org"
+const defaultETHRPCUrl = "https://rpc.core.testnet.ab.org"
 
 func InitRPCUrl(bc BlockChain) {
 	// default RPC Url
