@@ -209,12 +209,12 @@ func (cli *CLI) getNoSignTransactOpts() (*bind.TransactOpts, error) {
 	}
 
 	if err := cli.BuildClient(); err != nil {
-		fmt.Println("NetworkID Error: ", err)
+		fmt.Println("BuildClient Error: ", err)
 		return nil, err
 	}
-	networkID, err := cli.client.NetworkID(context.Background())
+	chainID, err := cli.client.ChainID(context.Background())
 	if err != nil {
-		fmt.Println("NetworkID Error: ", err)
+		fmt.Println("ChainID Error: ", err)
 		return nil, err
 	}
 
@@ -228,7 +228,7 @@ func (cli *CLI) getNoSignTransactOpts() (*bind.TransactOpts, error) {
 
 			cli.copyTx(tx)
 			cli.tran.From = address
-			cli.tran.NetworkID = networkID
+			cli.tran.ChainID = chainID
 
 			return nil, errNoSignTransactor
 		},
@@ -245,10 +245,9 @@ func (cli *CLI) copyTx(tx *types.Transaction) {
 		cli.tran.To = *tx.To()
 	}
 	cli.tran.Value = tx.Value()
-	cli.tran.Unit = UnitWEI
 	cli.tran.Data = tx.Data()
 	cli.tran.Nonce = tx.Nonce()
 	cli.tran.GasPrice = tx.GasPrice()
 	cli.tran.GasLimit = tx.Gas()
-	cli.tran.NetworkID = tx.ChainId()
+	cli.tran.ChainID = tx.ChainId()
 }

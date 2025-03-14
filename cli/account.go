@@ -6,8 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"math/big"
-	"os"
-	"strings"
 
 	"github.com/btcsuite/btcutil/base58"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
@@ -24,7 +22,7 @@ func (cli *CLI) buildAccountCmd() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   use,
-		Short: fmt.Sprintf("Manage %s accounts", cli.bc.String()),
+		Short: fmt.Sprintf("Manage accounts"),
 		Args:  cobra.MinimumNArgs(1),
 		Run: func(cmd *cobra.Command, args []string) {
 			return
@@ -131,16 +129,16 @@ func (cli *CLI) buildAccountListCmd() *cobra.Command {
 
 func (cli *CLI) buildBalanceCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:                   fmt.Sprintf("balance [-u %s] [address1] [address2]...", strings.Join(UnitList, "|")),
+		Use:                   fmt.Sprintf("balance [address1] [address2]..."),
 		Short:                 "Get balance of address",
 		Args:                  cobra.MinimumNArgs(0),
 		DisableFlagsInUseLine: true,
 		Run: func(cmd *cobra.Command, args []string) {
 
-			unit, _ := cmd.Flags().GetString("unit")
-			if unit != "" && !stringInSlice(unit, UnitList) {
-				fmt.Printf("Unit(%s) for invalid. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-				fmt.Fprint(os.Stderr, cmd.UsageString())
+			unit, err := cli.GetUnitETH()
+			if err != nil {
+				fmt.Println("GetUnitETH Error: ", err)
+				fmt.Println(cmd.UsageString())
 				return
 			}
 
@@ -174,8 +172,6 @@ func (cli *CLI) buildBalanceCmd() *cobra.Command {
 			return
 		},
 	}
-
-	cmd.Flags().StringP("unit", "u", "", fmt.Sprintf("unit for balance. %s.", fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ","))))
 
 	return cmd
 }

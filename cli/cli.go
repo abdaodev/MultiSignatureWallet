@@ -5,9 +5,13 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"math/big"
 	"os"
 	"strings"
 
+	"github.com/ABFoundationGlobal/MultiSignatureWallet/chains"
+
+	_ "github.com/ABFoundationGlobal/MultiSignatureWallet/chains"
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
@@ -19,6 +23,8 @@ import (
 var (
 	buildCommit string
 	buildDate   string
+
+	// chains = chains.Chain
 )
 
 // CLI represents a command-line interface. This class is
@@ -39,6 +45,7 @@ type CLI struct {
 	simpleRegistry  *SimpleRegistry
 	walletPassword  string
 	address         string
+	chainID         *big.Int
 
 	tran *Transaction
 	bc   BlockChain
@@ -85,10 +92,42 @@ func (cli *CLI) BuildClient() error {
 	if cli.client == nil {
 		cli.client, err = ethclient.Dial(cli.rpcURL)
 		if err != nil {
-			return fmt.Errorf("failed to connect to the %s client: %v", cli.bc.String(), err)
+			return fmt.Errorf("failed to connect to rpc node %s: %v", cli.rpcURL, err)
 		}
 	}
 	return nil
+}
+
+func (cli *CLI) GetUnitETH() (string, error) {
+	if cli.client == nil {
+		if err := cli.BuildClient(); err != nil {
+			return "", err
+		}
+	}
+
+	// chainId
+	if cli.chainID == nil {
+		var err error
+		cli.chainID, err = cli.client.ChainID(context.Background())
+		if err != nil {
+			return "", fmt.Errorf("failed to get chainId %s: %v", cli.rpcURL, err)
+		}
+	}
+
+	chain, ok := chains.Chains[cli.chainID.Uint64()]
+	if !ok {
+		return "", fmt.Errorf("failed to find chain %d", cli.chainID.Uint64())
+	}
+
+	unit := chain.NativeCurrency.Symbol
+	if unit == "" {
+		return "", fmt.Errorf("failed to get native unit")
+	}
+
+	UnitETH = unit
+	UnitList = []string{UnitETH, UnitWEI}
+
+	return UnitETH, nil
 }
 
 // BuildSimpleRegistry BuildClient

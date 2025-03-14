@@ -1,8 +1,6 @@
 package cli
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -24,7 +22,7 @@ func (cli *CLI) buildRootCmd() {
 	// Global flags
 	rootCmd.PersistentFlags().StringVarP(&cli.config, "config", "c", defaultConfigFile, "The `path` to config file")
 	rootCmd.PersistentFlags().StringP("walletPath", "w", defaultWalletPath, "Wallet storage `directory`")
-	rootCmd.PersistentFlags().StringP("rpcURL", "i", defaultRPCURL, fmt.Sprintf("%s json rpc or ipc `url`", cli.bc.String()))
+	rootCmd.PersistentFlags().StringP("rpcURL", "i", defaultRPCURL, "JSON-RPC `url` or ipc path")
 	rootCmd.PersistentFlags().StringP("contractAddress", "a", defaultContractAddress, "Contract `address`")
 	rootCmd.PersistentFlags().StringP("from", "f", "", "the from `address` who pay gas")
 

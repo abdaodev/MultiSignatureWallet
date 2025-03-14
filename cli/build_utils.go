@@ -8,7 +8,9 @@ import (
 	"math/big"
 	"os"
 	"strconv"
+	"strings"
 
+	"github.com/ABFoundationGlobal/MultiSignatureWallet/chains"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/console/prompt"
@@ -31,16 +33,16 @@ const (
 // Transaction for send Transaction
 type Transaction struct {
 	// Contract  common.Address `json:"to"`
-	From      common.Address `json:"from"`
-	To        common.Address `json:"to"`
-	Value     *big.Int       `json:"value"`
-	Unit      string         `json:"unit"`
-	Data      []byte         `json:"data"`
-	Nonce     uint64         `json:"nonce"`
-	GasPrice  *big.Int       `json:"gasPrice"`
-	GasLimit  uint64         `json:"gas"`
-	NetworkID *big.Int       `json:"networkID"`
-	Password  string         `json:"password,omitempty"`
+	From     common.Address `json:"from"`
+	To       common.Address `json:"to"`
+	Value    *big.Int       `json:"value"`
+	Unit     string         `json:"unit"`
+	Data     []byte         `json:"data"`
+	Nonce    uint64         `json:"nonce"`
+	GasPrice *big.Int       `json:"gasPrice"`
+	GasLimit uint64         `json:"gas"`
+	ChainID  *big.Int       `json:"chainID"`
+	Password string         `json:"password,omitempty"`
 
 	action int
 	params []interface{}
@@ -48,28 +50,26 @@ type Transaction struct {
 
 func (t Transaction) MarshalJSON(indent bool) ([]byte, error) {
 	type transaction struct {
-		From      common.Address  `json:"from"`
-		To        *common.Address `json:"to"`
-		Value     string          `json:"value"`
-		Unit      string          `json:"unit"`
-		Data      *hexutil.Bytes  `json:"data"`
-		Nonce     uint64          `json:"nonce"`
-		GasPrice  *big.Int        `json:"gasPrice"`
-		GasLimit  uint64          `json:"gas"`
-		NetworkID *big.Int        `json:"networkID"`
-		// Password  string          `json:"password,omitempty"`
+		From     common.Address  `json:"from"`
+		To       *common.Address `json:"to"`
+		Value    string          `json:"value"`
+		Data     *hexutil.Bytes  `json:"data"`
+		Nonce    uint64          `json:"nonce"`
+		GasPrice *big.Int        `json:"gasPrice"`
+		GasLimit uint64          `json:"gas"`
+		ChainID  *big.Int        `json:"chainID"`
 	}
 	var tran transaction
 	tran.From = t.From
 	tran.To = &t.To
-	tran.Value = getWeiAmountTextByUnit(t.Value, t.Unit)
-	tran.Unit = t.Unit
+	if t.Value != nil {
+		tran.Value = t.Value.String()
+	}
 	tran.Data = (*hexutil.Bytes)(&t.Data)
 	tran.Nonce = t.Nonce
 	tran.GasPrice = t.GasPrice
 	tran.GasLimit = t.GasLimit
-	tran.NetworkID = t.NetworkID
-	// tran.Password = t.Password
+	tran.ChainID = t.ChainID
 
 	if indent {
 		return json.MarshalIndent(tran, "", " ")
@@ -80,16 +80,15 @@ func (t Transaction) MarshalJSON(indent bool) ([]byte, error) {
 
 func (t *Transaction) UnmarshalJSON(input []byte) error {
 	type transaction struct {
-		From      common.Address  `json:"from"`
-		To        *common.Address `json:"to"`
-		Value     string          `json:"value"`
-		Unit      string          `json:"unit"`
-		Data      *hexutil.Bytes  `json:"data"`
-		Nonce     uint64          `json:"nonce"`
-		GasPrice  *big.Int        `json:"gasPrice"`
-		GasLimit  uint64          `json:"gas"`
-		NetworkID *big.Int        `json:"networkID"`
-		Password  string          `json:"password,omitempty"`
+		From     common.Address  `json:"from"`
+		To       *common.Address `json:"to"`
+		Value    string          `json:"value"`
+		Data     *hexutil.Bytes  `json:"data"`
+		Nonce    uint64          `json:"nonce"`
+		GasPrice *big.Int        `json:"gasPrice"`
+		GasLimit uint64          `json:"gas"`
+		ChainID  *big.Int        `json:"chainID"`
+		Password string          `json:"password,omitempty"`
 	}
 	var tran transaction
 	if err := json.Unmarshal(input, &tran); err != nil {
@@ -100,12 +99,11 @@ func (t *Transaction) UnmarshalJSON(input []byte) error {
 	if tran.To != nil {
 		t.To = *tran.To
 	}
-	t.Unit = tran.Unit
-	amountWei, err := getAmountWei(tran.Value, tran.Unit)
-	if err != nil {
-		return err
+	amount, ok := big.NewInt(0).SetString(tran.Value, 10)
+	if !ok {
+		return fmt.Errorf("invalid amount: %s", tran.Value)
 	}
-	t.Value = amountWei
+	t.Value = amount
 	if tran.Data != nil {
 		t.Data = *tran.Data
 	}
@@ -116,8 +114,8 @@ func (t *Transaction) UnmarshalJSON(input []byte) error {
 	if tran.GasLimit >= 21000 {
 		t.GasLimit = tran.GasLimit
 	}
-	if tran.NetworkID != nil {
-		t.NetworkID = tran.NetworkID
+	if tran.ChainID != nil {
+		t.ChainID = tran.ChainID
 	}
 	if tran.Password != "" {
 		t.Password = tran.Password
@@ -126,7 +124,7 @@ func (t *Transaction) UnmarshalJSON(input []byte) error {
 	return nil
 }
 
-func (cli *CLI) applyTranDefault() error {
+func (cli *CLI) applyTranDefault() {
 	if common.IsHexAddress(cli.contractAddress) {
 		cli.tran.To = common.HexToAddress(cli.contractAddress)
 	}
@@ -136,11 +134,10 @@ func (cli *CLI) applyTranDefault() error {
 	}
 
 	cli.tran.Value = new(big.Int)
-	cli.tran.Unit = UnitETH
 	cli.tran.GasPrice = big.NewInt(1)
-	cli.tran.NetworkID = big.NewInt(16888)
+	cli.tran.ChainID = big.NewInt(1)
 
-	return nil
+	return
 }
 
 func (cli *CLI) applyTxFile(path string) error {
@@ -160,6 +157,37 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 	if cli.tran == nil {
 		return errCliTranNil
 	}
+
+	if offline {
+		// get ChainID
+		if cli.tran.ChainID == nil || cli.tran.ChainID.Cmp(big.NewInt(0)) == 0 {
+			cli.tran.ChainID = big.NewInt(1)
+		}
+		promptStr = fmt.Sprintf("Enter ChainID (default: %s): ", cli.tran.ChainID.String())
+		networkIDStr, err := prompt.Stdin.PromptInput(promptStr)
+		if err != nil {
+			return err
+		}
+		if networkIDStr != "" {
+			networkID, ok := new(big.Int).SetString(networkIDStr, 10)
+			if !ok {
+				return errors.New("chainID error")
+			}
+			cli.tran.ChainID = networkID
+		}
+	} else {
+		_, err := cli.GetUnitETH()
+		if err != nil {
+			return err
+		}
+		cli.tran.ChainID = cli.chainID
+	}
+	if cli.tran.ChainID == nil {
+		return fmt.Errorf("chainID is nil")
+	}
+	chain := chains.Chains[cli.tran.ChainID.Uint64()]
+
+	fmt.Printf("Current blockchain is: %s[%d]\n", chain.Name, chain.ChainId)
 
 	// get contract address
 	for i := 0; ; i++ {
@@ -217,6 +245,11 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 					return errFromAddressIllegal
 				}
 				cli.tran.From = common.HexToAddress(fromAddressStr)
+			}
+
+			if offline {
+				// no need verify owner for offline
+				return nil
 			}
 
 			simpleRegistry, err := cli.GetSimpleRegistry()
@@ -359,7 +392,7 @@ func (cli *CLI) applyTxGuide(offline bool) error {
 		return nil
 	}
 
-	// get nonce, gasLimit, gasPrice, chainID
+	// get nonce, gasLimit, gasPrice
 	if err := cli.applyTxGuideNode(); err != nil {
 		return err
 	}
@@ -426,23 +459,6 @@ func (cli *CLI) applyTxGuideNode() error {
 		cli.tran.GasLimit = gasLimit
 	}
 
-	// get ChainID
-	if cli.tran.NetworkID == nil || cli.tran.NetworkID.Cmp(big.NewInt(0)) == 0 {
-		cli.tran.NetworkID = big.NewInt(16888)
-	}
-	promptStr = fmt.Sprintf("Enter ChainID (default: %s): ", cli.tran.NetworkID.String())
-	networkIDStr, err := prompt.Stdin.PromptInput(promptStr)
-	if err != nil {
-		return err
-	}
-	if networkIDStr != "" {
-		networkID, ok := new(big.Int).SetString(networkIDStr, 10)
-		if !ok {
-			return errors.New("chainID conver error")
-		}
-		cli.tran.NetworkID = networkID
-	}
-
 	return nil
 }
 
@@ -456,6 +472,22 @@ func (cli *CLI) saveTranToFile(filepath string) error {
 }
 
 func saveByteToFile(b []byte, filepath string) error {
+	if _, err := os.Stat(filepath); err == nil {
+		promptStr := fmt.Sprintf("File %s already exists, overwrite? [y/N] ", filepath)
+		yesInput, err := prompt.Stdin.PromptInput(promptStr)
+		if err != nil {
+			return err
+		}
+		if !(len(yesInput) > 0 && strings.ToUpper(yesInput[:1]) == "Y") {
+			fmt.Println(string(b))
+			fmt.Printf("Save to file %s cancelled\n", filepath)
+			return fmt.Errorf("cancelled")
+		}
+	} else if !os.IsNotExist(err) {
+		// An unexpected error occurred
+		return err
+	}
+
 	f, err := os.OpenFile(filepath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
 	if err != nil {
 		return err
@@ -516,32 +548,9 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	}
 
 	// get pay amount unit
-	var unit string
-	for i := 0; ; i++ {
-		if err := func() error {
-			promptStr = fmt.Sprintf("Enter unit for amount (NEW or WEI, default NEW): ")
-			var err error
-			unit, err = prompt.Stdin.PromptInput(promptStr)
-			if err != nil {
-				fmt.Println("Error: get \"unit\" error")
-				return err
-			}
-			if unit == "" {
-				unit = UnitETH
-			} else {
-				if !stringInSlice(unit, UnitList) {
-					return errIllegalUnit
-				}
-			}
-			return nil
-		}(); err == nil {
-			break
-		} else if i < 2 {
-			fmt.Println(err)
-			continue
-		} else {
-			return err
-		}
+	unit, err := cli.GetUnitETH()
+	if err != nil {
+		return err
 	}
 
 	// get pay amount

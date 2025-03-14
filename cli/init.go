@@ -41,7 +41,7 @@ func (cli *CLI) buildInitCmd() *cobra.Command {
 			viper.Set("walletPath", cli.walletPath)
 
 			rpcURLV := viper.GetString("rpcURL")
-			promptStr = fmt.Sprintf("Enter %s json rpc or ipc url (%s): ", cli.bc.String(), rpcURLV)
+			promptStr = fmt.Sprintf("Enter json rpc url or ipc path (%s): ", rpcURLV)
 			cli.rpcURL, err = prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				fmt.Println("PromptInput err:", err)

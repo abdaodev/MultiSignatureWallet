@@ -4,6 +4,7 @@ debug
 .idea/*
 .vscode/*
 config.toml
+config.*.toml
 MultiSignatureWallet
 MultiSignatureWallet.exe
 MultiSignatureWallet-ABIoT

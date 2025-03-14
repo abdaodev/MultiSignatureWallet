@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"math/big"
-	"os"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
@@ -15,20 +14,13 @@ import (
 
 func (cli *CLI) buildInfoCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:                   "info [transactionID] [-a contractAddress] [-u NEW|WEI]",
+		Use:                   "info [transactionID] [-a contractAddress]",
 		Short:                 "Show the basic info of contract wallet or a transaction ID",
 		DisableFlagsInUseLine: true,
 		Run: func(cmd *cobra.Command, args []string) {
 
 			if len(args) > 0 {
 				cli.showTxInfo(cmd, args)
-				return
-			}
-
-			unit, _ := cmd.Flags().GetString("unit")
-			if unit != "" && !stringInSlice(unit, UnitList) {
-				fmt.Printf("Unit(%s) for invalid. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-				fmt.Fprint(os.Stderr, cmd.UsageString())
 				return
 			}
 
@@ -40,6 +32,13 @@ func (cli *CLI) buildInfoCmd() *cobra.Command {
 			}
 
 			fmt.Printf("The contract address(%s) basic information is as follows:\n", cli.contractAddress)
+
+			unit, err := cli.GetUnitETH()
+			if err != nil {
+				fmt.Println("GetUnitETH Error: ", err)
+				fmt.Println(cmd.UsageString())
+				return
+			}
 
 			ctx := context.Background()
 			balance, err := cli.client.BalanceAt(ctx, common.HexToAddress(cli.contractAddress), nil)

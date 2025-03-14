@@ -133,7 +133,7 @@ func getAmountWei(amountStr, unit string) (*big.Int, error) {
 
 func getWeiAmountTextUnitByUnit(amount *big.Int, unit string) string {
 	if amount == nil {
-		return fmt.Sprintf("0 %s", UnitWEI)
+		return fmt.Sprintf("0 %s", UnitETH)
 	}
 	amountStr := amount.String()
 	amountStrLen := len(amountStr)

@@ -172,7 +172,7 @@ func (cli *CLI) signTx() (*types.Transaction, error) {
 		return nil, errCliTranNil
 	}
 	tx := types.NewTransaction(cli.tran.Nonce, cli.tran.To, cli.tran.Value, cli.tran.GasLimit, cli.tran.GasPrice, cli.tran.Data)
-	signTx, err := cli.wallet.SignTx(accounts.Account{Address: cli.tran.From}, tx, cli.tran.NetworkID)
+	signTx, err := cli.wallet.SignTx(accounts.Account{Address: cli.tran.From}, tx, cli.tran.ChainID)
 	if err != nil {
 		return nil, err
 	}
