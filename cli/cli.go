@@ -10,8 +10,6 @@ import (
 	"strings"
 
 	"github.com/ABFoundationGlobal/MultiSignatureWallet/chains"
-
-	_ "github.com/ABFoundationGlobal/MultiSignatureWallet/chains"
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
