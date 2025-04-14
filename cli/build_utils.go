@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -601,7 +602,16 @@ func (cli *CLI) applyTxGuideSubmit() error {
 				return err
 			}
 			if dataStr != "" {
-				data = []byte(dataStr)
+				// check if its hexadecimal (start with 0x)
+				if strings.HasPrefix(dataStr, "0x") {
+					hexData := dataStr[2:]
+					data, err = hex.DecodeString(hexData)
+					if err != nil {
+						return fmt.Errorf("invalid hex data: %v", err)
+					}
+				} else {
+					data = []byte(dataStr)
+				}
 			}
 			return nil
 		}(); err == nil {
