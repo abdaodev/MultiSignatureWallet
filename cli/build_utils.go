@@ -596,13 +596,13 @@ func (cli *CLI) applyTxGuideSubmit() error {
 	var data []byte
 	for i := 0; ; i++ {
 		if err := func() error {
-			promptStr = fmt.Sprintf("Enter text message (default is empty): ")
+			promptStr = fmt.Sprintf("Enter text message or hexadecimal data (default is empty): ")
 			dataStr, err := prompt.Stdin.PromptInput(promptStr)
 			if err != nil {
 				return err
 			}
 			if dataStr != "" {
-				// check if its hexadecimal (start with 0x)
+				// check if its hexadecimal data (starting with 0x)
 				if strings.HasPrefix(dataStr, "0x") {
 					hexData := dataStr[2:]
 					data, err = hex.DecodeString(hexData)
