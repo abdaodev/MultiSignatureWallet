@@ -17,7 +17,7 @@ import (
 
 func (cli *CLI) buildTxSubmitCmd() *cobra.Command {
 	TxSubmitCmd := &cobra.Command{
-		Use:                   fmt.Sprintf("submit <amount> <-t target> [-u %s] [-f source]", strings.Join(UnitList, ",")),
+		Use:                   fmt.Sprintf("submit <amount> <-t target> [-f source]"),
 		Short:                 "Submit a transaction, pay amount in unit to target address",
 		Aliases:               []string{"pay"},
 		Long:                  "Allows an owner to submit and confirm a transaction",
@@ -26,18 +26,6 @@ func (cli *CLI) buildTxSubmitCmd() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 
 			amountStr := args[0]
-			unit, err := cmd.Flags().GetString("unit")
-			if err != nil {
-				fmt.Println("Error: required flag(s) \"unit\" not set")
-				fmt.Fprint(os.Stderr, cmd.UsageString())
-				return
-			}
-			d := stringInSlice(unit, UnitList)
-			if !d {
-				fmt.Printf("Unit(%s) for amount error. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-				fmt.Fprint(os.Stderr, cmd.UsageString())
-				return
-			}
 
 			fromAddress := viper.GetString("from")
 			if fromAddress == "" || !common.IsHexAddress(fromAddress) {
@@ -131,6 +119,12 @@ func (cli *CLI) buildTxSubmitCmd() *cobra.Command {
 				}
 				data = []byte(dataStr)
 
+				unit, err := cli.GetUnitETH()
+				if err != nil {
+					fmt.Println(err)
+					return
+				}
+
 				amountWei, err = getAmountWei(amountStr, unit)
 				if err != nil {
 					fmt.Println("Get amount error:", err)
@@ -145,7 +139,6 @@ func (cli *CLI) buildTxSubmitCmd() *cobra.Command {
 	}
 
 	TxSubmitCmd.Flags().StringP("to", "t", "", "target account address or name")
-	TxSubmitCmd.Flags().StringP("unit", "u", UnitETH, fmt.Sprintf("unit for pay amount. %s.", fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ","))))
 	TxSubmitCmd.Flags().String("data", "", "custom data message (use quotes if there are spaces)")
 
 	TxSubmitCmd.MarkFlagRequired("to")
@@ -374,16 +367,16 @@ func (cli *CLI) showTxInfo(cmd *cobra.Command, args []string) {
 		return
 	}
 
-	unit, _ := cmd.Flags().GetString("unit")
-	if unit != "" && !stringInSlice(unit, UnitList) {
-		fmt.Printf("Unit(%s) for amount error. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-		fmt.Fprint(os.Stderr, cmd.UsageString())
-		return
-	}
-
 	simpleRegistry, err := cli.GetSimpleRegistry()
 	if err != nil {
 		fmt.Println("GetSimpleRegistry Error: ", err)
+		fmt.Println(cmd.UsageString())
+		return
+	}
+
+	unit, err := cli.GetUnitETH()
+	if err != nil {
+		fmt.Println("GetUnitETH Error: ", err)
 		fmt.Println(cmd.UsageString())
 		return
 	}

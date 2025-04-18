@@ -3,7 +3,6 @@ package cli
 import (
 	"fmt"
 	"math/big"
-	"os"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/common"
@@ -13,26 +12,12 @@ import (
 
 func (cli *CLI) buildDeployCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:                   "deploy <-o addr0,addr1,addr3> <-r number> [-l dailyLimitAmountInUnit]",
+		Use:                   "deploy <-o addr0,addr1,addr3> <-r number> [-l dailyLimitAmount]",
 		Short:                 fmt.Sprintf("Deploy MultiSigWallet contract"),
 		DisableFlagsInUseLine: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			var err error
 
 			save, _ := cmd.Flags().GetBool("save")
-
-			unit, err := cli.GetUnitETH()
-			if err != nil {
-				fmt.Println(err)
-				fmt.Fprint(os.Stderr, cmd.UsageString())
-				return
-			}
-			d := stringInSlice(unit, UnitList)
-			if !d {
-				fmt.Printf("Unit(%s) for amount error. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-				fmt.Fprint(os.Stderr, cmd.UsageString())
-				return
-			}
 
 			fromAddress := viper.GetString("from")
 			if fromAddress == "" || !common.IsHexAddress(fromAddress) {
@@ -59,10 +44,12 @@ func (cli *CLI) buildDeployCmd() *cobra.Command {
 			dailyLimitWei := new(big.Int)
 			dailyLimitStr, _ := cmd.Flags().GetString("dailylimit")
 			if dailyLimitStr != "" {
-				if !IsUintString(dailyLimitStr) {
-					fmt.Printf("DailyLimitStr(%v) illegal\n", dailyLimitStr)
+				unit, err := cli.GetUnitETH()
+				if err != nil {
+					fmt.Println(err)
 					return
 				}
+
 				dailyLimitWei, err = getAmountWei(dailyLimitStr, unit)
 				if err != nil {
 					fmt.Printf("Get amount error(%v): %v\n", err, dailyLimitStr)
@@ -106,7 +93,7 @@ func (cli *CLI) buildDeployCmd() *cobra.Command {
 
 	cmd.Flags().StringP("owners", "o", "", "the list of initial owners `address`es, separated by commas(,)")
 	cmd.Flags().Int64P("required", "r", 0, "the `number` of required confirmations, maximum is 50") // how to get 50, contract not deploy?
-	cmd.Flags().StringP("dailylimit", "l", "0", "the `amount` in unit, which can be withdrawn without confirmations on a daily basis")
+	cmd.Flags().StringP("dailylimit", "l", "0", "the `amount` which can be withdrawn without confirmations on a daily basis")
 	cmd.Flags().BoolP("save", "s", false, "save contract address to config file")
 
 	cmd.MarkFlagRequired("owners")

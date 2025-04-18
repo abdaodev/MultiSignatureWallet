@@ -2,8 +2,6 @@ package cli
 
 import (
 	"fmt"
-	"os"
-	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
@@ -15,24 +13,21 @@ import (
 
 func (cli *CLI) buildSignCmd() *cobra.Command {
 	signTxCmd := &cobra.Command{
-		Use:                   "sign <filepath> [-u NEW|WEI]",
+		Use:                   "sign <filepath>",
 		Short:                 "Sign the transaction in the file",
 		Args:                  cobra.MinimumNArgs(1),
 		DisableFlagsInUseLine: true,
 		Run: func(cmd *cobra.Command, args []string) {
-			var unit string
-			if cmd.Flags().Changed("unit") {
-				unit, _ = cmd.Flags().GetString("unit")
-				if unit != "" && !stringInSlice(unit, UnitList) {
-					fmt.Printf("Unit(%s) for amount error. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-					fmt.Fprint(os.Stderr, cmd.UsageString())
-					return
-				}
-			}
 
 			if cli.tran == nil {
 				cli.tran = new(Transaction)
 				cli.applyTranDefault()
+			}
+
+			unit, err := cli.GetUnitETH()
+			if err != nil {
+				fmt.Println(err)
+				return
 			}
 
 			infileStr := args[0]
@@ -48,7 +43,6 @@ func (cli *CLI) buildSignCmd() *cobra.Command {
 			showDataAuto(cli.tran.Data, "", unit)
 
 			var outStr string
-			var err error
 			if cmd.Flags().Changed("out") {
 				outStr, err = cmd.Flags().GetString("out")
 				if err != nil {
@@ -68,7 +62,6 @@ func (cli *CLI) buildSignCmd() *cobra.Command {
 	}
 
 	signTxCmd.Flags().String("out", "", "file `path` to save signed transaction")
-	signTxCmd.Flags().StringP("unit", "u", UnitETH, fmt.Sprintf("unit for pay amount. %s.", fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ","))))
 
 	return signTxCmd
 }

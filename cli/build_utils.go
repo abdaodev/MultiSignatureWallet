@@ -773,24 +773,14 @@ func (cli *CLI) applyTxGuideDailyLimit() error {
 	}
 
 	// get pay amount unit
-	var unit string
-	promptStr := fmt.Sprintf("Enter unit for daily limit (NEW or WEI, default NEW): ")
-	unit, err = prompt.Stdin.PromptInput(promptStr)
+	unit, err := cli.GetUnitETH()
 	if err != nil {
-		fmt.Println("Error: get \"unit\" error")
-		return err
-	}
-	if unit == "" {
-		unit = UnitETH
-	} else {
-		if !stringInSlice(unit, UnitList) {
-			return errIllegalUnit
-		}
+		return errIllegalUnit
 	}
 
 	// get pay amount
 	value := new(big.Int)
-	promptStr = fmt.Sprintf("Enter daily limit to change in %s (default: %s): ", unit,
+	promptStr := fmt.Sprintf("Enter daily limit to change in %s (default: %s): ", unit,
 		getWeiAmountTextByUnit(value, unit))
 	amountStr, err := prompt.Stdin.PromptInput(promptStr)
 	if err != nil {

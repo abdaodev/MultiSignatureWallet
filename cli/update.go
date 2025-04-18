@@ -5,7 +5,6 @@ import (
 	"log"
 	"math/big"
 	"os"
-	"strings"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/spf13/cobra"
@@ -29,7 +28,7 @@ func (cli *CLI) buildUpdateCmd() *cobra.Command {
 
 func (cli *CLI) buildUpdateDailyLimitCmd() *cobra.Command {
 	DailyLimitCmd := &cobra.Command{
-		Use:                   "dailylimit <number> [-u NEW|WEI]",
+		Use:                   "dailylimit <number>",
 		Short:                 "change the daily limit",
 		Long:                  "Allows to change the daily limit. Transaction has to be sent by wallet",
 		Args:                  cobra.MinimumNArgs(1),
@@ -50,16 +49,11 @@ func (cli *CLI) buildUpdateDailyLimitCmd() *cobra.Command {
 				fmt.Println(cmd.UsageString())
 				return
 			}
-			unit, err := cmd.Flags().GetString("unit")
+
+			unit, err := cli.GetUnitETH()
 			if err != nil {
-				fmt.Println("Error: required flag(s) \"unit\" not set")
-				fmt.Fprint(os.Stderr, cmd.UsageString())
-				return
-			}
-			d := stringInSlice(unit, UnitList)
-			if !d {
-				fmt.Printf("Unit(%s) for amount error. %s.\n", unit, fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ",")))
-				fmt.Fprint(os.Stderr, cmd.UsageString())
+				fmt.Println("GetUnitETH Error: ", err)
+				fmt.Println(cmd.UsageString())
 				return
 			}
 
@@ -79,8 +73,6 @@ func (cli *CLI) buildUpdateDailyLimitCmd() *cobra.Command {
 			cli.SubmitTransaction(fromAddress, common.HexToAddress(cli.contractAddress), big.NewInt(0), data)
 		},
 	}
-
-	DailyLimitCmd.Flags().StringP("unit", "u", UnitETH, fmt.Sprintf("unit for pay amount. %s.", fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ","))))
 
 	return DailyLimitCmd
 }

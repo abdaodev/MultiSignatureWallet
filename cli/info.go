@@ -171,7 +171,6 @@ func (cli *CLI) buildInfoCmd() *cobra.Command {
 		},
 	}
 
-	cmd.Flags().StringP("unit", "u", "", fmt.Sprintf("unit for value. %s.", fmt.Sprintf("Available unit: %s", strings.Join(UnitList, ","))))
 	cmd.Flags().String("token", "", "the address of token, if set then show the balance of this token")
 
 	return cmd
