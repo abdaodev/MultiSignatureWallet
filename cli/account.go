@@ -186,7 +186,7 @@ func (cli *CLI) getBalance(address common.Address) (*big.Int, error) {
 func (cli *CLI) buildAccountConvertCmd() *cobra.Command {
 	accountListCmd := &cobra.Command{
 		Use:                   "convert",
-		Short:                 "convert address to NewChainAddress",
+		Short:                 "convert address to NewAddress",
 		Args:                  cobra.MinimumNArgs(1),
 		DisableFlagsInUseLine: true,
 		Run: func(cmd *cobra.Command, args []string) {

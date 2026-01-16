@@ -115,16 +115,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.octano.dev","https://pyrus2.ubiqscan.io"},
 	},
 	9: Chain{
-		Name:      "Ubiq Network Testnet",
+		Name:      "Quai Network Mainnet",
 		ChainId:   9,
-		ShortName: "tubq",
-		NetworkId: 2,
+		ShortName: "quai",
+		NetworkId: 9,
 		NativeCurrency: NativeCurrency{
-			Name:     "Ubiq Testnet Ether",
-			Symbol:   "TUBQ",
+			Name:     "Quai",
+			Symbol:   "QUAI",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.quai.network/cyprus1"},
 	},
 	10: Chain{
 		Name:      "OP Mainnet",
@@ -520,7 +520,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "LYX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.mainnet.lukso.network","wss://ws-rpc.mainnet.lukso.network"},
+		RPC: []string{"https://42.rpc.thirdweb.com","https://rpc.lukso.sigmacore.io","https://rpc.mainnet.lukso.network","wss://ws-rpc.mainnet.lukso.network"},
 	},
 	43: Chain{
 		Name:      "Darwinia Pangolin Testnet",
@@ -700,7 +700,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "SYS",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.syscoin.org","https://rpc.ankr.com/syscoin/${ANKR_API_KEY}","https://syscoin.public-rpc.com","wss://rpc.syscoin.org/wss","https://syscoin-evm.publicnode.com","wss://syscoin-evm.publicnode.com"},
+		RPC: []string{"https://rpc.syscoin.org","https://rpc.ankr.com/syscoin/${ANKR_API_KEY}","https://syscoin.public-rpc.com","https://57.rpc.thirdweb.com","wss://rpc.syscoin.org/wss","https://syscoin-evm.publicnode.com","wss://syscoin-evm.publicnode.com"},
 	},
 	58: Chain{
 		Name:      "Ontology Mainnet",
@@ -1687,16 +1687,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.woop.ai/rpc"},
 	},
 	140: Chain{
-		Name:      "Eternal Mainnet",
+		Name:      "Eteria Mainnet",
 		ChainId:   140,
-		ShortName: "ETE",
+		ShortName: "ERA",
 		NetworkId: 140,
 		NativeCurrency: NativeCurrency{
-			Name:     "Eternal",
-			Symbol:   "ETE",
+			Name:     "Eteria",
+			Symbol:   "ERA",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainnet.eternalcoin.io/v1","ws://mainnet.eternalcoin.io/v1/ws"},
+		RPC: []string{"https://mainnet.eteria.io/v1"},
 	},
 	141: Chain{
 		Name:      "Openpiece Testnet",
@@ -1723,16 +1723,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.prodax.io"},
 	},
 	143: Chain{
-		Name:      "Monad Mainnet",
+		Name:      "Monad",
 		ChainId:   143,
 		ShortName: "mon",
 		NetworkId: 143,
 		NativeCurrency: NativeCurrency{
-			Name:     "MON Token",
+			Name:     "Monad",
 			Symbol:   "MON",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.monad.xyz"},
 	},
 	144: Chain{
 		Name:      "PHI Network v2",
@@ -1987,16 +1987,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{},
 	},
 	166: Chain{
-		Name:      "Omni",
+		Name:      "Nomina",
 		ChainId:   166,
-		ShortName: "omni",
+		ShortName: "nom",
 		NetworkId: 166,
 		NativeCurrency: NativeCurrency{
-			Name:     "Omni",
-			Symbol:   "OMNI",
+			Name:     "Nomina",
+			Symbol:   "NOM",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainnet.omni.network","wss://wss.mainnet.omni.network"},
+		RPC: []string{"https://mainnet.nomina.io","wss://wss.mainnet.nomina.io"},
 	},
 	167: Chain{
 		Name:      "Atoshi Testnet",
@@ -2070,6 +2070,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.latam-blockchain.com","wss://ws.latam-blockchain.com"},
 	},
+	173: Chain{
+		Name:      "ENI Mainnet",
+		ChainId:   173,
+		ShortName: "eni",
+		NetworkId: 173,
+		NativeCurrency: NativeCurrency{
+			Name:     "EGAS",
+			Symbol:   "EGAS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.eniac.network","https://rpc1.eniac.network","https://rpc2.eniac.network","https://enirpc.com","https://jp.enirpc.com","https://jp.eniacrpc.net","wss://rpc.eniac.network/ws/"},
+	},
+	174: Chain{
+		Name:      "ENI Testnet",
+		ChainId:   174,
+		ShortName: "eni-test",
+		NetworkId: 174,
+		NativeCurrency: NativeCurrency{
+			Name:     "EGAS",
+			Symbol:   "EGAS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.eniac.network"},
+	},
 	175: Chain{
 		Name:      "OTC",
 		ChainId:   175,
@@ -2107,7 +2131,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet.hsk.xyz"},
 	},
 	178: Chain{
-		Name:      "ABEY Testnet",
+		Name:      "Abey Testnet",
 		ChainId:   178,
 		ShortName: "abeyt",
 		NetworkId: 178,
@@ -2119,7 +2143,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://testrpc.abeychain.com"},
 	},
 	179: Chain{
-		Name:      "ABEY Mainnet",
+		Name:      "Abey Mainnet",
 		ChainId:   179,
 		ShortName: "abey",
 		NetworkId: 179,
@@ -2274,6 +2298,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.filefilego.com/rpc"},
 	},
+	192: Chain{
+		Name:      "Redmansion Chain",
+		ChainId:   192,
+		ShortName: "rmc",
+		NetworkId: 192,
+		NativeCurrency: NativeCurrency{
+			Name:     "Redmansion Coin",
+			Symbol:   "RMC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://redmansion.io/srpc/"},
+	},
 	193: Chain{
 		Name:      "Crypto Emergency",
 		ChainId:   193,
@@ -2285,6 +2321,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://cemchain.com"},
+	},
+	194: Chain{
+		Name:      "firachain",
+		ChainId:   194,
+		ShortName: "FIR",
+		NetworkId: 194,
+		NativeCurrency: NativeCurrency{
+			Name:     "firachain",
+			Symbol:   "FIR",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.firachain.com"},
 	},
 	195: Chain{
 		Name:      "X Layer Testnet",
@@ -2514,6 +2562,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://mainnet.shinarium.org"},
 	},
+	215: Chain{
+		Name:      "IDN Mainnet",
+		ChainId:   215,
+		ShortName: "IDN",
+		NetworkId: 215,
+		NativeCurrency: NativeCurrency{
+			Name:     "IDN",
+			Symbol:   "IDN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://dataseed1.idn-rpc.com","https://dataseed2.idn-rpc.com","https://dataseed3.idn-rpc.com"},
+	},
 	216: Chain{
 		Name:      "Happychain Testnet",
 		ChainId:   216,
@@ -2524,7 +2584,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "HAPPY",
 			Decimals: 18,
 		},
-		RPC: []string{"https://happy-testnet-sepolia.rpc.caldera.xyz/http"},
+		RPC: []string{"https://rpc.testnet.happy.tech/http"},
 	},
 	217: Chain{
 		Name:      "SiriusNet V2",
@@ -2680,7 +2740,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "GHO",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.lens.xyz"},
 	},
 	233: Chain{
 		Name:      "Ethernity Testnet",
@@ -2724,23 +2784,23 @@ var Chains = map[uint64]Chain{
 		ShortName: "blast",
 		NetworkId: 238,
 		NativeCurrency: NativeCurrency{
-			Name:     "Ether",
-			Symbol:   "ETH",
+			Name:     "One World Chain",
+			Symbol:   "OWCT",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.blastblockchain.com"},
+		RPC: []string{"https://zkevmrpc.blastchain.org"},
 	},
 	239: Chain{
 		Name:      "TAC Mainnet",
 		ChainId:   239,
-		ShortName: "tac",
+		ShortName: "tacchain_239-1",
 		NetworkId: 239,
 		NativeCurrency: NativeCurrency{
 			Name:     "TAC",
 			Symbol:   "TAC",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.tac.build","https://rpc.ankr.com/tac","https://ws.rpc.tac.build"},
 	},
 	240: Chain{
 		Name:      "Cronos zkEVM Testnet",
@@ -2777,6 +2837,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.energyweb.org","wss://rpc.energyweb.org/ws"},
+	},
+	247: Chain{
+		Name:      "ChooChain",
+		ChainId:   247,
+		ShortName: "choo",
+		NetworkId: 247,
+		NativeCurrency: NativeCurrency{
+			Name:     "ChooChain Token",
+			Symbol:   "CHOO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.choochain.io"},
 	},
 	248: Chain{
 		Name:      "Oasys Mainnet",
@@ -2817,11 +2889,11 @@ var Chains = map[uint64]Chain{
 	252: Chain{
 		Name:      "Fraxtal",
 		ChainId:   252,
-		ShortName: "fraxtal",
+		ShortName: "frax",
 		NetworkId: 252,
 		NativeCurrency: NativeCurrency{
-			Name:     "Frax Ether",
-			Symbol:   "frxETH",
+			Name:     "Frax",
+			Symbol:   "FRAX",
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.frax.com","https://fraxtal-rpc.publicnode.com","wss://fraxtal-rpc.publicnode.com"},
@@ -3112,7 +3184,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "HBAR",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainnet.hashio.io/api"},
+		RPC: []string{"https://mainnet.hashio.io/api","https://hedera.linkpool.pro"},
 	},
 	296: Chain{
 		Name:      "Hedera Testnet",
@@ -3331,16 +3403,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc-testnet.kcc.network"},
 	},
 	323: Chain{
-		Name:      "Cosvm Mainnet",
+		Name:      "BuyCex Infinity Chain",
 		ChainId:   323,
-		ShortName: "cvm",
+		ShortName: "buycex",
 		NetworkId: 323,
 		NativeCurrency: NativeCurrency{
-			Name:     "Cosvm",
-			Symbol:   "CVM",
+			Name:     "Buycex",
+			Symbol:   "BCX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.cosvm.net"},
+		RPC: []string{"https://rpc.buycex.net","wss://socket.buycex.net"},
 	},
 	324: Chain{
 		Name:      "zkSync Mainnet",
@@ -3378,6 +3450,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://zkrpc.testnet.grvt.io"},
 	},
+	329: Chain{
+		Name:      "VirBiCoin",
+		ChainId:   329,
+		ShortName: "virbicoin",
+		NetworkId: 329,
+		NativeCurrency: NativeCurrency{
+			Name:     "VBC",
+			Symbol:   "VBC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.digitalregion.jp"},
+	},
 	331: Chain{
 		Name:      "Telos zkEVM Testnet",
 		ChainId:   331,
@@ -3403,16 +3487,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://testapi.omaxray.com"},
 	},
 	333: Chain{
-		Name:      "Web3Q Mainnet",
+		Name:      "EthStorage Mainnet",
 		ChainId:   333,
-		ShortName: "w3q",
+		ShortName: "es-m",
 		NetworkId: 333,
 		NativeCurrency: NativeCurrency{
-			Name:     "Web3Q",
-			Symbol:   "W3Q",
+			Name:     "Ether",
+			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainnet.web3q.io:8545"},
+		RPC: []string{"https://rpc.mainnet.ethstorage.io:9540"},
 	},
 	335: Chain{
 		Name:      "DFK Chain Test",
@@ -3437,6 +3521,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://shiden.api.onfinality.io/public","https://shiden-rpc.dwellir.com","https://shiden.public.blastapi.io","wss://shiden.api.onfinality.io/public-ws","wss://shiden.public.blastapi.io","wss://shiden-rpc.dwellir.com"},
+	},
+	337: Chain{
+		Name:      "R5 Network",
+		ChainId:   337,
+		ShortName: "r5",
+		NetworkId: 337,
+		NativeCurrency: NativeCurrency{
+			Name:     "R5",
+			Symbol:   "R5",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.r5.network"},
 	},
 	338: Chain{
 		Name:      "Cronos Testnet",
@@ -3544,7 +3640,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "PLS",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.pulsechain.com","wss://rpc.pulsechain.com","https://pulsechain-rpc.publicnode.com","wss://pulsechain-rpc.publicnode.com","https://rpc-pulsechain.g4mm4.io","wss://rpc-pulsechain.g4mm4.io"},
+		RPC: []string{"https://rpc.pulsechain.com","https://pulsechain-rpc.publicnode.com","wss://pulsechain-rpc.publicnode.com","https://rpc-pulsechain.g4mm4.io"},
 	},
 	371: Chain{
 		Name:      "Consta Testnet",
@@ -3557,6 +3653,42 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc-testnet.theconsta.com"},
+	},
+	373: Chain{
+		Name:      "Status Network",
+		ChainId:   373,
+		ShortName: "snt",
+		NetworkId: 373,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	374: Chain{
+		Name:      "Status Network Hoodi",
+		ChainId:   374,
+		ShortName: "snt-hoodi",
+		NetworkId: 374,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	375: Chain{
+		Name:      "zkXPLA Mainnet",
+		ChainId:   375,
+		ShortName: "zkxpla",
+		NetworkId: 375,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.zkxpla.io"},
 	},
 	380: Chain{
 		Name:      "ZKAmoeba Testnet",
@@ -3810,6 +3942,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.verse.gesoten.com/"},
 	},
+	432: Chain{
+		Name:      "NutriEmp Chain",
+		ChainId:   432,
+		ShortName: "nutriemp",
+		NetworkId: 432,
+		NativeCurrency: NativeCurrency{
+			Name:     "GRAMZ",
+			Symbol:   "GRAMZ",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.nutriemp-chain.link","https://rpc.nutriemp.com"},
+	},
 	434: Chain{
 		Name:      "Boyaa Mainnet",
 		ChainId:   434,
@@ -3894,6 +4038,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.appchain.xyz/http","wss://rpc.appchain.xyz/ws"},
 	},
+	475: Chain{
+		Name:      "zkXPLA Testnet",
+		ChainId:   475,
+		ShortName: "zkxpla-testnet",
+		NetworkId: 475,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.zkxpla.io"},
+	},
 	478: Chain{
 		Name:      "Form Network",
 		ChainId:   478,
@@ -3917,6 +4073,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://worldchain-mainnet.g.alchemy.com/public","https://480.rpc.thirdweb.com","https://worldchain-mainnet.gateway.tenderly.co","wss://worldchain-mainnet.gateway.tenderly.co"},
+	},
+	484: Chain{
+		Name:      "Camp Network Mainnet",
+		ChainId:   484,
+		ShortName: "CampMainnet",
+		NetworkId: 484,
+		NativeCurrency: NativeCurrency{
+			Name:     "Camp",
+			Symbol:   "CAMP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.camp.raas.gelato.cloud"},
 	},
 	486: Chain{
 		Name:      "Standard Mainnet",
@@ -3991,16 +4159,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://columbus.camino.network/ext/bc/C/rpc"},
 	},
 	510: Chain{
-		Name:      "Syndicate Chain",
+		Name:      "Syndicate Mainnet",
 		ChainId:   510,
-		ShortName: "syndicate-chain-mainnet",
+		ShortName: "syndicate",
 		NetworkId: 510,
 		NativeCurrency: NativeCurrency{
-			Name:     "Ether",
-			Symbol:   "ETH",
+			Name:     "Syndicate",
+			Symbol:   "SYND",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-mainnet.syndicate.io"},
+		RPC: []string{"https://rpc.syndicate.io"},
 	},
 	512: Chain{
 		Name:      "Double-A Chain Mainnet",
@@ -4169,6 +4337,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://explorer.testnet.prometheuz.io"},
+	},
+	567: Chain{
+		Name:      "Validium Network",
+		ChainId:   567,
+		ShortName: "validium-testnet",
+		NetworkId: 567,
+		NativeCurrency: NativeCurrency{
+			Name:     "Validium",
+			Symbol:   "VLDM",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet.l2.rpc.validium.network"},
 	},
 	568: Chain{
 		Name:      "Dogechain Testnet",
@@ -4554,6 +4734,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc_testnet.janction.io","wss://rpc_testnet.janction.io"},
 	},
+	680: Chain{
+		Name:      "JasmyChain",
+		ChainId:   680,
+		ShortName: "jasmychain",
+		NetworkId: 680,
+		NativeCurrency: NativeCurrency{
+			Name:     "JasmyCoin",
+			Symbol:   "JASMY",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.jasmyscan.net","wss://rpc.jasmyscan.net/ws"},
+	},
+	681: Chain{
+		Name:      "JasmyChain Testnet",
+		ChainId:   681,
+		ShortName: "jasmychain-test",
+		NetworkId: 681,
+		NativeCurrency: NativeCurrency{
+			Name:     "JasmyCoin",
+			Symbol:   "JASMY",
+			Decimals: 18,
+		},
+		RPC: []string{"https://jasmy-chain-testnet.alt.technology","wss://jasmy-chain-testnet.alt.technology/ws"},
+	},
 	686: Chain{
 		Name:      "Karura Network",
 		ChainId:   686,
@@ -4852,7 +5056,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "QOM",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.qom.one"},
+		RPC: []string{"https://rpc.qom.one","https://evm-rpc-ql1.foxxone.one"},
 	},
 	776: Chain{
 		Name:      "OpenChain Testnet",
@@ -5092,7 +5296,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "DLY",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.mainnet.dailycrypto.net"},
+		RPC: []string{"https://rpc.mainnet.dailycrypto.net","https://rpc-2.mainnet.dailycrypto.net","https://rpc-3.mainnet.dailycrypto.net"},
 	},
 	825: Chain{
 		Name:      "Daily Network Testnet",
@@ -5104,7 +5308,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "DLY",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.testnet.dailycrypto.net"},
+		RPC: []string{"https://rpc.testnet.dailycrypto.net","https://rpc-2.testnet.dailycrypto.net","https://rpc-3.testnet.dailycrypto.net"},
 	},
 	831: Chain{
 		Name:      "CheckDot Blockchain Devnet",
@@ -5201,6 +5405,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet-data1.fantasiachain.com/","https://mainnet-data2.fantasiachain.com/","https://mainnet-data3.fantasiachain.com/"},
+	},
+	869: Chain{
+		Name:      "WorldMobileChain-Mainnet",
+		ChainId:   869,
+		ShortName: "WMC",
+		NetworkId: 869,
+		NativeCurrency: NativeCurrency{
+			Name:     "World Mobile Token",
+			Symbol:   "WMTX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://worldmobilechain-mainnet.g.alchemy.com/public"},
 	},
 	871: Chain{
 		Name:      "Electra Test Network",
@@ -5345,6 +5561,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://s3-testnet.garizon.net/rpc"},
+	},
+	904: Chain{
+		Name:      "Ault Blockchain Mainnet",
+		ChainId:   904,
+		ShortName: "ault",
+		NetworkId: 904,
+		NativeCurrency: NativeCurrency{
+			Name:     "AULT Token",
+			Symbol:   "AULT",
+			Decimals: 18,
+		},
+		RPC: []string{},
 	},
 	909: Chain{
 		Name:      "Portal Fantasy Chain",
@@ -5549,6 +5777,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://lite.chain.opentensor.ai"},
+	},
+	968: Chain{
+		Name:      "Datagram",
+		ChainId:   968,
+		ShortName: "dgram",
+		NetworkId: 968,
+		NativeCurrency: NativeCurrency{
+			Name:     "DGRAM",
+			Symbol:   "DGRAM",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.datagram.network/rpc"},
 	},
 	969: Chain{
 		Name:      "EthXY",
@@ -5851,16 +6091,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.lemonchain.io","https://rpc.allthingslemon.io"},
 	},
 	1007: Chain{
-		Name:      "Newton Testnet",
+		Name:      "AB IoT Testnet",
 		ChainId:   1007,
 		ShortName: "tnew",
 		NetworkId: 1007,
 		NativeCurrency: NativeCurrency{
-			Name:     "Newton",
-			Symbol:   "NEW",
+			Name:     "AB",
+			Symbol:   "AB",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc1.newchain.newtonproject.org"},
+		RPC: []string{"https://rpc.iot.testnet.ab.org"},
 	},
 	1008: Chain{
 		Name:      "Eurus Mainnet",
@@ -5911,16 +6151,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://apievm.rebuschain.com/rpc"},
 	},
 	1012: Chain{
-		Name:      "Newton",
+		Name:      "AB IoT",
 		ChainId:   1012,
 		ShortName: "new",
 		NetworkId: 1012,
 		NativeCurrency: NativeCurrency{
-			Name:     "Newton",
-			Symbol:   "NEW",
+			Name:     "AB",
+			Symbol:   "AB",
 			Decimals: 18,
 		},
-		RPC: []string{"https://global.rpc.mainnet.newtonproject.org"},
+		RPC: []string{"https://global.rpc.iot.ab.org"},
 	},
 	1022: Chain{
 		Name:      "Sakura",
@@ -6031,16 +6271,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{},
 	},
 	1071: Chain{
-		Name:      "ShimmerEVM Testnet Deprecated",
+		Name:      "OpenGPU Mainnet",
 		ChainId:   1071,
-		ShortName: "shimmerevm-testnet-deprecated",
+		ShortName: "ogpu",
 		NetworkId: 1071,
 		NativeCurrency: NativeCurrency{
-			Name:     "SMR",
-			Symbol:   "SMR",
+			Name:     "OGPU",
+			Symbol:   "OGPU",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://mainnet-rpc.ogpuscan.io","wss://mainnet-rpc.ogpuscan.io"},
 	},
 	1072: Chain{
 		Name:      "ShimmerEVM Testnet Deprecated 1072",
@@ -6270,6 +6510,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://mainnet-rpc.dogcoin.me"},
 	},
+	1122: Chain{
+		Name:      "LuxePorts",
+		ChainId:   1122,
+		ShortName: "lxp",
+		NetworkId: 1122,
+		NativeCurrency: NativeCurrency{
+			Name:     "LuxePorts",
+			Symbol:   "LXP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.luxeports.com","https://erpc.luxeports.com","wss://rpc.luxeports.com/ws","wss://erpc.luxeports.com/ws"},
+	},
 	1123: Chain{
 		Name:      "B2 Testnet",
 		ChainId:   1123,
@@ -6329,6 +6581,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://dmc.mydefichain.com/changi","https://testnet-dmc.mydefichain.com:20551"},
+	},
+	1134: Chain{
+		Name:      "StateMesh",
+		ChainId:   1134,
+		ShortName: "mesh",
+		NetworkId: 1134,
+		NativeCurrency: NativeCurrency{
+			Name:     "StateMesh",
+			Symbol:   "MESH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.statemesh.net"},
 	},
 	1135: Chain{
 		Name:      "Lisk",
@@ -6712,7 +6976,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ARC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-main-1.archiechain.io"},
+		RPC: []string{},
 	},
 	1244: Chain{
 		Name:      "ARC Testnet",
@@ -6724,7 +6988,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ARC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-test-1.archiechain.io"},
+		RPC: []string{},
 	},
 	1246: Chain{
 		Name:      "OM Platform Mainnet",
@@ -6849,7 +7113,7 @@ var Chains = map[uint64]Chain{
 	1291: Chain{
 		Name:      "Swisstronik Testnet",
 		ChainId:   1291,
-		ShortName: "swtr",
+		ShortName: "swtr-testnet",
 		NetworkId: 1291,
 		NativeCurrency: NativeCurrency{
 			Name:     "Swisstronik",
@@ -7038,6 +7302,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://evm-rpc.sei-apis.com","wss://evm-ws.sei-apis.com"},
 	},
+	1336: Chain{
+		Name:      "Kii Testnet Oro",
+		ChainId:   1336,
+		ShortName: "kiioro",
+		NetworkId: 1336,
+		NativeCurrency: NativeCurrency{
+			Name:     "Kii",
+			Symbol:   "KII",
+			Decimals: 18,
+		},
+		RPC: []string{"https://json-rpc.uno.sentry.testnet.v3.kiivalidator.com"},
+	},
 	1337: Chain{
 		Name:      "Geth Testnet",
 		ChainId:   1337,
@@ -7206,6 +7482,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{},
 	},
+	1424: Chain{
+		Name:      "Perennial",
+		ChainId:   1424,
+		ShortName: "perennial",
+		NetworkId: 1424,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.perennial.foundation"},
+	},
+	1425: Chain{
+		Name:      "ONINO Mainnet",
+		ChainId:   1425,
+		ShortName: "onino",
+		NetworkId: 1425,
+		NativeCurrency: NativeCurrency{
+			Name:     "ONI",
+			Symbol:   "ONI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.onino.io"},
+	},
 	1433: Chain{
 		Name:      "Rikeza Network Mainnet",
 		ChainId:   1433,
@@ -7217,6 +7517,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.rikscan.com"},
+	},
+	1439: Chain{
+		Name:      "Injective Testnet",
+		ChainId:   1439,
+		ShortName: "injective-testnet",
+		NetworkId: 1439,
+		NativeCurrency: NativeCurrency{
+			Name:     "Injective",
+			Symbol:   "INJ",
+			Decimals: 18,
+		},
+		RPC: []string{"https://k8s.testnet.json-rpc.injective.network","wss://k8s.testnet.ws.injective.network","https://injectiveevm-testnet-rpc.polkachu.com","wss://injectiveevm-testnet-rpc.polkachu.com"},
 	},
 	1440: Chain{
 		Name:      "Living Assets Mainnet",
@@ -7482,6 +7794,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.bethscan.io"},
 	},
+	1612: Chain{
+		Name:      "OpenLedger Mainnet",
+		ChainId:   1612,
+		ShortName: "open",
+		NetworkId: 1612,
+		NativeCurrency: NativeCurrency{
+			Name:     "Open",
+			Symbol:   "OPEN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.openledger.xyz"},
+	},
 	1617: Chain{
 		Name:      "Ethereum Inscription Mainnet",
 		ChainId:   1617,
@@ -7541,6 +7865,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet.pivotalprotocol.com"},
+	},
+	1650: Chain{
+		Name:      "IIC Blockchain Testnet",
+		ChainId:   1650,
+		ShortName: "iic-testnet",
+		NetworkId: 1650,
+		NativeCurrency: NativeCurrency{
+			Name:     "Saya Coin",
+			Symbol:   "SAYA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.iic-blockchain.com"},
 	},
 	1657: Chain{
 		Name:      "Btachain",
@@ -7662,6 +7998,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.testnet.blockchain.or.th"},
 	},
+	1714: Chain{
+		Name:      "ACiD",
+		ChainId:   1714,
+		ShortName: "acid",
+		NetworkId: 1714,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
 	1717: Chain{
 		Name:      "Doric Network",
 		ChainId:   1717,
@@ -7710,6 +8058,42 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.reya.network","wss://ws.reya.network"},
 	},
+	1732: Chain{
+		Name:      "Fuga Mainnet",
+		ChainId:   1732,
+		ShortName: "FUGA",
+		NetworkId: 1732,
+		NativeCurrency: NativeCurrency{
+			Name:     "FUGA",
+			Symbol:   "FUGA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.fuga.blue"},
+	},
+	1733: Chain{
+		Name:      "Fuga Testnet",
+		ChainId:   1733,
+		ShortName: "FUGA_T",
+		NetworkId: 1733,
+		NativeCurrency: NativeCurrency{
+			Name:     "FUGA",
+			Symbol:   "FUGA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.fuga.blue"},
+	},
+	1734: Chain{
+		Name:      "Fuga Develop",
+		ChainId:   1734,
+		ShortName: "FUGA_D",
+		NetworkId: 1734,
+		NativeCurrency: NativeCurrency{
+			Name:     "FUGA",
+			Symbol:   "FUGA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-develop.fuga.blue"},
+	},
 	1740: Chain{
 		Name:      "Metal L2 Testnet",
 		ChainId:   1740,
@@ -7745,6 +8129,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://tea.mining4people.com/rpc","http://172.104.194.36:8545"},
+	},
+	1776: Chain{
+		Name:      "Injective",
+		ChainId:   1776,
+		ShortName: "injective",
+		NetworkId: 1776,
+		NativeCurrency: NativeCurrency{
+			Name:     "Injective",
+			Symbol:   "INJ",
+			Decimals: 18,
+		},
+		RPC: []string{"https://sentry.evm-rpc.injective.network","wss://sentry.evm-ws.injective.network","https://injectiveevm-rpc.polkachu.com","wss://injectiveevm-ws.polkachu.com"},
 	},
 	1777: Chain{
 		Name:      "Gauss Mainnet",
@@ -7865,6 +8261,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.verify-testnet.gelato.digital","wss://ws.verify-testnet.gelato.digital"},
+	},
+	1848: Chain{
+		Name:      "Swisstronik Mainnet",
+		ChainId:   1848,
+		ShortName: "swtr",
+		NetworkId: 1848,
+		NativeCurrency: NativeCurrency{
+			Name:     "Swisstronik",
+			Symbol:   "SWTR",
+			Decimals: 18,
+		},
+		RPC: []string{"https://json-rpc.mainnet.swisstronik.com/unencrypted/","https://json-rpc.mainnet.swisstronik.com","wss://ws-rpc.mainnet.swisstronik.com"},
 	},
 	1853: Chain{
 		Name:      "HighOctane Subnet",
@@ -8190,6 +8598,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.selendra.org","https://rpc2.selendra.org"},
 	},
+	1962: Chain{
+		Name:      "T-Rex Testnet",
+		ChainId:   1962,
+		ShortName: "TREX",
+		NetworkId: 1962,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnetrpc.trex.xyz"},
+	},
 	1967: Chain{
 		Name:      "Eleanor",
 		ChainId:   1967,
@@ -8261,6 +8681,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.onuschain.io","wss://ws.onuschain.io"},
+	},
+	1983: Chain{
+		Name:      "Krown Mainnet",
+		ChainId:   1983,
+		ShortName: "krown",
+		NetworkId: 1983,
+		NativeCurrency: NativeCurrency{
+			Name:     "KROWN",
+			Symbol:   "KROWN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.krown.network","https://mainnet1.krown.network"},
 	},
 	1984: Chain{
 		Name:      "Eurus Testnet",
@@ -8368,7 +8800,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "tEDX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.testnet.edexa.network","https://rpc.testnet.edexa.com"},
+		RPC: []string{},
 	},
 	1996: Chain{
 		Name:      "Sanko",
@@ -8668,7 +9100,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.phala.network"},
 	},
 	2037: Chain{
 		Name:      "Kiwi Subnet",
@@ -8922,6 +9354,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc-dubai.mp1network.com/"},
 	},
+	2129: Chain{
+		Name:      "Memento Testnet",
+		ChainId:   2129,
+		ShortName: "memento-testnet",
+		NetworkId: 2129,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.memento.zeeve.online"},
+	},
 	2136: Chain{
 		Name:      "BigShortBets Testnet",
 		ChainId:   2136,
@@ -9052,7 +9496,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "G7",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainnet-rpc.game7.io","wss://mainnet-rpc.game7.io"},
+		RPC: []string{"https://mainnet-rpc.game7.io","wss://mainnet-rpc.game7.io","https://mainnet-rpc.game7.build","wss://mainnet-rpc.game7.build"},
 	},
 	2192: Chain{
 		Name:      "SnaxChain",
@@ -9077,6 +9521,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.moonsama.com","wss://rpc.moonsama.com/ws"},
+	},
+	2201: Chain{
+		Name:      "Stable Testnet",
+		ChainId:   2201,
+		ShortName: "stable-testnet",
+		NetworkId: 2201,
+		NativeCurrency: NativeCurrency{
+			Name:     "gUSDT",
+			Symbol:   "gUSDT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.stable.xyz"},
 	},
 	2202: Chain{
 		Name:      "Antofy Mainnet",
@@ -9280,7 +9736,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ATLA",
 			Decimals: 18,
 		},
-		RPC: []string{"https://testnet-rpc.atleta.network","https://rpc.ankr.com/atleta_olympia","wss://testnet-rpc.atleta.network","https://atleta-testnet.htw.tech/","https://public-atleta.nownodes.io"},
+		RPC: []string{"https://testnet-rpc.atleta.network","https://rpc.ankr.com/atleta_olympia","wss://testnet-rpc.atleta.network","https://atleta-testnet.htw.tech/","https://public-atleta.nownodes.io","https://public-atla-testnet.fastnode.io"},
 	},
 	2342: Chain{
 		Name:      "Omnia Chain",
@@ -9342,10 +9798,22 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://api.sepolia.kroma.network"},
 	},
+	2366: Chain{
+		Name:      "KiteAI",
+		ChainId:   2366,
+		ShortName: "KiteAI",
+		NetworkId: 2366,
+		NativeCurrency: NativeCurrency{
+			Name:     "Kite",
+			Symbol:   "KITE",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.gokite.ai"},
+	},
 	2368: Chain{
 		Name:      "KiteAI Testnet",
 		ChainId:   2368,
-		ShortName: "KiteAI",
+		ShortName: "KiteAITestnet",
 		NetworkId: 1,
 		NativeCurrency: NativeCurrency{
 			Name:     "Kite",
@@ -9377,6 +9845,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://turin.rpc.tac.build","https://rpc.ankr.com/tac_turin","https://turin-ws.rpc.tac.build"},
+	},
+	2391: Chain{
+		Name:      "TAC Saint Petersburg",
+		ChainId:   2391,
+		ShortName: "tacchain_2391-1",
+		NetworkId: 2391,
+		NativeCurrency: NativeCurrency{
+			Name:     "TAC",
+			Symbol:   "TAC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://spb.rpc.tac.build","https://rpc.ankr.com/tac_spb","https://spb-ws.rpc.tac.build"},
 	},
 	2399: Chain{
 		Name:      "BOMB Chain Testnet",
@@ -9532,7 +10012,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "6DO",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.6do.world"},
+		RPC: []string{"https://rpc.6dochain.com","https://rpc2.6dochain.com","https://rpc3.6dochain.com"},
 	},
 	2484: Chain{
 		Name:      "Unicorn Ultra Nebulas Testnet",
@@ -9588,11 +10068,23 @@ var Chains = map[uint64]Chain{
 		ShortName: "fraxtal-testnet",
 		NetworkId: 2522,
 		NativeCurrency: NativeCurrency{
-			Name:     "Frax Ether",
-			Symbol:   "frxETH",
+			Name:     "Frax",
+			Symbol:   "FRAX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.testnet.frax.com","https://fraxtal-holesky-rpc.publicnode.com","wss://fraxtal-holesky-rpc.publicnode.com"},
+		RPC: []string{},
+	},
+	2523: Chain{
+		Name:      "Fraxtal Hoodi Testnet",
+		ChainId:   2523,
+		ShortName: "fraxtal-hoodi-testnet",
+		NetworkId: 2523,
+		NativeCurrency: NativeCurrency{
+			Name:     "Frax",
+			Symbol:   "FRAX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.frax.com"},
 	},
 	2525: Chain{
 		Name:      "inEVM Mainnet",
@@ -9641,6 +10133,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://api.techpay.io/"},
+	},
+	2582: Chain{
+		Name:      "H2 Chain Mainnet",
+		ChainId:   2582,
+		ShortName: "h2",
+		NetworkId: 2582,
+		NativeCurrency: NativeCurrency{
+			Name:     "H2 Chain Native Token",
+			Symbol:   "H2",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.h2chain.io"},
 	},
 	2605: Chain{
 		Name:      "Pho Blockchain Mainnet",
@@ -9749,6 +10253,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{},
+	},
+	2691: Chain{
+		Name:      "Splendor Mainnet",
+		ChainId:   2691,
+		ShortName: "spld",
+		NetworkId: 2691,
+		NativeCurrency: NativeCurrency{
+			Name:     "Splendor Token",
+			Symbol:   "SPLD",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet-rpc.splendor.org","https://splendor-rpc.org/"},
+	},
+	2692: Chain{
+		Name:      "Splendor Testnet",
+		ChainId:   2692,
+		ShortName: "spldt",
+		NetworkId: 2692,
+		NativeCurrency: NativeCurrency{
+			Name:     "Splendor Test Token",
+			Symbol:   "SPLDT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.splendor.org"},
 	},
 	2710: Chain{
 		Name:      "Morph Testnet",
@@ -9874,13 +10402,13 @@ var Chains = map[uint64]Chain{
 		Name:      "HyperAGI Mainnet",
 		ChainId:   2868,
 		ShortName: "hypt",
-		NetworkId: 1,
+		NetworkId: 2868,
 		NativeCurrency: NativeCurrency{
 			Name:     "Hyperdust",
 			Symbol:   "HYPT",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://rpc.hyperagi.network","https://rpc.hyperagi.ai"},
 	},
 	2882: Chain{
 		Name:      "Chips Network",
@@ -10024,7 +10552,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "VTCN",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mainapi.bchscan.io"},
+		RPC: []string{"https://mainapi.bchscan.io","https://datahub-asia02.bchscan.io/"},
 	},
 	3031: Chain{
 		Name:      "Orlando Chain",
@@ -10134,6 +10662,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://test-rpc-node-http.svmscan.io"},
 	},
+	3111: Chain{
+		Name:      "Alpha Chain Mainnet",
+		ChainId:   3111,
+		ShortName: "alpha",
+		NetworkId: 3111,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.goalpha.org"},
+	},
 	3141: Chain{
 		Name:      "Filecoin - Hyperspace testnet",
 		ChainId:   3141,
@@ -10145,6 +10685,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{},
+	},
+	3230: Chain{
+		Name:      "C9XChain",
+		ChainId:   3230,
+		ShortName: "c9xchain",
+		NetworkId: 3230,
+		NativeCurrency: NativeCurrency{
+			Name:     "CXC",
+			Symbol:   "CXC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.tanssi-mainnet.network/tanssi-2002","wss://services.tanssi-mainnet.network/tanssi-2002"},
 	},
 	3269: Chain{
 		Name:      "Dubxcoin network",
@@ -10169,6 +10721,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpctestnet.arabianchain.org"},
+	},
+	3300: Chain{
+		Name:      "Realio Testnet",
+		ChainId:   3300,
+		ShortName: "realiotestnet",
+		NetworkId: 3300,
+		NativeCurrency: NativeCurrency{
+			Name:     "Rio",
+			Symbol:   "RIO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://json-rpc.realiostage.network","https://realio-testnet.json-rpc.decentrio.ventures"},
+	},
+	3301: Chain{
+		Name:      "Realio",
+		ChainId:   3301,
+		ShortName: "realio",
+		NetworkId: 3301,
+		NativeCurrency: NativeCurrency{
+			Name:     "Rio",
+			Symbol:   "RIO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://json-rpc.realio.network","https://realio.json-rpc.decentrio.ventures"},
 	},
 	3306: Chain{
 		Name:      "Debounce Subnet Testnet",
@@ -10204,7 +10780,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"http://mainnet.l2.ethstorage.io:9540"},
+		RPC: []string{"https://rpc.mainnet.l2.ethstorage.io:9540"},
 	},
 	3333: Chain{
 		Name:      "EthStorage Testnet",
@@ -10216,7 +10792,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"http://testnet.ethstorage.io:9540"},
+		RPC: []string{"https://rpc.testnet.ethstorage.io:9546"},
 	},
 	3334: Chain{
 		Name:      "Web3Q Galileo",
@@ -10252,7 +10828,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"http://testnet.l2.ethstorage.io:9540"},
+		RPC: []string{"https://rpc.testnet.l2.ethstorage.io:9540"},
 	},
 	3337: Chain{
 		Name:      "EthStorage Devnet",
@@ -10264,7 +10840,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"http://devnet.ethstorage.io:9540"},
+		RPC: []string{"https://rpc.devnet.ethstorage.io:9540"},
 	},
 	3338: Chain{
 		Name:      "peaq",
@@ -10276,19 +10852,43 @@ var Chains = map[uint64]Chain{
 			Symbol:   "PEAQ",
 			Decimals: 18,
 		},
-		RPC: []string{"https://peaq.api.onfinality.io/public","https://peaq-rpc.dwellir.com","https://peaq-rpc.publicnode.com","https://evm.peaq.network","https://responsive-powerful-mansion.peaq-mainnet.quiknode.pro/29963d0a2deee01a20b091926b08d68db12bc68b"},
+		RPC: []string{"https://quicknode1.peaq.xyz","https://quicknode2.peaq.xyz","https://quicknode3.peaq.xyz"},
 	},
 	3339: Chain{
-		Name:      "EthStorage Mainnet",
+		Name:      "EthStorage L2 Devnet",
 		ChainId:   3339,
-		ShortName: "es-m",
+		ShortName: "esl2-d",
 		NetworkId: 3339,
 		NativeCurrency: NativeCurrency{
 			Name:     "Ether",
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"http://mainnet.ethstorage.io:9540"},
+		RPC: []string{"https://rpc.devnet.l2.ethstorage.io:9540"},
+	},
+	3343: Chain{
+		Name:      "Edge",
+		ChainId:   3343,
+		ShortName: "edge",
+		NetworkId: 3343,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://edge-mainnet.g.alchemy.com/public"},
+	},
+	3344: Chain{
+		Name:      "Pentagon Chain",
+		ChainId:   3344,
+		ShortName: "PentagonChain",
+		NetworkId: 3344,
+		NativeCurrency: NativeCurrency{
+			Name:     "Pentagon Chain",
+			Symbol:   "PC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.pentagon.games"},
 	},
 	3366: Chain{
 		Name:      "Meroneum",
@@ -10461,7 +11061,7 @@ var Chains = map[uint64]Chain{
 	3636: Chain{
 		Name:      "Botanix Testnet",
 		ChainId:   3636,
-		ShortName: "BTNX",
+		ShortName: "BTNXt",
 		NetworkId: 3636,
 		NativeCurrency: NativeCurrency{
 			Name:     "Botanix",
@@ -10473,14 +11073,14 @@ var Chains = map[uint64]Chain{
 	3637: Chain{
 		Name:      "Botanix Mainnet",
 		ChainId:   3637,
-		ShortName: "BTCm",
+		ShortName: "BTNX",
 		NetworkId: 3637,
 		NativeCurrency: NativeCurrency{
 			Name:     "Botanix",
 			Symbol:   "BTC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.btxtestchain.com"},
+		RPC: []string{"https://rpc.botanixlabs.com"},
 	},
 	3639: Chain{
 		Name:      "iChain Network",
@@ -10588,7 +11188,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "XOC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.xone.org"},
+		RPC: []string{"https://rpc.xone.org","https://rpc-node-1.xone.org","https://rpc-node-2.xone.org","https://rpc-node-3.xone.org","https://rpc-node-4.xone.org","wss://rpc.xone.org"},
 	},
 	3737: Chain{
 		Name:      "Crossbell",
@@ -10819,13 +11419,13 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc-dev.carbonium.network/","https://server-testnet.carbonium.network"},
 	},
 	4048: Chain{
-		Name:      "GAN Testnet",
+		Name:      "GANchain L1",
 		ChainId:   4048,
-		ShortName: "GANTestnet",
+		ShortName: "GANchain",
 		NetworkId: 4048,
 		NativeCurrency: NativeCurrency{
-			Name:     "GP Token",
-			Symbol:   "GP",
+			Name:     "GPUnet",
+			Symbol:   "GPU",
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.gpu.net"},
@@ -11082,6 +11682,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://testnet-erigon-rpc.merlinchain.io"},
 	},
+	4207: Chain{
+		Name:      "Layer Edge Mainnet",
+		ChainId:   4207,
+		ShortName: "LayerEdge",
+		NetworkId: 4207,
+		NativeCurrency: NativeCurrency{
+			Name:     "Layer Edge",
+			Symbol:   "EDGEN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://layeredge-mainnet-evm.itrocket.net","https://layeredge.rpc.subquery.network/public","https://rpc.layeredge.io","https://rpc.layeredge.foundation"},
+	},
 	4242: Chain{
 		Name:      "Nexi Mainnet",
 		ChainId:   4242,
@@ -11129,6 +11741,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc-echos-mainnet-0.t.conduit.xyz"},
+	},
+	4326: Chain{
+		Name:      "MegaETH Mainnet",
+		ChainId:   4326,
+		ShortName: "megaeth",
+		NetworkId: 4326,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{},
 	},
 	4328: Chain{
 		Name:      "Bobafuji Testnet",
@@ -11189,6 +11813,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet-rpc1.pikascan.com"},
+	},
+	4442: Chain{
+		Name:      "Denergy Testnet",
+		ChainId:   4442,
+		ShortName: "den-testnet",
+		NetworkId: 4442,
+		NativeCurrency: NativeCurrency{
+			Name:     "WATT",
+			Symbol:   "WATT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.denergytestnet.com/"},
 	},
 	4444: Chain{
 		Name:      "Htmlcoin Mainnet",
@@ -11275,16 +11911,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.verylabs.io"},
 	},
 	4646: Chain{
-		Name:      "MST Chain",
+		Name:      "MST Mainnet",
 		ChainId:   4646,
 		ShortName: "mst",
 		NetworkId: 4646,
 		NativeCurrency: NativeCurrency{
-			Name:     "MST",
-			Symbol:   "MST",
+			Name:     "MST Native Coin",
+			Symbol:   "MSTC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://mariorpc.mstblockchain.com","https://craftrpc.mstblockchain.com"},
+		RPC: []string{"https://mariorpc.mstblockchain.com","https://craftrpc.mstblockchain.com","wss://mariorpc.mstblockchain.com","wss://craftrpc.mstblockchain.com"},
 	},
 	4653: Chain{
 		Name:      "Gold Chain",
@@ -11514,6 +12150,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://node0.testnet.treasurenet.io","https://node1.testnet.treasurenet.io","https://node2.testnet.treasurenet.io","https://node3.testnet.treasurenet.io"},
 	},
+	5031: Chain{
+		Name:      "Somnia Mainnet",
+		ChainId:   5031,
+		ShortName: "SomniaMainnet",
+		NetworkId: 5031,
+		NativeCurrency: NativeCurrency{
+			Name:     "Somnia Mainnet",
+			Symbol:   "SOMI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://api.infra.mainnet.somnia.network"},
+	},
 	5039: Chain{
 		Name:      "ONIGIRI Test Subnet",
 		ChainId:   5039,
@@ -11728,7 +12376,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "FTN",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc1.bahamut.io","https://rpc2.bahamut.io","wss://ws1.sahara.bahamutchain.com","wss://ws2.sahara.bahamutchain.com","https://bahamut-rpc.publicnode.com","wss://bahamut-rpc.publicnode.com"},
+		RPC: []string{"https://rpc1.bahamut.io","https://rpc2.bahamut.io","https://rpc1.ftnscan.io","https://rpc2.ftnscan.io","wss://ws1.sahara.bahamutchain.com","wss://ws2.sahara.bahamutchain.com","https://bahamut-rpc.publicnode.com","wss://bahamut-rpc.publicnode.com"},
 	},
 	5169: Chain{
 		Name:      "Smart Layer Network",
@@ -11872,7 +12520,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://settlus-mainnet.g.alchemy.com/public"},
 	},
 	5372: Chain{
 		Name:      "Settlus Testnet",
@@ -11910,6 +12558,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.edexa.network","https://rpc.edexa.com"},
 	},
+	5433: Chain{
+		Name:      "Inertia Scan",
+		ChainId:   5433,
+		ShortName: "IRTA",
+		NetworkId: 5433,
+		NativeCurrency: NativeCurrency{
+			Name:     "Inertia",
+			Symbol:   "IRTA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.inertiascan.com"},
+	},
 	5439: Chain{
 		Name:      "Egochain",
 		ChainId:   5439,
@@ -11923,16 +12583,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet.egochain.org"},
 	},
 	5464: Chain{
-		Name:      "Saga",
+		Name:      "SagaEVM",
 		ChainId:   5464,
-		ShortName: "saga",
+		ShortName: "sagaevm",
 		NetworkId: 5464,
 		NativeCurrency: NativeCurrency{
 			Name:     "gas",
 			Symbol:   "GAS",
 			Decimals: 18,
 		},
-		RPC: []string{"http://sagaevm-5464-1.jsonrpc.sagarpc.io"},
+		RPC: []string{"https://sagaevm.jsonrpc.sagarpc.io"},
 	},
 	5511: Chain{
 		Name:      "PointPay Mainnet",
@@ -12006,6 +12666,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.chainverse.info"},
 	},
+	5589: Chain{
+		Name:      "Jamton",
+		ChainId:   5589,
+		ShortName: "jamton",
+		NetworkId: 5589,
+		NativeCurrency: NativeCurrency{
+			Name:     "DOTON",
+			Symbol:   "DOTON",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.jamton.network/"},
+	},
 	5611: Chain{
 		Name:      "opBNB Testnet",
 		ChainId:   5611,
@@ -12076,7 +12748,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "TANGO",
 			Decimals: 18,
 		},
-		RPC: []string{"https://dancebox-3001.tanssi-api.network","wss://dancebox-3001.tanssi-api.network"},
+		RPC: []string{"https://services.tanssi-testnet.network/dancelight-2001","wss://services.tanssi-testnet.network/dancelight-2001"},
 	},
 	5700: Chain{
 		Name:      "Syscoin Tanenbaum Testnet",
@@ -12173,6 +12845,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://proxy.wegochain.io","http://wallet.wegochain.io:7764"},
+	},
+	5887: Chain{
+		Name:      "MANTRACHAIN Testnet",
+		ChainId:   5887,
+		ShortName: "dukong",
+		NetworkId: 5887,
+		NativeCurrency: NativeCurrency{
+			Name:     "MANTRA",
+			Symbol:   "MANTRA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://evm.dukong.mantrachain.io","wss://evm.dukong.mantrachain.io/ws"},
+	},
+	5888: Chain{
+		Name:      "MANTRACHAIN Mainnet",
+		ChainId:   5888,
+		ShortName: "mantrachain",
+		NetworkId: 5888,
+		NativeCurrency: NativeCurrency{
+			Name:     "OM",
+			Symbol:   "OM",
+			Decimals: 18,
+		},
+		RPC: []string{"https://evm.mantrachain.io","wss://evm.mantrachain.io/ws"},
 	},
 	6000: Chain{
 		Name:      "BounceBit Testnet",
@@ -12630,17 +13326,29 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://evm-rpc.testnet-2.nibiru.fi"},
 	},
+	6913: Chain{
+		Name:      "billions-testnet",
+		ChainId:   6913,
+		ShortName: "billionstest",
+		NetworkId: 6913,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://billions-testnet-rpc.eu-north-2.gateway.fm"},
+	},
 	6934: Chain{
-		Name:      "XYL TestNet",
+		Name:      "Xylume TestNet",
 		ChainId:   6934,
 		ShortName: "xyl",
 		NetworkId: 6934,
 		NativeCurrency: NativeCurrency{
-			Name:     "XYL",
+			Name:     "Xylume",
 			Symbol:   "XYL",
 			Decimals: 18,
 		},
-		RPC: []string{"https://xyl-testnet.glitch.me/rpc/"},
+		RPC: []string{"https://xylume-testnet.sparked.network/rpc/"},
 	},
 	6942: Chain{
 		Name:      "Laika Mainnet",
@@ -12942,6 +13650,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://eon-rpc.horizenlabs.io/ethv1","https://rpc.ankr.com/horizen_eon"},
 	},
+	7336: Chain{
+		Name:      "Pruv Testnet",
+		ChainId:   7336,
+		ShortName: "pruvtestnet",
+		NetworkId: 7336,
+		NativeCurrency: NativeCurrency{
+			Name:     "Pruv",
+			Symbol:   "PRUV",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.pruv.network","wss://rpc.testnet.pruv.network"},
+	},
+	7337: Chain{
+		Name:      "Pruv Mainnet",
+		ChainId:   7337,
+		ShortName: "pruvmainnet",
+		NetworkId: 7337,
+		NativeCurrency: NativeCurrency{
+			Name:     "Pruv",
+			Symbol:   "PRUV",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.pruv.network","wss://rpc.pruv.network"},
+	},
 	7341: Chain{
 		Name:      "Shyft Mainnet",
 		ChainId:   7341,
@@ -12964,7 +13696,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://l2.rarimo.com","wss://wss.l2.rarimo.com"},
 	},
 	7484: Chain{
 		Name:      "Raba Network Mainnet",
@@ -12989,6 +13721,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.meversemainnet.io"},
+	},
+	7531: Chain{
+		Name:      "Rome Mainnet 0 Palatine",
+		ChainId:   7531,
+		ShortName: "rome-mainnet-0-palatine",
+		NetworkId: 7531,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://palatine-i.mainnet-0.romeprotocol.xyz"},
+	},
+	7532: Chain{
+		Name:      "Rome Mainnet 0 Aventine",
+		ChainId:   7532,
+		ShortName: "rome-mainnet-0-aventine",
+		NetworkId: 7532,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://aventine-i.mainnet-0.romeprotocol.xyz"},
 	},
 	7560: Chain{
 		Name:      "Cyber Mainnet",
@@ -13170,6 +13926,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://validator-mainnet.orenium.org","https://rpc-oracle-mainnet.orenium.org","https://portalmainnet.orenium.org"},
 	},
+	7788: Chain{
+		Name:      "Draw Coin",
+		ChainId:   7788,
+		ShortName: "drw",
+		NetworkId: 7788,
+		NativeCurrency: NativeCurrency{
+			Name:     "DRW",
+			Symbol:   "DRW",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.drawchain.org"},
+	},
 	7798: Chain{
 		Name:      "OpenEX LONG Testnet",
 		ChainId:   7798,
@@ -13229,6 +13997,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.powerloom.network"},
+	},
+	7869: Chain{
+		Name:      "Powerloom Mainnet V2",
+		ChainId:   7869,
+		ShortName: "powerloom",
+		NetworkId: 7869,
+		NativeCurrency: NativeCurrency{
+			Name:     "Powerloom Token",
+			Symbol:   "POWER",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-v2.powerloom.network"},
 	},
 	7878: Chain{
 		Name:      "Hazlor Testnet",
@@ -13458,6 +14238,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://sphinx.shardeum.org/"},
 	},
+	8083: Chain{
+		Name:      "Shardeum Testnet",
+		ChainId:   8083,
+		ShortName: "ShardeumTestnet",
+		NetworkId: 8083,
+		NativeCurrency: NativeCurrency{
+			Name:     "Shardeum Test SHM",
+			Symbol:   "SHM",
+			Decimals: 18,
+		},
+		RPC: []string{"https://api-testnet.shardeum.org/"},
+	},
 	8086: Chain{
 		Name:      "Bitcoin Chain",
 		ChainId:   8086,
@@ -13507,16 +14299,28 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://bbnrpc.mainnet.bharatblockchain.io"},
 	},
 	8108: Chain{
-		Name:      "Zenchain",
+		Name:      "ZenChain",
 		ChainId:   8108,
 		ShortName: "zen",
 		NetworkId: 8108,
 		NativeCurrency: NativeCurrency{
-			Name:     "ZCX",
-			Symbol:   "ZCX",
+			Name:     "ZTC",
+			Symbol:   "ZTC",
 			Decimals: 18,
 		},
 		RPC: []string{},
+	},
+	8118: Chain{
+		Name:      "Shardeum",
+		ChainId:   8118,
+		ShortName: "Shardeum",
+		NetworkId: 8118,
+		NativeCurrency: NativeCurrency{
+			Name:     "Shardeum",
+			Symbol:   "SHM",
+			Decimals: 18,
+		},
+		RPC: []string{"https://api.shardeum.org/"},
 	},
 	8131: Chain{
 		Name:      "Qitmeer Network Testnet",
@@ -13589,6 +14393,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{},
+	},
+	8150: Chain{
+		Name:      "Alpen Testnet",
+		ChainId:   8150,
+		ShortName: "alpen-testnet",
+		NetworkId: 8150,
+		NativeCurrency: NativeCurrency{
+			Name:     "Signet BTC",
+			Symbol:   "sBTC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.alpenlabs.io"},
 	},
 	8181: Chain{
 		Name:      "Testnet BeOne Chain",
@@ -13723,13 +14539,13 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://api.dracones.net/"},
 	},
 	8408: Chain{
-		Name:      "Zenchain Testnet",
+		Name:      "ZenChain Testnet",
 		ChainId:   8408,
 		ShortName: "zentest",
 		NetworkId: 8408,
 		NativeCurrency: NativeCurrency{
-			Name:     "ZCX",
-			Symbol:   "ZCX",
+			Name:     "ZTC",
+			Symbol:   "ZTC",
 			Decimals: 18,
 		},
 		RPC: []string{"https://zenchain-testnet.api.onfinality.io/public","wss://zenchain-testnet.api.onfinality.io/public-ws"},
@@ -13817,6 +14633,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet-rpc.helachain.com"},
+	},
+	8700: Chain{
+		Name:      "Autonomys Chronos Testnet",
+		ChainId:   8700,
+		ShortName: "ATN",
+		NetworkId: 8700,
+		NativeCurrency: NativeCurrency{
+			Name:     "AI3",
+			Symbol:   "AI3",
+			Decimals: 18,
+		},
+		RPC: []string{"https://auto-evm.chronos.autonomys.xyz/ws"},
 	},
 	8723: Chain{
 		Name:      "TOOL Global Mainnet",
@@ -14286,6 +15114,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc-testnet.qubetics.work/"},
 	},
+	9030: Chain{
+		Name:      "Qubetics Mainnet",
+		ChainId:   9030,
+		ShortName: "QubeticsMainnet",
+		NetworkId: 9030,
+		NativeCurrency: NativeCurrency{
+			Name:     "Qubetics",
+			Symbol:   "TICS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.qubetics.com","wss://socket-testnet.qubetics.work","https://evm-rpc-arch.qubetics.com","https://evm-ws-arch.qubetics.com"},
+	},
 	9069: Chain{
 		Name:      "Apex Fusion - Nexus Mainnet",
 		ChainId:   9069,
@@ -14354,6 +15194,18 @@ var Chains = map[uint64]Chain{
 		NativeCurrency: NativeCurrency{
 			Name:     "Sync",
 			Symbol:   "SYNC",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	9134: Chain{
+		Name:      "GIWA",
+		ChainId:   9134,
+		ShortName: "giwa",
+		NetworkId: 9134,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
 			Decimals: 18,
 		},
 		RPC: []string{},
@@ -14455,16 +15307,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet-rpc.evokescan.org"},
 	},
 	9496: Chain{
-		Name:      "WeaveVM Testnet",
+		Name:      "Load Alphanet",
 		ChainId:   9496,
-		ShortName: "twvm",
+		ShortName: "tload",
 		NetworkId: 9496,
 		NativeCurrency: NativeCurrency{
-			Name:     "Testnet WeaveVM Token",
-			Symbol:   "tWVM",
+			Name:     "Testnet Load Token",
+			Symbol:   "tLOAD",
 			Decimals: 18,
 		},
-		RPC: []string{"https://testnet.wvm.dev","https://testnet-rpc.wvm.dev"},
+		RPC: []string{"https://alphanet.load.network"},
 	},
 	9527: Chain{
 		Name:      "Rangers Protocol Testnet Robin",
@@ -14537,6 +15389,42 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet.bnb.boba.network","wss://wss.testnet.bnb.boba.network","https://replica.testnet.bnb.boba.network","wss://replica-wss.testnet.bnb.boba.network","https://boba-bnb-testnet.gateway.tenderly.co","wss://boba-bnb-testnet.gateway.tenderly.co"},
+	},
+	9745: Chain{
+		Name:      "Plasma Mainnet",
+		ChainId:   9745,
+		ShortName: "plasma",
+		NetworkId: 9745,
+		NativeCurrency: NativeCurrency{
+			Name:     "Plasma",
+			Symbol:   "XPL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.plasma.to"},
+	},
+	9746: Chain{
+		Name:      "Plasma Testnet",
+		ChainId:   9746,
+		ShortName: "plasma-testnet",
+		NetworkId: 9746,
+		NativeCurrency: NativeCurrency{
+			Name:     "Testnet Plasma",
+			Symbol:   "XPL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.plasma.to"},
+	},
+	9747: Chain{
+		Name:      "Plasma Devnet",
+		ChainId:   9747,
+		ShortName: "plasma-devnet",
+		NetworkId: 9747,
+		NativeCurrency: NativeCurrency{
+			Name:     "Devnet Plasma",
+			Symbol:   "XPL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://devnet-rpc.plasma.to"},
 	},
 	9768: Chain{
 		Name:      "MainnetZ Testnet",
@@ -14683,16 +15571,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.pointledger.net"},
 	},
 	9897: Chain{
-		Name:      "arena-z-testnet",
+		Name:      "arena-z-testnet-deprecated",
 		ChainId:   9897,
-		ShortName: "arena-z-testnet",
+		ShortName: "arena-z-testnet-deprecated",
 		NetworkId: 9897,
 		NativeCurrency: NativeCurrency{
 			Name:     "Ether",
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.arena-z.t.raas.gelato.cloud","wss://ws.arena-z.t.raas.gelato.cloud"},
+		RPC: []string{},
 	},
 	9898: Chain{
 		Name:      "Larissa Chain",
@@ -14705,6 +15593,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.larissa.network"},
+	},
+	9899: Chain{
+		Name:      "Arena-Z-Testnet",
+		ChainId:   9899,
+		ShortName: "arena-z-testnet",
+		NetworkId: 9899,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.arena-z.gg","wss://testnet-ws.arena-z.gg"},
 	},
 	9901: Chain{
 		Name:      "Zytron Linea Mainnet",
@@ -15040,7 +15940,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "TEA",
 			Decimals: 18,
 		},
-		RPC: []string{},
+		RPC: []string{"https://tea-sepolia.g.alchemy.com/public"},
 	},
 	10222: Chain{
 		Name:      "GLScan",
@@ -15197,6 +16097,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc-testnet.gameswift.io","wss://ws-testnet.gameswift.io"},
+	},
+	10904: Chain{
+		Name:      "Ault Blockchain Testnet",
+		ChainId:   10904,
+		ShortName: "ault-testnet",
+		NetworkId: 10904,
+		NativeCurrency: NativeCurrency{
+			Name:     "Testnet AULT Token",
+			Symbol:   "AULT",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	10920: Chain{
+		Name:      "Fuse Flash Testnet",
+		ChainId:   10920,
+		ShortName: "fuseflash",
+		NetworkId: 10920,
+		NativeCurrency: NativeCurrency{
+			Name:     "Fuse",
+			Symbol:   "FUSE",
+			Decimals: 18,
+		},
+		RPC: []string{},
 	},
 	10946: Chain{
 		Name:      "Quadrans Blockchain",
@@ -15391,16 +16315,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.egoldchain.com","wss://rpc.egoldchain.com"},
 	},
 	11501: Chain{
-		Name:      "BEVM Mainnet",
+		Name:      "GEB Mainnet",
 		ChainId:   11501,
-		ShortName: "bevm",
+		ShortName: "geb",
 		NetworkId: 11501,
 		NativeCurrency: NativeCurrency{
 			Name:     "BTC",
 			Symbol:   "BTC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-mainnet-1.bevm.io/","https://rpc-mainnet-2.bevm.io/"},
+		RPC: []string{"https://rpc-mainnet-1.geb.network/","https://rpc-mainnet-2.geb.network/"},
 	},
 	11503: Chain{
 		Name:      "BEVM Testnet",
@@ -15415,16 +16339,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://testnet.bevm.io/"},
 	},
 	11504: Chain{
-		Name:      "BEVM Signet",
+		Name:      "GEB Signet",
 		ChainId:   11504,
-		ShortName: "bevm-signet",
+		ShortName: "geb-signet",
 		NetworkId: 11504,
 		NativeCurrency: NativeCurrency{
 			Name:     "BTC",
 			Symbol:   "BTC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://signet.bevm.io/"},
+		RPC: []string{"https://signet.geb.network/"},
 	},
 	11521: Chain{
 		Name:      "SatsChain",
@@ -15449,6 +16373,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet-rpc.sardisnetwork.com"},
+	},
+	11811: Chain{
+		Name:      "ARK Mainnet",
+		ChainId:   11811,
+		ShortName: "ark",
+		NetworkId: 11811,
+		NativeCurrency: NativeCurrency{
+			Name:     "ARK Token",
+			Symbol:   "ARK",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.ark.io"},
+	},
+	11812: Chain{
+		Name:      "ARK Testnet",
+		ChainId:   11812,
+		ShortName: "ark-testnet",
+		NetworkId: 11812,
+		NativeCurrency: NativeCurrency{
+			Name:     "DARK Token",
+			Symbol:   "DARK",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet.mainsailhq.com/rpc"},
 	},
 	11820: Chain{
 		Name:      "Artela Mainnet",
@@ -15844,7 +16792,19 @@ var Chains = map[uint64]Chain{
 			Symbol:   "TG7T",
 			Decimals: 18,
 		},
-		RPC: []string{"https://testnet-rpc.game7.io","wss://testnet-rpc.game7.io"},
+		RPC: []string{"https://testnet-rpc.game7.io","wss://testnet-rpc.game7.io","https://testnet-rpc.game7.build","wss://testnet-rpc.game7.build"},
+	},
+	13766: Chain{
+		Name:      "Trexx",
+		ChainId:   13766,
+		ShortName: "trexx",
+		NetworkId: 13766,
+		NativeCurrency: NativeCurrency{
+			Name:     "TRX",
+			Symbol:   "TRX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.tanssi-mainnet.network/tanssi-2003","wss://services.tanssi-mainnet.network/tanssi-2003"},
 	},
 	13812: Chain{
 		Name:      "Susono",
@@ -15930,6 +16890,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://test-rpc.vitruveo.xyz"},
 	},
+	14601: Chain{
+		Name:      "Sonic Testnet",
+		ChainId:   14601,
+		ShortName: "sonic-testnet",
+		NetworkId: 14601,
+		NativeCurrency: NativeCurrency{
+			Name:     "Sonic",
+			Symbol:   "S",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.soniclabs.com"},
+	},
 	14800: Chain{
 		Name:      "Vana Moksha Testnet",
 		ChainId:   14800,
@@ -15965,6 +16937,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://explorer-rpc-http.testnet5.stages.humanode.io"},
+	},
+	15000: Chain{
+		Name:      "Quai Network Testnet",
+		ChainId:   15000,
+		ShortName: "quai-testnet",
+		NetworkId: 15000,
+		NativeCurrency: NativeCurrency{
+			Name:     "Quai",
+			Symbol:   "QUAI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://orchard.rpc.quai.network/cyprus1"},
 	},
 	15003: Chain{
 		Name:      "Immutable zkEVM Devnet",
@@ -16049,6 +17033,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://api.testnet.evm.eosnetwork.com"},
+	},
+	15885: Chain{
+		Name:      "Bitroot Testnet",
+		ChainId:   15885,
+		ShortName: "bitroot-testnet",
+		NetworkId: 15885,
+		NativeCurrency: NativeCurrency{
+			Name:     "BRT",
+			Symbol:   "BRT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.bitroot.co"},
+	},
+	15888: Chain{
+		Name:      "Bitroot",
+		ChainId:   15888,
+		ShortName: "bitroot",
+		NetworkId: 15888,
+		NativeCurrency: NativeCurrency{
+			Name:     "BRT",
+			Symbol:   "BRT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.bitroot.co","https://mainnet-rpc.bitroot.co"},
 	},
 	16000: Chain{
 		Name:      "MetaDot Mainnet",
@@ -16168,7 +17176,43 @@ var Chains = map[uint64]Chain{
 			Symbol:   "A0GI",
 			Decimals: 18,
 		},
+		RPC: []string{},
+	},
+	16601: Chain{
+		Name:      "0G-Galileo-Testnet",
+		ChainId:   16601,
+		ShortName: "0gai-galileo-testnet",
+		NetworkId: 16601,
+		NativeCurrency: NativeCurrency{
+			Name:     "A0GI",
+			Symbol:   "A0GI",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	16602: Chain{
+		Name:      "0G-Testnet-Galileo",
+		ChainId:   16602,
+		ShortName: "0g-testnet-galileo",
+		NetworkId: 16602,
+		NativeCurrency: NativeCurrency{
+			Name:     "0G",
+			Symbol:   "0G",
+			Decimals: 18,
+		},
 		RPC: []string{"https://evmrpc-testnet.0g.ai"},
+	},
+	16661: Chain{
+		Name:      "0G Mainnet",
+		ChainId:   16661,
+		ShortName: "0g",
+		NetworkId: 16661,
+		NativeCurrency: NativeCurrency{
+			Name:     "0G",
+			Symbol:   "0G",
+			Decimals: 18,
+		},
+		RPC: []string{"https://evmrpc.0g.ai"},
 	},
 	16688: Chain{
 		Name:      "IRIShub Testnet",
@@ -16313,6 +17357,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://api.kon-wallet.com"},
+	},
+	17735: Chain{
+		Name:      "Esports Chain",
+		ChainId:   17735,
+		ShortName: "Esports",
+		NetworkId: 17735,
+		NativeCurrency: NativeCurrency{
+			Name:     "Esport Token",
+			Symbol:   "ESPT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://esportsblock.org/rpc/"},
+	},
+	17771: Chain{
+		Name:      "DMD Diamond",
+		ChainId:   17771,
+		ShortName: "dmd",
+		NetworkId: 17771,
+		NativeCurrency: NativeCurrency{
+			Name:     "DMD",
+			Symbol:   "DMD",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.bit.diamonds"},
 	},
 	17777: Chain{
 		Name:      "EOS EVM Network",
@@ -16517,6 +17585,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.decentraconnect.io"},
+	},
+	19478: Chain{
+		Name:      "Trustivon Testnet",
+		ChainId:   19478,
+		ShortName: "trustivon",
+		NetworkId: 19478,
+		NativeCurrency: NativeCurrency{
+			Name:     "Trustivon",
+			Symbol:   "TC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.trustivon.com"},
 	},
 	19515: Chain{
 		Name:      "SEC Testnet",
@@ -16776,8 +17856,8 @@ var Chains = map[uint64]Chain{
 		ShortName: "1money",
 		NetworkId: 21210,
 		NativeCurrency: NativeCurrency{
-			Name:     "USD1",
-			Symbol:   "USD1",
+			Name:     "FREE",
+			Symbol:   "FREE",
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet.1money.network"},
@@ -16950,6 +18030,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://testrpc.opside.network"},
 	},
+	23232: Chain{
+		Name:      "Gotas Social",
+		ChainId:   23232,
+		ShortName: "gotas",
+		NetworkId: 23232,
+		NativeCurrency: NativeCurrency{
+			Name:     "GOTAS",
+			Symbol:   "GOTAS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.tanssi-mainnet.network/tanssi-2006","wss://services.tanssi-mainnet.network/tanssi-2006"},
+	},
 	23294: Chain{
 		Name:      "Oasis Sapphire",
 		ChainId:   23294,
@@ -17035,16 +18127,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://testnet.steamexchange.io"},
 	},
 	24125: Chain{
-		Name:      "MagiChain",
+		Name:      "Nexurachain",
 		ChainId:   24125,
-		ShortName: "MGC",
+		ShortName: "XURAm",
 		NetworkId: 24125,
 		NativeCurrency: NativeCurrency{
-			Name:     "MGIX",
-			Symbol:   "MGIX",
+			Name:     "XURA",
+			Symbol:   "XURA",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.magichain.io"},
+		RPC: []string{"https://rpc.nexurachain.io"},
 	},
 	24484: Chain{
 		Name:      "Webchain",
@@ -17105,6 +18197,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.everclear.raas.gelato.cloud"},
+	},
+	25821: Chain{
+		Name:      "H2 Chain Testnet Lambda",
+		ChainId:   25821,
+		ShortName: "h2-lambda",
+		NetworkId: 25821,
+		NativeCurrency: NativeCurrency{
+			Name:     "Lambda H2",
+			Symbol:   "H2",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.h-1.io"},
 	},
 	25839: Chain{
 		Name:      "AlveyChain Testnet",
@@ -17189,6 +18293,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://ducx-mainnet-node1.rocknblock.io","https://ducx-mainnet-node2.rocknblock.io","https://ducx-mainnet-node3.rocknblock.io"},
+	},
+	26514: Chain{
+		Name:      "Horizen Mainnet",
+		ChainId:   26514,
+		ShortName: "horizen",
+		NetworkId: 26514,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://horizen.calderachain.xyz/http"},
 	},
 	26600: Chain{
 		Name:      "Hertz Network Mainnet",
@@ -17334,6 +18450,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://alpha-1-replica-0.bedrock-goerli.optimism.io","https://alpha-1-replica-1.bedrock-goerli.optimism.io","https://alpha-1-replica-2.bedrock-goerli.optimism.io","https://alpha-1-replica-2.bedrock-goerli.optimism.io"},
 	},
+	28540: Chain{
+		Name:      "Rivool",
+		ChainId:   28540,
+		ShortName: "rivool",
+		NetworkId: 28540,
+		NativeCurrency: NativeCurrency{
+			Name:     "RVO",
+			Symbol:   "RVO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.tanssi-mainnet.network/tanssi-2005","wss://services.tanssi-mainnet.network/tanssi-2005"},
+	},
 	28882: Chain{
 		Name:      "Boba Sepolia",
 		ChainId:   28882,
@@ -17454,6 +18582,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://cerium-rpc.canxium.net"},
 	},
+	30303: Chain{
+		Name:      "Ethiq",
+		ChainId:   30303,
+		ShortName: "ethiq",
+		NetworkId: 30303,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.ethiq.network","wss://rpc.ethiq.network"},
+	},
 	30730: Chain{
 		Name:      "Movement EVM Legacy",
 		ChainId:   30730,
@@ -17489,6 +18629,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mevm.testnet.imola.movementlabs.xyz"},
+	},
+	30939: Chain{
+		Name:      "Dilithium3 Testnet",
+		ChainId:   30939,
+		ShortName: "dlt-testnet",
+		NetworkId: 30939,
+		NativeCurrency: NativeCurrency{
+			Name:     "Dilithium3",
+			Symbol:   "DLT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.dilithium3.com","wss://rpc-testnet.dilithium3.com/ws"},
 	},
 	31102: Chain{
 		Name:      "Ethersocial Network",
@@ -17563,9 +18715,9 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.wirexpaychain.com"},
 	},
 	31611: Chain{
-		Name:      "Mezo Matsnet Testnet",
+		Name:      "Mezo Testnet",
 		ChainId:   31611,
-		ShortName: "mezo",
+		ShortName: "mezo-testnet",
 		NetworkId: 31611,
 		NativeCurrency: NativeCurrency{
 			Name:     "Bitcoin",
@@ -17574,29 +18726,41 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.test.mezo.org"},
 	},
+	31612: Chain{
+		Name:      "Mezo",
+		ChainId:   31612,
+		ShortName: "mezo",
+		NetworkId: 31612,
+		NativeCurrency: NativeCurrency{
+			Name:     "Bitcoin",
+			Symbol:   "BTC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc_evm-mezo.imperator.co","wss://ws_evm-mezo.imperator.co","https://rpc-http.mezo.boar.network","wss://rpc-ws.mezo.boar.network","https://mainnet.mezo.public.validationcloud.io","wss://mainnet.mezo.public.validationcloud.io","https://rpc-internal.mezo.org","wss://rpc-ws-internal.mezo.org"},
+	},
 	31753: Chain{
-		Name:      "Xchain Mainnet",
+		Name:      "Xchain Mainnet (Deprecated)",
 		ChainId:   31753,
-		ShortName: "INTD",
+		ShortName: "INTD_deprecated",
 		NetworkId: 31753,
 		NativeCurrency: NativeCurrency{
 			Name:     "Intdestcoin",
 			Symbol:   "INTD",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.xchainscan.com"},
+		RPC: []string{},
 	},
 	31754: Chain{
-		Name:      "Xchain Testnet",
+		Name:      "Xchain Testnet (Deprecated)",
 		ChainId:   31754,
-		ShortName: "tINTD",
+		ShortName: "tINTD_deprecated",
 		NetworkId: 31754,
 		NativeCurrency: NativeCurrency{
 			Name:     "Intdestcoin Testnet",
 			Symbol:   "INTD",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.xchaintest.net"},
+		RPC: []string{},
 	},
 	32001: Chain{
 		Name:      "W3Gamez Holesky Testnet",
@@ -17609,6 +18773,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc-holesky.w3gamez.network"},
+	},
+	32323: Chain{
+		Name:      "BasedAI",
+		ChainId:   32323,
+		ShortName: "basedai",
+		NetworkId: 32323,
+		NativeCurrency: NativeCurrency{
+			Name:     "BasedAI",
+			Symbol:   "BASED",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.basedaibridge.com/rpc/"},
 	},
 	32382: Chain{
 		Name:      "Santiment Intelligence Network",
@@ -17647,7 +18823,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet.fusionnetwork.io","wss://mainnet.fusionnetwork.io"},
 	},
 	32769: Chain{
-		Name:      "Zilliqa EVM",
+		Name:      "Zilliqa 2",
 		ChainId:   32769,
 		ShortName: "zil",
 		NetworkId: 32769,
@@ -17695,7 +18871,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://json-rpc.entangle.fi"},
 	},
 	33101: Chain{
-		Name:      "Zilliqa EVM Testnet",
+		Name:      "Zilliqa 2 Testnet",
 		ChainId:   33101,
 		ShortName: "zil-testnet",
 		NetworkId: 33101,
@@ -17704,7 +18880,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ZIL",
 			Decimals: 18,
 		},
-		RPC: []string{"https://dev-api.zilliqa.com"},
+		RPC: []string{"https://api.testnet.zilliqa.com"},
 	},
 	33103: Chain{
 		Name:      "Zilliqa 2 EVM proto-testnet",
@@ -17802,6 +18978,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.slingshotdao.com"},
 	},
+	33431: Chain{
+		Name:      "Edge Testnet",
+		ChainId:   33431,
+		ShortName: "edge-testnet",
+		NetworkId: 33431,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://edge-testnet.g.alchemy.com/public"},
+	},
 	33469: Chain{
 		Name:      "Zilliqa 2 EVM devnet",
 		ChainId:   33469,
@@ -17813,6 +19001,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://api.zq2-devnet.zilliqa.com"},
+	},
+	33710: Chain{
+		Name:      "R5 Network Testnet",
+		ChainId:   33710,
+		ShortName: "tr5",
+		NetworkId: 33710,
+		NativeCurrency: NativeCurrency{
+			Name:     "Test R5",
+			Symbol:   "TR5",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.r5.network"},
 	},
 	33979: Chain{
 		Name:      "Funki",
@@ -17897,6 +19097,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.qtestnet.org"},
+	},
+	36888: Chain{
+		Name:      "AB Core Mainnet",
+		ChainId:   36888,
+		ShortName: "abcore",
+		NetworkId: 36888,
+		NativeCurrency: NativeCurrency{
+			Name:     "AB",
+			Symbol:   "AB",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.core.ab.org","https://rpc1.core.ab.org"},
+	},
+	36900: Chain{
+		Name:      "ADI Chain",
+		ChainId:   36900,
+		ShortName: "adi",
+		NetworkId: 36900,
+		NativeCurrency: NativeCurrency{
+			Name:     "ADI",
+			Symbol:   "ADI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.adifoundation.ai"},
 	},
 	37111: Chain{
 		Name:      "Lens Testnet",
@@ -18017,6 +19241,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.edu-chain.raas.gelato.cloud"},
+	},
+	42000: Chain{
+		Name:      "Helios Chain Testnet",
+		ChainId:   42000,
+		ShortName: "HLS",
+		NetworkId: 42000,
+		NativeCurrency: NativeCurrency{
+			Name:     "Helios",
+			Symbol:   "HLS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet1.helioschainlabs.org"},
 	},
 	42001: Chain{
 		Name:      "PMON Chain",
@@ -18186,6 +19422,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://enugu-rpc.assetchain.org"},
 	},
+	42429: Chain{
+		Name:      "Tempo Testnet",
+		ChainId:   42429,
+		ShortName: "tempotest",
+		NetworkId: 42429,
+		NativeCurrency: NativeCurrency{
+			Name:     "No native currency",
+			Symbol:   "USD",
+			Decimals: 6,
+		},
+		RPC: []string{"https://rpc.testnet.tempo.xyz"},
+	},
 	42766: Chain{
 		Name:      "ZKFair Mainnet",
 		ChainId:   42766,
@@ -18294,6 +19542,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://avax.boba.network","wss://wss.avax.boba.network","https://replica.avax.boba.network","wss://replica-wss.avax.boba.network"},
 	},
+	43419: Chain{
+		Name:      "GUNZ",
+		ChainId:   43419,
+		ShortName: "gunz-mainnet",
+		NetworkId: 43419,
+		NativeCurrency: NativeCurrency{
+			Name:     "GUN",
+			Symbol:   "GUN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.gunzchain.io/ext/bc/2M47TxWHGnhNtq6pM5zPXdATBtuqubxn5EPFgFmEawCQr9WFML/rpc"},
+	},
 	43521: Chain{
 		Name:      "Formicarium",
 		ChainId:   43521,
@@ -18367,7 +19627,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.autobahn.network"},
 	},
 	45003: Chain{
-		Name:      "Juneo Mainnet",
+		Name:      "Juneo JUNE-Chain",
 		ChainId:   45003,
 		ShortName: "JUNE",
 		NetworkId: 45003,
@@ -18377,6 +19637,150 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/JUNE/rpc"},
+	},
+	45004: Chain{
+		Name:      "Juneo DAI1-Chain",
+		ChainId:   45004,
+		ShortName: "DAI1",
+		NetworkId: 45004,
+		NativeCurrency: NativeCurrency{
+			Name:     "DAI1",
+			Symbol:   "DAI1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/DAI1/rpc"},
+	},
+	45005: Chain{
+		Name:      "Juneo USDT1-Chain",
+		ChainId:   45005,
+		ShortName: "USDT1",
+		NetworkId: 45005,
+		NativeCurrency: NativeCurrency{
+			Name:     "USDT1",
+			Symbol:   "USDT1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/USDT1/rpc"},
+	},
+	45006: Chain{
+		Name:      "Juneo USD1-Chain",
+		ChainId:   45006,
+		ShortName: "USD1",
+		NetworkId: 45006,
+		NativeCurrency: NativeCurrency{
+			Name:     "USD1",
+			Symbol:   "USD1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/USD1/rpc"},
+	},
+	45007: Chain{
+		Name:      "Juneo mBTC1-Chain",
+		ChainId:   45007,
+		ShortName: "mBTC1",
+		NetworkId: 45007,
+		NativeCurrency: NativeCurrency{
+			Name:     "mBTC1",
+			Symbol:   "mBTC1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/mBTC1/rpc"},
+	},
+	45008: Chain{
+		Name:      "Juneo GLD1-Chain",
+		ChainId:   45008,
+		ShortName: "GLD1",
+		NetworkId: 45008,
+		NativeCurrency: NativeCurrency{
+			Name:     "GLD1",
+			Symbol:   "GLD1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/GLD1/rpc"},
+	},
+	45009: Chain{
+		Name:      "Juneo LTC1-Chain",
+		ChainId:   45009,
+		ShortName: "LTC1",
+		NetworkId: 45009,
+		NativeCurrency: NativeCurrency{
+			Name:     "LTC1",
+			Symbol:   "LTC1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/LTC1/rpc"},
+	},
+	45010: Chain{
+		Name:      "Juneo DOGE1-Chain",
+		ChainId:   45010,
+		ShortName: "DOGE1",
+		NetworkId: 45010,
+		NativeCurrency: NativeCurrency{
+			Name:     "DOGE1",
+			Symbol:   "DOGE1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/DOGE1/rpc"},
+	},
+	45011: Chain{
+		Name:      "Juneo EUR1-Chain",
+		ChainId:   45011,
+		ShortName: "EUR1",
+		NetworkId: 45011,
+		NativeCurrency: NativeCurrency{
+			Name:     "EUR1",
+			Symbol:   "EUR1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/EUR1/rpc"},
+	},
+	45012: Chain{
+		Name:      "Juneo SGD1-Chain",
+		ChainId:   45012,
+		ShortName: "SGD1",
+		NetworkId: 45012,
+		NativeCurrency: NativeCurrency{
+			Name:     "SGD1",
+			Symbol:   "SGD1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/SGD1/rpc"},
+	},
+	45013: Chain{
+		Name:      "Juneo BCH1-Chain",
+		ChainId:   45013,
+		ShortName: "BCH1",
+		NetworkId: 45013,
+		NativeCurrency: NativeCurrency{
+			Name:     "BCH1",
+			Symbol:   "BCH1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/BCH1/rpc"},
+	},
+	45014: Chain{
+		Name:      "Juneo LINK1-Chain",
+		ChainId:   45014,
+		ShortName: "LINK1",
+		NetworkId: 45014,
+		NativeCurrency: NativeCurrency{
+			Name:     "LINK1",
+			Symbol:   "LINK1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juneo-mainnet.network/ext/bc/LINK1/rpc"},
+	},
+	45056: Chain{
+		Name:      "Billions",
+		ChainId:   45056,
+		ShortName: "Billions",
+		NetworkId: 45056,
+		NativeCurrency: NativeCurrency{
+			Name:     "ETHER",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://billions-rpc.eu-north-2.gateway.fm"},
 	},
 	45454: Chain{
 		Name:      "Swamps L2",
@@ -18643,16 +20047,28 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://dream-rpc.somnia.network"},
 	},
 	50341: Chain{
-		Name:      "Reddio Devnet",
+		Name:      "Reddio Testnet",
 		ChainId:   50341,
 		ShortName: "reddio-devnet",
 		NetworkId: 50341,
 		NativeCurrency: NativeCurrency{
-			Name:     "Red",
-			Symbol:   "RED",
+			Name:     "Reddio",
+			Symbol:   "RDO",
 			Decimals: 18,
 		},
 		RPC: []string{"https://reddio-dev.reddio.com"},
+	},
+	50342: Chain{
+		Name:      "Reddio",
+		ChainId:   50342,
+		ShortName: "reddio",
+		NetworkId: 50342,
+		NativeCurrency: NativeCurrency{
+			Name:     "Reddio",
+			Symbol:   "RDO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.reddio.com/rpc"},
 	},
 	50505: Chain{
 		Name:      "STB Testnet",
@@ -18701,6 +20117,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet-rpc.sardisnetwork.com"},
+	},
+	51888: Chain{
+		Name:      "Memento Mainnet",
+		ChainId:   51888,
+		ShortName: "memento-mainnet",
+		NetworkId: 51888,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.mementoblockchain.com"},
 	},
 	52014: Chain{
 		Name:      "Electroneum Mainnet",
@@ -18929,6 +20357,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.flamma.network"},
+	},
+	55930: Chain{
+		Name:      "DataHaven Mainnet",
+		ChainId:   55930,
+		ShortName: "datahaven",
+		NetworkId: 55930,
+		NativeCurrency: NativeCurrency{
+			Name:     "HAVE",
+			Symbol:   "HAVE",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.datahaven-mainnet.network/mainnet","wss://services.datahaven-mainnet.network/mainnet"},
+	},
+	55931: Chain{
+		Name:      "DataHaven Testnet",
+		ChainId:   55931,
+		ShortName: "datahaven-testnet",
+		NetworkId: 55931,
+		NativeCurrency: NativeCurrency{
+			Name:     "MOCK",
+			Symbol:   "MOCK",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.datahaven-testnet.network/testnet","wss://services.datahaven-testnet.network/testnet"},
 	},
 	56026: Chain{
 		Name:      "Lambda Chain Mainnet",
@@ -19170,6 +20622,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://test103.thinkiumrpc.net/"},
 	},
+	60600: Chain{
+		Name:      "POTOS Testnet",
+		ChainId:   60600,
+		ShortName: "potos-testnet",
+		NetworkId: 60600,
+		NativeCurrency: NativeCurrency{
+			Name:     "POTOS Token",
+			Symbol:   "POT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.potos.hk"},
+	},
+	60603: Chain{
+		Name:      "POTOS Mainnet",
+		ChainId:   60603,
+		ShortName: "potos",
+		NetworkId: 60603,
+		NativeCurrency: NativeCurrency{
+			Name:     "POTOS Token",
+			Symbol:   "POT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.potos.hk"},
+	},
 	60808: Chain{
 		Name:      "BOB",
 		ChainId:   60808,
@@ -19181,6 +20657,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.gobob.xyz","wss://rpc.gobob.xyz","https://bob-mainnet.public.blastapi.io","wss://bob-mainnet.public.blastapi.io"},
+	},
+	60850: Chain{
+		Name:      "Perennial Sepolia",
+		ChainId:   60850,
+		ShortName: "perennial-sepolia",
+		NetworkId: 60850,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-sepolia.perennial.foundation"},
 	},
 	61022: Chain{
 		Name:      "Orange Chain Mainnet",
@@ -19314,6 +20802,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://baklava-forno.celo-testnet.org"},
 	},
+	62606: Chain{
+		Name:      "Apollo Mainnet",
+		ChainId:   62606,
+		ShortName: "APOLLO",
+		NetworkId: 62606,
+		NativeCurrency: NativeCurrency{
+			Name:     "Apollo",
+			Symbol:   "APOLLO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet-rpc.apolloscan.io"},
+	},
 	62621: Chain{
 		Name:      "MultiVAC Mainnet",
 		ChainId:   62621,
@@ -19397,6 +20897,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://geist-mainnet.g.alchemy.com/public"},
+	},
+	64002: Chain{
+		Name:      "XCHAIN Testnet",
+		ChainId:   64002,
+		ShortName: "xct",
+		NetworkId: 64002,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://xchain-testnet-rpc.kuma.bid"},
 	},
 	65349: Chain{
 		Name:      "CratD2C Testnet",
@@ -19506,6 +21018,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"http://testnet.cosmicchain.site:3344"},
 	},
+	68414: Chain{
+		Name:      "Henesys",
+		ChainId:   68414,
+		ShortName: "nxpc",
+		NetworkId: 68414,
+		NativeCurrency: NativeCurrency{
+			Name:     "NEXPACE",
+			Symbol:   "NXPC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://henesys-rpc.msu.io"},
+	},
 	68770: Chain{
 		Name:      "DM2 Verse Mainnet",
 		ChainId:   68770,
@@ -19529,6 +21053,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.testnet.dm2verse.dmm.com"},
+	},
+	69000: Chain{
+		Name:      "Animechain Mainnet",
+		ChainId:   69000,
+		ShortName: "anime",
+		NetworkId: 69000,
+		NativeCurrency: NativeCurrency{
+			Name:     "Animecoin",
+			Symbol:   "ANIME",
+			Decimals: 18,
+		},
+		RPC: []string{},
 	},
 	69420: Chain{
 		Name:      "Condrieu",
@@ -19745,6 +21281,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc1-mainnet.icbnetwork.info/","https://rpc2-mainnet.icbnetwork.info/"},
+	},
+	73285: Chain{
+		Name:      "Nebula",
+		ChainId:   73285,
+		ShortName: "nebula",
+		NetworkId: 73285,
+		NativeCurrency: NativeCurrency{
+			Name:     "Nebula Cash",
+			Symbol:   "NEBX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://nebula-chain.com/rpc"},
 	},
 	73799: Chain{
 		Name:      "Energy Web Volta Testnet",
@@ -19999,7 +21547,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc-amoy.polygon.technology","https://polygon-amoy-bor-rpc.publicnode.com","wss://polygon-amoy-bor-rpc.publicnode.com"},
 	},
 	80008: Chain{
-		Name:      "Polynomia Sepolia",
+		Name:      "Polynomial Sepolia",
 		ChainId:   80008,
 		ShortName: "polynomialSepolia",
 		NetworkId: 80008,
@@ -20082,6 +21630,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc-geo-genesis-h0q2s21xx8.t.conduit.xyz/"},
 	},
+	80808: Chain{
+		Name:      "HyperX",
+		ChainId:   80808,
+		ShortName: "hpx",
+		NetworkId: 80808,
+		NativeCurrency: NativeCurrency{
+			Name:     "HPX",
+			Symbol:   "HPX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.hyperx.technology"},
+	},
 	80931: Chain{
 		Name:      "Forta Chain",
 		ChainId:   80931,
@@ -20105,6 +21665,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet-rpc.nordekscan.com"},
+	},
+	81224: Chain{
+		Name:      "Codex",
+		ChainId:   81224,
+		ShortName: "codex",
+		NetworkId: 81224,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.codex.xyz","wss://rpc.codex.xyz"},
 	},
 	81341: Chain{
 		Name:      "Amana Testnet",
@@ -20286,6 +21858,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"http://65.108.151.70:8545"},
 	},
+	83592: Chain{
+		Name:      "Katron AI Mainnet",
+		ChainId:   83592,
+		ShortName: "ktn",
+		NetworkId: 83592,
+		NativeCurrency: NativeCurrency{
+			Name:     "Katron AI",
+			Symbol:   "KTN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://blockchain-rpc1.katronai.com","https://blockchain-rpc2.katronai.com"},
+	},
 	83868: Chain{
 		Name:      "Xprotocol Sepolia",
 		ChainId:   83868,
@@ -20382,6 +21966,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"http://testnet.cybertrust.space:48501"},
 	},
+	86606: Chain{
+		Name:      "CpChain Testnet",
+		ChainId:   86606,
+		ShortName: "cpchain-testnet",
+		NetworkId: 86606,
+		NativeCurrency: NativeCurrency{
+			Name:     "CP",
+			Symbol:   "CP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.cpchain.com"},
+	},
+	86608: Chain{
+		Name:      "CpChain Mainnet",
+		ChainId:   86608,
+		ShortName: "cpchain",
+		NetworkId: 86608,
+		NativeCurrency: NativeCurrency{
+			Name:     "CP",
+			Symbol:   "CP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.cpchain.com"},
+	},
 	88002: Chain{
 		Name:      "Nautilus Proteus Testnet",
 		ChainId:   88002,
@@ -20405,6 +22013,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://inoai-network.com"},
+	},
+	88688: Chain{
+		Name:      "Cycle Network Mainnet Frigate",
+		ChainId:   88688,
+		ShortName: "cyclef",
+		NetworkId: 88688,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://frigate-rpc-mainnet.cyclenetwork.io"},
 	},
 	88800: Chain{
 		Name:      "ZKasino Mainnet",
@@ -20598,6 +22218,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.chain.metadap.io","wss://rpc-ws.chain.metadap.io"},
 	},
+	91342: Chain{
+		Name:      "GIWA Sepolia Testnet",
+		ChainId:   91342,
+		ShortName: "giwasepolia",
+		NetworkId: 91342,
+		NativeCurrency: NativeCurrency{
+			Name:     "Sepolia Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://sepolia-rpc.giwa.io"},
+	},
 	91715: Chain{
 		Name:      "Combo Testnet",
 		ChainId:   91715,
@@ -20657,6 +22289,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.stratovm.io"},
+	},
+	94524: Chain{
+		Name:      "XCHAIN",
+		ChainId:   94524,
+		ShortName: "xc",
+		NetworkId: 94524,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://xchain-rpc.kuma.bid"},
 	},
 	95432: Chain{
 		Name:      "SRICHAIN",
@@ -20790,6 +22434,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://node.sidrachain.com"},
 	},
+	97476: Chain{
+		Name:      "Doma Testnet",
+		ChainId:   97476,
+		ShortName: "doma-testnet",
+		NetworkId: 97476,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.doma.xyz"},
+	},
+	97477: Chain{
+		Name:      "Doma",
+		ChainId:   97477,
+		ShortName: "doma",
+		NetworkId: 97477,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.doma.xyz"},
+	},
 	97531: Chain{
 		Name:      "Green Chain Testnet",
 		ChainId:   97531,
@@ -20827,7 +22495,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://testnet-rpc.optimusz7.com"},
 	},
 	98864: Chain{
-		Name:      "Plume Devnet",
+		Name:      "Plume Devnet (Legacy)",
 		ChainId:   98864,
 		ShortName: "plume-devnet",
 		NetworkId: 98864,
@@ -20836,7 +22504,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://test-rpc.plumenetwork.xyz","wss://test-rpc.plumenetwork.xyz"},
+		RPC: []string{},
 	},
 	98865: Chain{
 		Name:      "Plume (Legacy)",
@@ -20848,7 +22516,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.plumenetwork.xyz","wss://rpc.plumenetwork.xyz"},
+		RPC: []string{},
 	},
 	98866: Chain{
 		Name:      "Plume Mainnet",
@@ -20860,7 +22528,19 @@ var Chains = map[uint64]Chain{
 			Symbol:   "PLUME",
 			Decimals: 18,
 		},
-		RPC: []string{"https://phoenix-rpc.plumenetwork.xyz","wss://phoenix-rpc.plumenetwork.xyz"},
+		RPC: []string{"https://rpc.plume.org","wss://rpc.plume.org"},
+	},
+	98867: Chain{
+		Name:      "Plume Testnet",
+		ChainId:   98867,
+		ShortName: "plume-testnet",
+		NetworkId: 98867,
+		NativeCurrency: NativeCurrency{
+			Name:     "Plume",
+			Symbol:   "PLUME",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.plume.org","wss://testnet-rpc.plume.org"},
 	},
 	98881: Chain{
 		Name:      "Ebi Chain",
@@ -20873,6 +22553,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.ebi.xyz"},
+	},
+	98964: Chain{
+		Name:      "Pay1 Network",
+		ChainId:   98964,
+		ShortName: "pay1",
+		NetworkId: 98964,
+		NativeCurrency: NativeCurrency{
+			Name:     "Pay1",
+			Symbol:   "Pay1",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.pay1coin.com","https://rpc0.pay1coin.com","https://rpc1.pay1coin.com","https://rpc2.pay1coin.com","wss://ws.pay1coin.com","wss://ws0.pay1coin.com","wss://ws1.pay1coin.com","wss://ws2.pay1coin.com"},
 	},
 	98985: Chain{
 		Name:      "Superposition Testnet",
@@ -21090,6 +22782,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://mainnet-l2-ethapi.quarkchain.io"},
 	},
+	100021: Chain{
+		Name:      "Sova",
+		ChainId:   100021,
+		ShortName: "sova",
+		NetworkId: 100021,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.sova.io"},
+	},
 	100100: Chain{
 		Name:      "Deprecated CHI",
 		ChainId:   100100,
@@ -21101,6 +22805,54 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{},
+	},
+	100501: Chain{
+		Name:      "DeInfra Mainnet",
+		ChainId:   100501,
+		ShortName: "deinfra-mainnet",
+		NetworkId: 100501,
+		NativeCurrency: NativeCurrency{
+			Name:     "SK",
+			Symbol:   "SK",
+			Decimals: 18,
+		},
+		RPC: []string{"https://c100501n3.deinfra.net:443/jsonrpc"},
+	},
+	100610: Chain{
+		Name:      "Monsoon ",
+		ChainId:   100610,
+		ShortName: "monsoon",
+		NetworkId: 100610,
+		NativeCurrency: NativeCurrency{
+			Name:     "RDP",
+			Symbol:   "RDP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://monsoon.rainfall.one"},
+	},
+	100611: Chain{
+		Name:      "Monsoon Alpha",
+		ChainId:   100611,
+		ShortName: "monsoon-alpha",
+		NetworkId: 100611,
+		NativeCurrency: NativeCurrency{
+			Name:     "RDL",
+			Symbol:   "RDL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://alpha.monsoon.rainfall.one"},
+	},
+	101003: Chain{
+		Name:      "Socotra JUNE-Chain",
+		ChainId:   101003,
+		ShortName: "Socotra-JUNE",
+		NetworkId: 101003,
+		NativeCurrency: NativeCurrency{
+			Name:     "Socotra JUNE",
+			Symbol:   "JUNE",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.socotra-testnet.network/ext/bc/JUNE/rpc"},
 	},
 	101010: Chain{
 		Name:      "Global Trust Network",
@@ -21199,16 +22951,16 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://api.kaspaclassic.world/","http://80.178.101.118:8000/"},
 	},
 	105105: Chain{
-		Name:      "Stratis Mainnet",
+		Name:      "Xertra Mainnet",
 		ChainId:   105105,
-		ShortName: "stratis",
+		ShortName: "xertra",
 		NetworkId: 105105,
 		NativeCurrency: NativeCurrency{
-			Name:     "Stratis",
+			Name:     "STRAX",
 			Symbol:   "STRAX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.stratisevm.com"},
+		RPC: []string{"https://rpc.xertra.com"},
 	},
 	105363: Chain{
 		Name:      "Lumoz Chain Testnet",
@@ -21438,6 +23190,66 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.testnet.chain.metadap.io","wss://rpc-ws.testnet.chain.metadap.io"},
 	},
+	120893: Chain{
+		Name:      "Sova Sepolia Testnet",
+		ChainId:   120893,
+		ShortName: "sovasep",
+		NetworkId: 120893,
+		NativeCurrency: NativeCurrency{
+			Name:     "Sepolia Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.sova.io"},
+	},
+	121212: Chain{
+		Name:      "Rome Devnet Esquiline",
+		ChainId:   121212,
+		ShortName: "rome-devnet-esquiline",
+		NetworkId: 121212,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://esquiline-i.devnet.romeprotocol.xyz"},
+	},
+	121213: Chain{
+		Name:      "Rome Devnet Subura",
+		ChainId:   121213,
+		ShortName: "rome-devnet-subura",
+		NetworkId: 121213,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://subura-i.devnet.romeprotocol.xyz"},
+	},
+	121214: Chain{
+		Name:      "Rome Testnet Martius",
+		ChainId:   121214,
+		ShortName: "rome-testnet-martius",
+		NetworkId: 121214,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://martius-i.testnet.romeprotocol.xyz"},
+	},
+	121215: Chain{
+		Name:      "Rome Testnet Caelian",
+		ChainId:   121215,
+		ShortName: "rome-testnet-caelian",
+		NetworkId: 121215,
+		NativeCurrency: NativeCurrency{
+			Name:     "RSOL",
+			Symbol:   "RSOL",
+			Decimals: 18,
+		},
+		RPC: []string{"https://caelian-i.testnet.romeprotocol.xyz"},
+	},
 	121224: Chain{
 		Name:      "Fushuma",
 		ChainId:   121224,
@@ -21449,6 +23261,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.fushuma.com"},
+	},
+	121525: Chain{
+		Name:      "Ethernova Mainnet",
+		ChainId:   121525,
+		ShortName: "ethnova",
+		NetworkId: 121525,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ethernova",
+			Symbol:   "NOVA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.ethnova.net"},
 	},
 	123321: Chain{
 		Name:      "Gemchain",
@@ -21486,8 +23310,20 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.testnet.mitosis.org"},
 	},
+	127823: Chain{
+		Name:      "Etherlink Shadownet Testnet",
+		ChainId:   127823,
+		ShortName: "etlst",
+		NetworkId: 127823,
+		NativeCurrency: NativeCurrency{
+			Name:     "tez",
+			Symbol:   "XTZ",
+			Decimals: 18,
+		},
+		RPC: []string{"https://node.shadownet.etherlink.com"},
+	},
 	128123: Chain{
-		Name:      "Etherlink Testnet",
+		Name:      "Etherlink Ghostnet Testnet",
 		ChainId:   128123,
 		ShortName: "etlt",
 		NetworkId: 128123,
@@ -21497,6 +23333,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://node.ghostnet.etherlink.com"},
+	},
+	129399: Chain{
+		Name:      "Tatara Testnet",
+		ChainId:   129399,
+		ShortName: "Tatara",
+		NetworkId: 129399,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.tatara.katanarpc.com/"},
 	},
 	131313: Chain{
 		Name:      "Odyssey Chain (Testnet)",
@@ -21630,6 +23478,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{},
 	},
+	161803: Chain{
+		Name:      "Eventum Mainnet",
+		ChainId:   161803,
+		ShortName: "Eventum",
+		NetworkId: 161803,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet-rpc.evedex.com"},
+	},
 	165279: Chain{
 		Name:      "Eclat Mainnet",
 		ChainId:   165279,
@@ -21715,7 +23575,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{},
 	},
 	167009: Chain{
-		Name:      "Taiko Hekla",
+		Name:      "Taiko Hekla (deprecated)",
 		ChainId:   167009,
 		ShortName: "tko-hekla",
 		NetworkId: 167009,
@@ -21724,7 +23584,19 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.hekla.taiko.xyz","wss://ws.hekla.taiko.xyz","https://taiko-hekla-rpc.publicnode.com","wss://taiko-hekla-rpc.publicnode.com"},
+		RPC: []string{},
+	},
+	167013: Chain{
+		Name:      "Taiko Hoodi",
+		ChainId:   167013,
+		ShortName: "tko-hoodi",
+		NetworkId: 167013,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.hoodi.taiko.xyz"},
 	},
 	168168: Chain{
 		Name:      "Zchains",
@@ -21810,6 +23682,30 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://loa-rpc.litprotocol.com"},
 	},
+	175200: Chain{
+		Name:      "Lit Chain Mainnet",
+		ChainId:   175200,
+		ShortName: "lit",
+		NetworkId: 175200,
+		NativeCurrency: NativeCurrency{
+			Name:     "Lit Protocol",
+			Symbol:   "LITKEY",
+			Decimals: 18,
+		},
+		RPC: []string{"https://lit-chain-rpc.litprotocol.com"},
+	},
+	181228: Chain{
+		Name:      "HPP Sepolia Testnet",
+		ChainId:   181228,
+		ShortName: "hpp-sepolia",
+		NetworkId: 181228,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://sepolia.hpp.io"},
+	},
 	188710: Chain{
 		Name:      "Bitica Chain Mainnet",
 		ChainId:   188710,
@@ -21833,6 +23729,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet.condor.systems/rpc"},
+	},
+	190415: Chain{
+		Name:      "HPP Mainnet",
+		ChainId:   190415,
+		ShortName: "hpp-mainnet",
+		NetworkId: 190415,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.hpp.io"},
+	},
+	191919: Chain{
+		Name:      "Altblockscan Mainnet",
+		ChainId:   191919,
+		ShortName: "altb",
+		NetworkId: 191919,
+		NativeCurrency: NativeCurrency{
+			Name:     "Altblockscan",
+			Symbol:   "ALTB",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.altblockscan.com"},
 	},
 	192940: Chain{
 		Name:      "Mind Network Testnet",
@@ -21893,6 +23813,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc_testnet.xfair.ai","wss://rpc_testnet.xfair.ai"},
+	},
+	200024: Chain{
+		Name:      "NitroGraph Testnet",
+		ChainId:   200024,
+		ShortName: "nitro-testnet",
+		NetworkId: 200024,
+		NativeCurrency: NativeCurrency{
+			Name:     "Nitro",
+			Symbol:   "NOS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-testnet.nitrograph.foundation"},
 	},
 	200101: Chain{
 		Name:      "Milkomeda C1 Testnet",
@@ -22086,6 +24018,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.blockfitscan.io"},
 	},
+	202599: Chain{
+		Name:      "JuChain Testnet",
+		ChainId:   202599,
+		ShortName: "ju-test",
+		NetworkId: 202599,
+		NativeCurrency: NativeCurrency{
+			Name:     "JU Testnet Token",
+			Symbol:   "JU",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.juchain.org","wss://testnet-ws.juchain.org"},
+	},
 	202624: Chain{
 		Name:      "Jellie",
 		ChainId:   202624,
@@ -22116,11 +24060,23 @@ var Chains = map[uint64]Chain{
 		ShortName: "auroria",
 		NetworkId: 205205,
 		NativeCurrency: NativeCurrency{
-			Name:     "Auroria Stratis",
+			Name:     "tSTRAX",
 			Symbol:   "tSTRAX",
 			Decimals: 18,
 		},
-		RPC: []string{"https://auroria.rpc.stratisevm.com"},
+		RPC: []string{"https://auroria.rpc.xertra.com"},
+	},
+	210000: Chain{
+		Name:      "JuChain Mainnet",
+		ChainId:   210000,
+		ShortName: "ju",
+		NetworkId: 210000,
+		NativeCurrency: NativeCurrency{
+			Name:     "JU",
+			Symbol:   "JU",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.juchain.org","wss://ws.juchain.org"},
 	},
 	210049: Chain{
 		Name:      "GitAGI Atlas Testnet",
@@ -22228,7 +24184,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "WETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.hydradx.cloud","wss://rpc.hydradx.cloud","https://hydration-rpc.n.dwellir.com","wss://hydration-rpc.n.dwellir.com","https://rpc.helikon.io/hydradx","wss://rpc.helikon.io/hydradx","https://hydration.dotters.network","wss://hydration.dotters.network"},
+		RPC: []string{"https://rpc.hydradx.cloud","wss://rpc.hydradx.cloud","https://hydration-rpc.n.dwellir.com","wss://hydration-rpc.n.dwellir.com","https://rpc.helikon.io/hydradx","wss://rpc.helikon.io/hydradx","https://hydration.dotters.network","wss://hydration.dotters.network","https://hydration.ibp.network","wss://hydration.ibp.network","https://rpc.cay.hydration.cloud","wss://rpc.cay.hydration.cloud","https://rpc.parm.hydration.cloud","wss://rpc.parm.hydration.cloud","https://rpc.roach.hydration.cloud","wss://rpc.roach.hydration.cloud","https://rpc.zipp.hydration.cloud","wss://rpc.zipp.hydration.cloud","https://rpc.sin.hydration.cloud","wss://rpc.sin.hydration.cloud","https://rpc.coke.hydration.cloud","wss://rpc.coke.hydration.cloud"},
 	},
 	222555: Chain{
 		Name:      "DeepL Mainnet",
@@ -22253,6 +24209,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet.deeplnetwork.org"},
+	},
+	223344: Chain{
+		Name:      "B20 Testnet",
+		ChainId:   223344,
+		ShortName: "B20",
+		NetworkId: 223344,
+		NativeCurrency: NativeCurrency{
+			Name:     "B20",
+			Symbol:   "TBOC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.beonescan.com"},
 	},
 	224168: Chain{
 		Name:      "Taf ECO Chain Mainnet",
@@ -22362,6 +24330,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.studio-blockchain.com","wss://ws.studio-blockchain.com"},
 	},
+	240241: Chain{
+		Name:      "Studio Blockchain Mainnet",
+		ChainId:   240241,
+		ShortName: "stom",
+		NetworkId: 240241,
+		NativeCurrency: NativeCurrency{
+			Name:     "Studio Token",
+			Symbol:   "STO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.studio-blockchain.com","https://mainnet2.studio-blockchain.com","https://mainnet3.studio-blockchain.com","https://mainnet.studio-scan.com","https://mainnet2.studio-scan.com","wss://mainnet.studio-blockchain.com:8547"},
+	},
 	240515: Chain{
 		Name:      "Orange Chain Testnet",
 		ChainId:   240515,
@@ -22445,6 +24425,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet.block.caduceus.foundation","wss://mainnet.block.caduceus.foundation"},
+	},
+	258432: Chain{
+		Name:      "Althea L1 Mainnet",
+		ChainId:   258432,
+		ShortName: "ALTHEA",
+		NetworkId: 258432,
+		NativeCurrency: NativeCurrency{
+			Name:     "Althea",
+			Symbol:   "ALTHEA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.althea.zone"},
 	},
 	262371: Chain{
 		Name:      "Eclat Testnet",
@@ -22567,7 +24559,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet-rpc.oneworldchain.org"},
 	},
 	313313: Chain{
-		Name:      "SaharaAI Testnet",
+		Name:      "Sahara AI Testnet",
 		ChainId:   313313,
 		ShortName: "saharatest",
 		NetworkId: 313313,
@@ -22614,6 +24606,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://testnet-rpc.bloomgenesis.com"},
 	},
+	323432: Chain{
+		Name:      "World Mobile Chain Testnet",
+		ChainId:   323432,
+		ShortName: "WMCTEST",
+		NetworkId: 323432,
+		NativeCurrency: NativeCurrency{
+			Name:     "ATestingToken",
+			Symbol:   "WOMOX",
+			Decimals: 18,
+		},
+		RPC: []string{"https://worldmobile-testnet.g.alchemy.com/public"},
+	},
 	325000: Chain{
 		Name:      "Camp Network Testnet V2",
 		ChainId:   325000,
@@ -22627,7 +24631,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc-campnetwork.xyz"},
 	},
 	327126: Chain{
-		Name:      "WABA Chain Testnet",
+		Name:      "WABA Chain Mainnet",
 		ChainId:   327126,
 		ShortName: "waba",
 		NetworkId: 327126,
@@ -22746,6 +24750,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.polis.tech"},
 	},
+	335700: Chain{
+		Name:      "Scenium",
+		ChainId:   335700,
+		ShortName: "scenium",
+		NetworkId: 335700,
+		NativeCurrency: NativeCurrency{
+			Name:     "SCEN",
+			Symbol:   "SCEN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://services.tanssi-mainnet.network/tanssi-2004","wss://services.tanssi-mainnet.network/tanssi-2004"},
+	},
 	336655: Chain{
 		Name:      "UPchain Testnet",
 		ChainId:   336655,
@@ -22818,6 +24834,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://dgs-rpc.digitsoul.co.th"},
 	},
+	369369: Chain{
+		Name:      "Denergy Network",
+		ChainId:   369369,
+		ShortName: "den-mainnet",
+		NetworkId: 369369,
+		NativeCurrency: NativeCurrency{
+			Name:     "WATT",
+			Symbol:   "WATT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.d.energy/"},
+	},
 	373737: Chain{
 		Name:      "HAPchain Testnet",
 		ChainId:   373737,
@@ -22829,6 +24857,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://jsonrpc-test.hap.land"},
+	},
+	380929: Chain{
+		Name:      "Silent Data Mainnet",
+		ChainId:   380929,
+		ShortName: "silent-data-mainnet",
+		NetworkId: 380929,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.silentdata.com/${SILENTDATA_AUTH_TOKEN}"},
+	},
+	381185: Chain{
+		Name:      "Silent Data Testnet",
+		ChainId:   381185,
+		ShortName: "silent-data-testnet",
+		NetworkId: 381185,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet.silentdata.com/${SILENTDATA_AUTH_TOKEN}"},
 	},
 	381931: Chain{
 		Name:      "Metal C-Chain",
@@ -23133,7 +25185,7 @@ var Chains = map[uint64]Chain{
 	490000: Chain{
 		Name:      "Autonomys Taurus Testnet",
 		ChainId:   490000,
-		ShortName: "ATN",
+		ShortName: "ATN-deprecated",
 		NetworkId: 490000,
 		NativeCurrency: NativeCurrency{
 			Name:     "AI3",
@@ -23165,6 +25217,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://subnets.avax.network/playdappne/mainnet/rpc"},
+	},
+	511111: Chain{
+		Name:      "Alpha Chain Testnet",
+		ChainId:   511111,
+		ShortName: "alpha-testnet",
+		NetworkId: 511111,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-rpc.goalpha.org"},
 	},
 	512512: Chain{
 		Name:      "CMP-Testnet",
@@ -23359,16 +25423,40 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://dustboy-rpc.jibl2.com/"},
 	},
 	560000: Chain{
-		Name:      "Hetu Testnet",
+		Name:      "Hetu Mainnet",
 		ChainId:   560000,
 		ShortName: "HETU",
 		NetworkId: 560000,
 		NativeCurrency: NativeCurrency{
-			Name:     "tETH",
-			Symbol:   "tETH",
+			Name:     "HETU",
+			Symbol:   "HETU",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.testchainv1.hetuscan.com"},
+		RPC: []string{"https://rpc.va.hetu.org"},
+	},
+	560013: Chain{
+		Name:      "Rogue Chain",
+		ChainId:   560013,
+		ShortName: "rogue",
+		NetworkId: 560013,
+		NativeCurrency: NativeCurrency{
+			Name:     "Rogue",
+			Symbol:   "ROGUE",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.roguechain.io/rpc","wss://rpc.roguechain.io/ws"},
+	},
+	560048: Chain{
+		Name:      "Ethereum Hoodi",
+		ChainId:   560048,
+		ShortName: "hoe",
+		NetworkId: 560048,
+		NativeCurrency: NativeCurrency{
+			Name:     "Hoodi Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.hoodi.ethpandaops.io"},
 	},
 	621847: Chain{
 		Name:      "DJT Testnet",
@@ -23514,6 +25602,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{},
 	},
+	685689: Chain{
+		Name:      "Gensyn Mainnet",
+		ChainId:   685689,
+		ShortName: "gensyn-mainnet",
+		NetworkId: 685689,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
 	686868: Chain{
 		Name:      "Won Network",
 		ChainId:   686868,
@@ -23525,6 +25625,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.wonnetwork.org"},
+	},
+	695569: Chain{
+		Name:      "Pyrope Testnet",
+		ChainId:   695569,
+		ShortName: "pyrope",
+		NetworkId: 695569,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.pyropechain.com","wss://rpc.pyropechain.com"},
 	},
 	696969: Chain{
 		Name:      "Galadriel Devnet",
@@ -23634,6 +25746,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://testnet.rpc.hemi.network/rpc"},
 	},
+	747474: Chain{
+		Name:      "katana",
+		ChainId:   747474,
+		ShortName: "katana",
+		NetworkId: 747474,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.katana.network"},
+	},
 	751230: Chain{
 		Name:      "Bear Network Chain Testnet",
 		ChainId:   751230,
@@ -23707,16 +25831,28 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc-gel-sepolia.inkonchain.com","wss://ws-gel-sepolia.inkonchain.com"},
 	},
 	763374: Chain{
-		Name:      "Surge Testnet",
+		Name:      "Surge deprecated Testnet",
 		ChainId:   763374,
-		ShortName: "surge-testnet",
+		ShortName: "surge-deprecated-testnet",
 		NetworkId: 763374,
 		NativeCurrency: NativeCurrency{
 			Name:     "Ether",
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://l2-rpc.surge.staging-nethermind.xyz","wss://l2-rpc.surge.staging-nethermind.xyz"},
+		RPC: []string{},
+	},
+	763375: Chain{
+		Name:      "Surge Testnet",
+		ChainId:   763375,
+		ShortName: "surge-testnet",
+		NetworkId: 763375,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://l2-rpc.hoodi.surge.wtf","wss://l2-ws.hoodi.surge.wtf"},
 	},
 	764984: Chain{
 		Name:      "Lamina1 Testnet",
@@ -23753,6 +25889,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://fraa-dancebox-3035-rpc.a.dancebox.tanssi.network"},
+	},
+	777777: Chain{
+		Name:      "Winr Protocol Mainnet",
+		ChainId:   777777,
+		ShortName: "winr",
+		NetworkId: 777777,
+		NativeCurrency: NativeCurrency{
+			Name:     "Winr",
+			Symbol:   "WINR",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.winr.games"},
 	},
 	777888: Chain{
 		Name:      "Oone Chain Mainnet",
@@ -23874,6 +26022,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://goerli.rpc.zklink.io","wss://goerli.rpc.zklink.io"},
 	},
+	812242: Chain{
+		Name:      "Codex Testnet",
+		ChainId:   812242,
+		ShortName: "codex-testnet",
+		NetworkId: 812242,
+		NativeCurrency: NativeCurrency{
+			Name:     "Sepolia Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.codex-stg.xyz","wss://rpc.codex-stg.xyz"},
+	},
 	812397: Chain{
 		Name:      "SG Verse Mainnet",
 		ChainId:   812397,
@@ -23909,6 +26069,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://mainnet-rpc.curvescan.io"},
+	},
+	838838: Chain{
+		Name:      "HyperCluster",
+		ChainId:   838838,
+		ShortName: "HYPEC",
+		NetworkId: 838838,
+		NativeCurrency: NativeCurrency{
+			Name:     "HyperCluster Token",
+			Symbol:   "HYPEC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.hypercluster.org"},
 	},
 	839320: Chain{
 		Name:      "PRM Testnet",
@@ -23958,6 +26130,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://chain.deptofgood.com"},
 	},
+	853211: Chain{
+		Name:      "Testethiq",
+		ChainId:   853211,
+		ShortName: "testethiq",
+		NetworkId: 853211,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.ethiq.network","wss://rpc.testnet.ethiq.network"},
+	},
 	855456: Chain{
 		Name:      "Dodao",
 		ChainId:   855456,
@@ -23968,7 +26152,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "DODAO",
 			Decimals: 18,
 		},
-		RPC: []string{"https://fraa-dancebox-3041-rpc.a.dancebox.tanssi.network","wss://fraa-dancebox-3041-rpc.a.dancebox.tanssi.network"},
+		RPC: []string{"https://fraa-flashbox-4643-rpc.a.stagenet.tanssi.network","wss://fraa-flashbox-4643-rpc.a.stagenet.tanssi.network"},
 	},
 	879151: Chain{
 		Name:      "BlocX Mainnet",
@@ -24138,6 +26322,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://host-76-74-28-226.contentfabric.io/eth/","https://host-76-74-28-232.contentfabric.io/eth/","https://host-76-74-29-2.contentfabric.io/eth/","https://host-76-74-29-8.contentfabric.io/eth/","https://host-76-74-29-34.contentfabric.io/eth/","https://host-76-74-29-35.contentfabric.io/eth/","https://host-154-14-211-98.contentfabric.io/eth/","https://host-154-14-192-66.contentfabric.io/eth/","https://host-60-240-133-202.contentfabric.io/eth/","https://host-64-235-250-98.contentfabric.io/eth/"},
 	},
+	963369: Chain{
+		Name:      "AVI Coin",
+		ChainId:   963369,
+		ShortName: "avi",
+		NetworkId: 963369,
+		NativeCurrency: NativeCurrency{
+			Name:     "AVI Coin",
+			Symbol:   "AVI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.avicoin.org"},
+	},
 	978657: Chain{
 		Name:      "Treasure Ruby",
 		ChainId:   978657,
@@ -24222,6 +26418,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://node1.amchain.net"},
 	},
+	1001996: Chain{
+		Name:      "Wirex Pay Testnet",
+		ChainId:   1001996,
+		ShortName: "wirex-testnet",
+		NetworkId: 1001996,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-dev.wirexpaychain.com"},
+	},
 	1008686: Chain{
 		Name:      "Naga Testnet",
 		ChainId:   1008686,
@@ -24264,8 +26472,8 @@ var Chains = map[uint64]Chain{
 		ShortName: "1money-testnet",
 		NetworkId: 1212101,
 		NativeCurrency: NativeCurrency{
-			Name:     "USD1",
-			Symbol:   "USD1",
+			Name:     "FREE",
+			Symbol:   "FREE",
 			Decimals: 18,
 		},
 		RPC: []string{"https://testnet.1money.network"},
@@ -24378,6 +26586,42 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc-orbit-testnet.ata.network"},
 	},
+	1440000: Chain{
+		Name:      "XRPL EVM Sidechain",
+		ChainId:   1440000,
+		ShortName: "xrplevm",
+		NetworkId: 1440000,
+		NativeCurrency: NativeCurrency{
+			Name:     "XRP",
+			Symbol:   "XRP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.xrplevm.org","wss://ws.xrplevm.org"},
+	},
+	1440002: Chain{
+		Name:      "XRPL EVM Sidechain Devnet",
+		ChainId:   1440002,
+		ShortName: "xrplevmdevnet",
+		NetworkId: 1440002,
+		NativeCurrency: NativeCurrency{
+			Name:     "XRP",
+			Symbol:   "XRP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.devnet.xrplevm.org","wss://ws.devnet.xrplevm.org"},
+	},
+	1449000: Chain{
+		Name:      "XRPL EVM Sidechain Testnet",
+		ChainId:   1449000,
+		ShortName: "xrplevmtestnet",
+		NetworkId: 1449000,
+		NativeCurrency: NativeCurrency{
+			Name:     "XRP",
+			Symbol:   "XRP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.xrplevm.org","wss://ws.testnet.xrplevm.org"},
+	},
 	1501869: Chain{
 		Name:      "Waterfall 9 Test Network",
 		ChainId:   1501869,
@@ -24449,6 +26693,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"http://testnet.x-phere.com"},
+	},
+	2019775: Chain{
+		Name:      "Jovay Sepolia Testnet",
+		ChainId:   2019775,
+		ShortName: "jovay-sepolia",
+		NetworkId: 2019775,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://api.zan.top/public/jovay-testnet","https://api.zan.top/node/v1/jovay/testnet/${ZAN_API_KEY}","wss://api.zan.top/node/ws/v1/jovay/testnet/${ZAN_API_KEY}"},
 	},
 	2021398: Chain{
 		Name:      "DeBank Testnet",
@@ -24545,6 +26801,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://sc-rpc.dpu.ac.th"},
+	},
+	2632500: Chain{
+		Name:      "COTI",
+		ChainId:   2632500,
+		ShortName: "coti",
+		NetworkId: 2632500,
+		NativeCurrency: NativeCurrency{
+			Name:     "COTI",
+			Symbol:   "COTI",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet.coti.io/rpc"},
 	},
 	2702128: Chain{
 		Name:      "Xterio Chain (ETH)",
@@ -24690,6 +26958,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.zerion.io/v1/zero-sepolia"},
 	},
+	5042002: Chain{
+		Name:      "Arc Network Testnet",
+		ChainId:   5042002,
+		ShortName: "arc-testnet",
+		NetworkId: 5042002,
+		NativeCurrency: NativeCurrency{
+			Name:     "USDC",
+			Symbol:   "USDC",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.arc.network","wss://rpc.testnet.arc.network","https://rpc.quicknode.testnet.arc.network","wss://rpc.quicknode.testnet.arc.network","https://rpc.blockdaemon.testnet.arc.network"},
+	},
 	5112023: Chain{
 		Name:      "NumBlock Chain",
 		ChainId:   5112023,
@@ -24738,6 +27018,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://rpc.ankr.com/electroneum_testnet"},
 	},
+	5318007: Chain{
+		Name:      "Reactive Lasna",
+		ChainId:   5318007,
+		ShortName: "lreact",
+		NetworkId: 5318007,
+		NativeCurrency: NativeCurrency{
+			Name:     "Lasna React",
+			Symbol:   "lREACT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://lasna-rpc.rnk.dev"},
+	},
 	5318008: Chain{
 		Name:      "Reactive Kopli",
 		ChainId:   5318008,
@@ -24785,6 +27077,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://jsonrpc-test.imversed.network","https://ws-jsonrpc-test.imversed.network"},
+	},
+	5734951: Chain{
+		Name:      "Jovay Mainnet",
+		ChainId:   5734951,
+		ShortName: "jovay",
+		NetworkId: 5734951,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.jovay.io","https://api.zan.top/node/v1/jovay/mainnet/${ZAN_API_KEY}","wss://api.zan.top/node/ws/v1/jovay/mainnet/${ZAN_API_KEY}"},
 	},
 	6038361: Chain{
 		Name:      "Astar zKyoto",
@@ -24844,7 +27148,43 @@ var Chains = map[uint64]Chain{
 			Symbol:   "Ton",
 			Decimals: 18,
 		},
-		RPC: []string{"https://testnet.tingchain.org"},
+		RPC: []string{"https://testnet.tingchain.org","https://public.0xrpc.com/6666689"},
+	},
+	6912115: Chain{
+		Name:      "ENI Testnet (Deprecated)",
+		ChainId:   6912115,
+		ShortName: "eni-test-deprecated",
+		NetworkId: 6912115,
+		NativeCurrency: NativeCurrency{
+			Name:     "EGAS",
+			Symbol:   "EGAS",
+			Decimals: 18,
+		},
+		RPC: []string{},
+	},
+	6985385: Chain{
+		Name:      "Humanity Protocol",
+		ChainId:   6985385,
+		ShortName: "hp",
+		NetworkId: 6985385,
+		NativeCurrency: NativeCurrency{
+			Name:     "H",
+			Symbol:   "H",
+			Decimals: 18,
+		},
+		RPC: []string{"https://humanity-mainnet.g.alchemy.com/public"},
+	},
+	7080969: Chain{
+		Name:      "Humanity Protocol testnet",
+		ChainId:   7080969,
+		ShortName: "thp",
+		NetworkId: 7080969,
+		NativeCurrency: NativeCurrency{
+			Name:     "tHP",
+			Symbol:   "tHP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.testnet.humanity.org","https://humanity-testnet.g.alchemy.com/public"},
 	},
 	7082400: Chain{
 		Name:      "COTI Testnet",
@@ -25122,6 +27462,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://hal-rpc.alienxchain.io/http","https://hal.rpc.caldera.xyz/http"},
 	},
+	11142220: Chain{
+		Name:      "Celo Sepolia Testnet",
+		ChainId:   11142220,
+		ShortName: "celo-sep",
+		NetworkId: 11142220,
+		NativeCurrency: NativeCurrency{
+			Name:     "CELO",
+			Symbol:   "CELO",
+			Decimals: 18,
+		},
+		RPC: []string{"https://forno.celo-sepolia.celo-testnet.org"},
+	},
 	11145513: Chain{
 		Name:      "Blessnet Sepolia",
 		ChainId:   11145513,
@@ -25135,7 +27487,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://blessnet-sepolia-testnet.rpc.caldera.xyz/http","wss://blessnet-sepolia-testnet.rpc.caldera.xyz/ws"},
 	},
 	11155111: Chain{
-		Name:      "Sepolia",
+		Name:      "Ethereum Sepolia",
 		ChainId:   11155111,
 		ShortName: "sep",
 		NetworkId: 11155111,
@@ -25144,7 +27496,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc.sepolia.org","https://rpc2.sepolia.org","https://rpc-sepolia.rockx.com","https://rpc.sepolia.ethpandaops.io","https://sepolia.infura.io/v3/${INFURA_API_KEY}","wss://sepolia.infura.io/v3/${INFURA_API_KEY}","https://sepolia.gateway.tenderly.co","wss://sepolia.gateway.tenderly.co","https://ethereum-sepolia-rpc.publicnode.com","wss://ethereum-sepolia-rpc.publicnode.com","https://sepolia.drpc.org","wss://sepolia.drpc.org","https://rpc-sepolia.rockx.com","https://eth-sepolia.g.alchemy.com/v2/WddzdzI2o9S3COdT73d5w6AIogbKq4X-"},
+		RPC: []string{"https://rpc.sepolia.org","https://rpc2.sepolia.org","https://rpc.sepolia.ethpandaops.io","https://sepolia.infura.io/v3/${INFURA_API_KEY}","wss://sepolia.infura.io/v3/${INFURA_API_KEY}","https://sepolia.gateway.tenderly.co","wss://sepolia.gateway.tenderly.co","https://ethereum-sepolia-rpc.publicnode.com","wss://ethereum-sepolia-rpc.publicnode.com","https://sepolia.drpc.org","wss://sepolia.drpc.org","https://eth-sepolia.g.alchemy.com/v2/WddzdzI2o9S3COdT73d5w6AIogbKq4X-"},
 	},
 	11155420: Chain{
 		Name:      "OP Sepolia Testnet",
@@ -25157,6 +27509,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://sepolia.optimism.io","https://optimism-sepolia.drpc.org","wss://optimism-sepolia.drpc.org"},
+	},
+	11155931: Chain{
+		Name:      "RISE Testnet",
+		ChainId:   11155931,
+		ShortName: "rise-testnet",
+		NetworkId: 11155931,
+		NativeCurrency: NativeCurrency{
+			Name:     "RISE Testnet Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet.riselabs.xyz","wss://testnet.riselabs.xyz/ws"},
 	},
 	11166111: Chain{
 		Name:      "R0AR Testnet",
@@ -25183,7 +27547,7 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.lummio.net"},
 	},
 	12052024: Chain{
-		Name:      "Memento Testnet",
+		Name:      "Memento Testnet (deprecated)",
 		ChainId:   12052024,
 		ShortName: "memento-test",
 		NetworkId: 12052024,
@@ -25192,7 +27556,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://test-rpc.mementoblockchain.com/IRkghvI3FfEArEJMr4zC/rpc"},
+		RPC: []string{},
 	},
 	12227331: Chain{
 		Name:      "NeoX Testnet T3",
@@ -25241,6 +27605,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://churchill-rpc.pepchain.io"},
+	},
+	13863860: Chain{
+		Name:      "Symbiosis",
+		ChainId:   13863860,
+		ShortName: "symbiosis",
+		NetworkId: 13863860,
+		NativeCurrency: NativeCurrency{
+			Name:     "Symbiosis",
+			Symbol:   "SIS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://symbiosis.calderachain.xyz/http"},
 	},
 	14288640: Chain{
 		Name:      "Anduschain Mainnet",
@@ -25372,7 +27748,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "QKI",
 			Decimals: 18,
 		},
-		RPC: []string{"https://hz.rpc.qkiscan.cn","https://jp.rpc.qkiscan.io","https://rpc1.qkiscan.io","https://rpc2.qkiscan.io","https://rpc3.qkiscan.io"},
+		RPC: []string{"https://rpc1.qkirpc.org","https://rpc2.qkirpc.org","https://rpc3.qkirpc.org","https://rpc1.qkiscan.io","https://rpc2.qkiscan.io","https://rpc3.qkiscan.io"},
 	},
 	20201022: Chain{
 		Name:      "Pego Network",
@@ -25401,14 +27777,14 @@ var Chains = map[uint64]Chain{
 	20230825: Chain{
 		Name:      "Vcity Testnet",
 		ChainId:   20230825,
-		ShortName: "Vcity",
+		ShortName: "Vcitytestnet",
 		NetworkId: 20230825,
 		NativeCurrency: NativeCurrency{
 			Name:     "Testnet Vcity Token",
-			Symbol:   "VCITY",
+			Symbol:   "VCT",
 			Decimals: 18,
 		},
-		RPC: []string{"https://testnet.vcity.app"},
+		RPC: []string{"http://testnet-rpc.vcity.app"},
 	},
 	20240324: Chain{
 		Name:      "DeBank Sepolia Testnet",
@@ -25445,6 +27821,42 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc-proxima.swanchain.io"},
+	},
+	20250217: Chain{
+		Name:      "Xphere Mainnet",
+		ChainId:   20250217,
+		ShortName: "xp",
+		NetworkId: 20250217,
+		NativeCurrency: NativeCurrency{
+			Name:     "Xphere",
+			Symbol:   "XP",
+			Decimals: 18,
+		},
+		RPC: []string{"https://en-bkk.x-phere.com"},
+	},
+	20250407: Chain{
+		Name:      "PlatON Dev Testnet",
+		ChainId:   20250407,
+		ShortName: "platondev3",
+		NetworkId: 1,
+		NativeCurrency: NativeCurrency{
+			Name:     "LAT",
+			Symbol:   "lat",
+			Decimals: 18,
+		},
+		RPC: []string{"https://devnet3openapi.platon.network/rpc","wss://devnet3openapi.platon.network/ws"},
+	},
+	20250825: Chain{
+		Name:      "Vcitychain Mainnet",
+		ChainId:   20250825,
+		ShortName: "vcity",
+		NetworkId: 20250825,
+		NativeCurrency: NativeCurrency{
+			Name:     "Vcity Coin",
+			Symbol:   "VCITY",
+			Decimals: 18,
+		},
+		RPC: []string{"https://mainnet-rpc.vcity.app"},
 	},
 	20256789: Chain{
 		Name:      "ETP Mainnet",
@@ -25528,7 +27940,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "6DO-T",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-testnet.6do.world"},
+		RPC: []string{"https://rpc-testnet.6dochain.com"},
 	},
 	27082017: Chain{
 		Name:      "Excoincial Chain Volta-Testnet",
@@ -25617,14 +28029,14 @@ var Chains = map[uint64]Chain{
 	33772211: Chain{
 		Name:      "Xone Testnet",
 		ChainId:   33772211,
-		ShortName: "txoc",
+		ShortName: "tXOC",
 		NetworkId: 33772211,
 		NativeCurrency: NativeCurrency{
 			Name:     "Xone Coin",
 			Symbol:   "XOC",
 			Decimals: 18,
 		},
-		RPC: []string{"https://rpc-testnet.xone.plus","https://rpc-testnet.xone.org","https://rpc-testnet.knight.center"},
+		RPC: []string{"https://rpc-testnet.xone.plus","https://rpc-testnet.xone.org","https://rpc-testnet.knight.center","wss://rpc-testnet.xone.org"},
 	},
 	34949059: Chain{
 		Name:      "citronus-citro",
@@ -25744,7 +28156,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "DKA",
 			Decimals: 18,
 		},
-		RPC: []string{"https://warehouse-full01.dkargo.io"},
+		RPC: []string{"https://rpc.warehouse.dkargo.io"},
 	},
 	61717561: Chain{
 		Name:      "Aquachain",
@@ -25757,6 +28169,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://c.onical.org","https://tx.aquacha.in/api"},
+	},
+	65000000: Chain{
+		Name:      "Autonity Mainnet",
+		ChainId:   65000000,
+		ShortName: "aut",
+		NetworkId: 65000000,
+		NativeCurrency: NativeCurrency{
+			Name:     "Auton",
+			Symbol:   "ATN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc.autonity-apis.com","wss://rpc.autonity-apis.com","https://autonity.rpc.web3cdn.network","wss://autonity.rpc.web3cdn.network","https://autonity.rpc.subquery.network/public","wss://autonity.rpc.subquery.network/public"},
 	},
 	65010000: Chain{
 		Name:      "Autonity Bakerloo (Thames) Testnet",
@@ -25864,7 +28288,19 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ATN",
 			Decimals: 18,
 		},
-		RPC: []string{"https://autonity.rpc.web3cdn.network/testnet","wss://autonity.rpc.web3cdn.network/testnet/ws","https://autonity-piccadilly.rpc.subquery.network/public","https://piccadilly.autonity-apis.com","wss://piccadilly-ws.autonity-apis.com"},
+		RPC: []string{},
+	},
+	66666666: Chain{
+		Name:      "Winr Protocol Testnet",
+		ChainId:   66666666,
+		ShortName: "winrtestnet",
+		NetworkId: 66666666,
+		NativeCurrency: NativeCurrency{
+			Name:     "Winr",
+			Symbol:   "WINR",
+			Decimals: 18,
+		},
+		RPC: []string{"https://rpc-devnet.winr.games"},
 	},
 	68840142: Chain{
 		Name:      "Frame Testnet",
@@ -25925,6 +28361,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.teamblockchain.team"},
+	},
+	89127398: Chain{
+		Name:      "Krown Testnet",
+		ChainId:   89127398,
+		ShortName: "krown-testnet",
+		NetworkId: 89127398,
+		NativeCurrency: NativeCurrency{
+			Name:     "KROWN",
+			Symbol:   "KROWN",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet.krown.network","https://testnet1.krown.network"},
 	},
 	89346162: Chain{
 		Name:      "Reya Cronos",
@@ -26035,9 +28483,9 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://rpc.opcelestia-raspberry.gelato.digital","wss://ws.opcelestia-raspberry.gelato.digital"},
 	},
 	161221135: Chain{
-		Name:      "Plume Testnet",
+		Name:      "Plume Testnet (Legacy)",
 		ChainId:   161221135,
-		ShortName: "plume-testnet",
+		ShortName: "plume-testnet-legacy",
 		NetworkId: 161221135,
 		NativeCurrency: NativeCurrency{
 			Name:     "Plume Sepolia Ether",
@@ -26178,6 +28626,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://mainnet-rpc.oneledger.network"},
 	},
+	324705682: Chain{
+		Name:      "SKALE Base Sepolia",
+		ChainId:   324705682,
+		ShortName: "skale-base-sepolia",
+		NetworkId: 324705682,
+		NativeCurrency: NativeCurrency{
+			Name:     "Credits",
+			Symbol:   "CREDIT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://base-sepolia-testnet.skalenodes.com/v1/jubilant-horrible-ancha","wss://base-sepolia-testnet.skalenodes.com/v1/ws/jubilant-horrible-ancha"},
+	},
 	328527624: Chain{
 		Name:      "Nal Sepolia Testnet",
 		ChainId:   328527624,
@@ -26250,6 +28710,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://westend-asset-hub-eth-rpc.polkadot.io"},
 	},
+	420420422: Chain{
+		Name:      "Paseo PassetHub",
+		ChainId:   420420422,
+		ShortName: "pas",
+		NetworkId: 420420422,
+		NativeCurrency: NativeCurrency{
+			Name:     "PAS",
+			Symbol:   "PAS",
+			Decimals: 18,
+		},
+		RPC: []string{"https://testnet-passet-hub-eth-rpc.polkadot.io"},
+	},
 	476158412: Chain{
 		Name:      "Deprecated SKALE Europa Hub Testnet",
 		ChainId:   476158412,
@@ -26309,6 +28781,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.testnet.sophon.xyz","wss://rpc.testnet.sophon.xyz/ws"},
+	},
+	661898459: Chain{
+		Name:      "Smart Mainnet",
+		ChainId:   661898459,
+		ShortName: "smart",
+		NetworkId: 661898459,
+		NativeCurrency: NativeCurrency{
+			Name:     "Smart",
+			Symbol:   "SMART",
+			Decimals: 6,
+		},
+		RPC: []string{},
 	},
 	666666666: Chain{
 		Name:      "Degen Chain",
@@ -26406,6 +28890,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://sepolia.rpc.zora.energy"},
 	},
+	1000000003: Chain{
+		Name:      "DeInfra Devnet3",
+		ChainId:   1000000003,
+		ShortName: "deinfra-dev3",
+		NetworkId: 1000000003,
+		NativeCurrency: NativeCurrency{
+			Name:     "dev3SK",
+			Symbol:   "dSK",
+			Decimals: 18,
+		},
+		RPC: []string{"https://c3n1.thepower.io/jsonrpc"},
+	},
 	1020352220: Chain{
 		Name:      "SKALE Titan Hub Testnet",
 		ChainId:   1020352220,
@@ -26441,6 +28937,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"http://cybeth1.cyberdeck.eu:8545"},
+	},
+	1187947933: Chain{
+		Name:      "SKALE Base",
+		ChainId:   1187947933,
+		ShortName: "skale-base",
+		NetworkId: 1187947933,
+		NativeCurrency: NativeCurrency{
+			Name:     "Credits",
+			Symbol:   "CREDIT",
+			Decimals: 18,
+		},
+		RPC: []string{"https://skale-base.skalenodes.com/v1/base","wss://skale-base.skalenodes.com/v1/ws/base"},
 	},
 	1273227453: Chain{
 		Name:      "HUMAN Protocol",
@@ -26692,7 +29200,7 @@ var Chains = map[uint64]Chain{
 			Symbol:   "ETH",
 			Decimals: 18,
 		},
-		RPC: []string{"https://public.sepolia.rpc.status.network","wss://status-sepolia-rpc.eu-north-2.gateway.fm/ws"},
+		RPC: []string{"https://public.sepolia.rpc.status.network"},
 	},
 	1666600000: Chain{
 		Name:      "Harmony Mainnet Shard 0",
@@ -26874,6 +29382,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://23.92.21.121:8545"},
 	},
+	2030232745: Chain{
+		Name:      "Lumia Beam Testnet",
+		ChainId:   2030232745,
+		ShortName: "lumia-beam-testnet",
+		NetworkId: 2030232745,
+		NativeCurrency: NativeCurrency{
+			Name:     "Lumia",
+			Symbol:   "LUMIA",
+			Decimals: 18,
+		},
+		RPC: []string{"https://beam-rpc.lumia.org"},
+	},
 	2046399126: Chain{
 		Name:      "SKALE Europa Hub",
 		ChainId:   2046399126,
@@ -26898,6 +29418,18 @@ var Chains = map[uint64]Chain{
 		},
 		RPC: []string{"https://kermit.accumulatenetwork.io/eth"},
 	},
+	2494104990: Chain{
+		Name:      "Tron Shasta",
+		ChainId:   2494104990,
+		ShortName: "tron-shasta",
+		NetworkId: 2494104990,
+		NativeCurrency: NativeCurrency{
+			Name:     "Tron",
+			Symbol:   "TRX",
+			Decimals: 6,
+		},
+		RPC: []string{"https://api.shasta.trongrid.io/jsonrpc"},
+	},
 	2863311531: Chain{
 		Name:      "Ancient8 Testnet (deprecated)",
 		ChainId:   2863311531,
@@ -26921,6 +29453,30 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://wallrpc.pirl.io"},
+	},
+	3416255149: Chain{
+		Name:      "Ultima Mainnet",
+		ChainId:   3416255149,
+		ShortName: "ultima",
+		NetworkId: 3416255149,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ultima",
+			Symbol:   "ULTIMA",
+			Decimals: 6,
+		},
+		RPC: []string{},
+	},
+	3448148188: Chain{
+		Name:      "Tron Nile",
+		ChainId:   3448148188,
+		ShortName: "tron-nile",
+		NetworkId: 3448148188,
+		NativeCurrency: NativeCurrency{
+			Name:     "Tron",
+			Symbol:   "TRX",
+			Decimals: 6,
+		},
+		RPC: []string{"https://nile.trongrid.io/jsonrpc"},
 	},
 	4216137055: Chain{
 		Name:      "OneLedger Testnet Frankenstein",
@@ -27211,13 +29767,13 @@ var Chains = map[uint64]Chain{
 		RPC: []string{"https://mainnet.ipdc.io/"},
 	},
 	666301179999: Chain{
-		Name:      "Smart Pay Mobile Money",
+		Name:      "SmartPay Mobile Money",
 		ChainId:   666301179999,
 		ShortName: "SmartPay",
 		NetworkId: 666301179999,
 		NativeCurrency: NativeCurrency{
 			Name:     "SmartPay Mobile Money",
-			Symbol:   "SMRTP",
+			Symbol:   "SMM",
 			Decimals: 18,
 		},
 		RPC: []string{"https://network.uat.smartmoneyewallet.com/"},
@@ -27245,6 +29801,18 @@ var Chains = map[uint64]Chain{
 			Decimals: 18,
 		},
 		RPC: []string{"https://rpc.flame.dawn-1.astria.org"},
+	},
+	428962654539583: Chain{
+		Name:      "Yominet",
+		ChainId:   428962654539583,
+		ShortName: "yomi",
+		NetworkId: 428962654539583,
+		NativeCurrency: NativeCurrency{
+			Name:     "Ether",
+			Symbol:   "ETH",
+			Decimals: 18,
+		},
+		RPC: []string{"https://jsonrpc-yominet-1.anvil.asia-southeast.initia.xyz"},
 	},
 	868455272153094: Chain{
 		Name:      "Godwoken Testnet (V1)",

@@ -125,7 +125,7 @@ func InitERC(bc BlockChain) {
 // rpc
 var defaultRPCURL string
 
-const defaultNEWRPCURL = "https://rpc1.newchain.newtonproject.org"
+const defaultNEWRPCURL = "https://rpc.iot.testnet.ab.org"
 const defaultETHRPCUrl = "https://rpc.core.testnet.ab.org"
 
 func InitRPCUrl(bc BlockChain) {

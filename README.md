@@ -62,7 +62,7 @@
 
 ### Download from releases
 
-Binary archives are published at https://release.cloud.diynova.com/newton/MultiSignatureWallet/.
+Binary archives are published at https://github.com/ABFoundationGlobal/MultiSignatureWallet/releases.
 
 ### Building the source
 
@@ -71,7 +71,7 @@ Binary archives are published at https://release.cloud.diynova.com/newton/MultiS
 install:
 
 ```bash
-git clone https://github.com/newtonproject/MultiSignatureWallet.git && cd MultiSignatureWallet && make install
+git clone https://github.com/ABFoundationGlobal/MultiSignatureWallet.git && cd MultiSignatureWallet && make install
 ```
 
 run MultiSignatureWallet:
@@ -85,7 +85,7 @@ run MultiSignatureWallet:
 install:
 
 ```bash
-git clone https://github.com/newtonproject/MultiSignatureWallet.git && cd MultiSignatureWallet && make install
+git clone https://github.com/ABFoundationGlobal/MultiSignatureWallet.git && cd MultiSignatureWallet && make install
 ```
 
 run MultiSignatureWallet:
@@ -121,11 +121,12 @@ Usage:
   MultiSigWallet [command]
 
 Available Commands:
-  account     Manage NewChain accounts
+  account     Manage accounts
   broadcast   Broadcast sign transacion hex in the signTxFilePath to blockchain
   build       Build transaction
+  completion  Generate the autocompletion script for the specified shell
   confirm     Confirm transactionId
-  deploy      Deploy NewChain contract
+  deploy      Deploy MultiSigWallet contract
   execute     Execute transactionId
   help        Help about any command
   info        Show the basic info of contract wallet or a transaction ID
@@ -143,7 +144,7 @@ Flags:
   -a, --contractAddress address   Contract address
   -f, --from address              the from address who pay gas
   -h, --help                      help for MultiSigWallet
-  -i, --rpcURL url                NewChain json rpc or ipc url (default "https://rpc1.newchain.newtonproject.org")
+  -i, --rpcURL url                JSON-RPC url or ipc path (default "https://rpc.iot.testnet.ab.org")
   -w, --walletPath directory      Wallet storage directory (default "./wallet/")
 
 Use "MultiSigWallet [command] --help" for more information about a command.
@@ -159,7 +160,7 @@ One available configuration file `config.toml` is as follows:
 ```conf
 contractaddress = "0xf09E6759c2588eE8435902d16350E321CBD27af3"
 from = "0xdDeB86Dd09F16316B67322199E288d7AF35E0806"
-rpcurl = "https://rpc1.newchain.newtonproject.org"
+rpcurl = "https://rpc.iot.testnet.ab.org"
 walletpath = "./wallet/"
 ```
 
@@ -178,7 +179,7 @@ $ MultiSignatureWallet init
 Initialize config file
 Enter file in which to save (./config.toml):
 Enter the wallet storage directory (./wallet/):
-Enter NewChain json rpc or ipc url (https://rpc1.newchain.newtonproject.org):
+Enter json rpc url or ipc path (https://rpc.iot.testnet.ab.org):
 Create a default account or not: [Y/n]
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Enter passphrase (empty for no passphrase):
@@ -326,7 +327,7 @@ MultiSignatureWallet sign tx.txt --out tx.sign
 #### Broadcast signed transaction online
 
 ```bash
-# Broadcast signed transaction hex to NewChain system
+# Broadcast signed transaction hex to Blockchain
 MultiSignatureWallet broadcast tx.sign
 ```
 
@@ -422,7 +423,7 @@ MultiSignatureWallet sign tx.txt
 
 ##### Broadcast Signed Transaction (Online Computer)
 ```bash
-# Broadcast signed transacion hex to NewChain system
+# Broadcast signed transacion hex to Blockchain
 # This will return an transacionID and tell it to the other owners.
 MultiSignatureWallet broadcast tx.txt.sign
 ```
@@ -443,7 +444,7 @@ MultiSignatureWallet sign tx.txt
 
 ##### Broadcast Signed Transaction (Online Computer)
 ```bash
-# Broadcast signed transacion hex to NewChain system
+# Broadcast signed transacion hex to Blockchain
 MultiSignatureWallet broadcast tx.txt.sign
 ```
 
