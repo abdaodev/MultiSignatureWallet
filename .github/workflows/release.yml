@@ -22,6 +22,8 @@ jobs:
             goarch: arm64
           - goos: darwin
             goarch: arm64
+          - goos: windows
+            goarch: amd64
 
     steps:
       - name: Checkout
@@ -41,10 +43,15 @@ jobs:
         run: |
           make all
           mkdir -p dist
-          test -f MultiSignatureWallet
-          test -f MultiSignatureWallet-ABIoT
-          cp MultiSignatureWallet dist/MultiSignatureWallet-${{ matrix.goos }}-${{ matrix.goarch }}
-          cp MultiSignatureWallet-ABIoT dist/MultiSignatureWallet-ABIoT-${{ matrix.goos }}-${{ matrix.goarch }}
+          EXT=""
+          if [ "${{ matrix.goos }}" = "windows" ]; then
+            EXT=".exe"
+          fi
+          test -f "MultiSignatureWallet${EXT}"
+          test -f "MultiSignatureWallet-ABIoT${EXT}"
+          cp "MultiSignatureWallet${EXT}" "dist/MultiSignatureWallet-${{ matrix.goos }}-${{ matrix.goarch }}${EXT}"
+          cp "MultiSignatureWallet-ABIoT${EXT}" "dist/MultiSignatureWallet-ABIoT-${{ matrix.goos }}-${{ matrix.goarch }}${EXT}"
+        
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
